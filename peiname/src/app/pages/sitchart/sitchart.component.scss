@@ -24,7 +24,7 @@ p{
 .sofa{
     margin-left: 21%;
 }
-.sofaseat {
+#sofaseat {
     background-color: rgba(76, 203, 203, 0.4); /* Green */
     border: none;
     color: white;
@@ -39,6 +39,6 @@ p{
     padding-right: 22%;
     margin-right: 2%;
   }
-  .sofaseat:focus{
-      background-color: rgba(76, 203, 203, 0.7);
-  }
+//   #sofaseat:focus{
+//       background-color: rgba(76, 203, 203, 0.7);
+//   }
