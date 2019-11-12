@@ -38,8 +38,8 @@
     margin-left:21%;
     position:fixed;
     width: 56%;
-    color:black;
-    background: #FFCC48;
+    color: black;
+    background:  #FFCC48;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     text-align:center;
@@ -60,16 +60,19 @@
 //   }
 
   .restauslist{
-      margin-top: 30%;
-        list-style-type:none;
-      padding:3%;
+    list-style-type: none;
+    padding: 3%;
+    position: fixed;
+    top: 16%;
   }
 
   .restlistitem{
+    display: flex;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: white;
     margin-bottom: 2%;
-    padding:8%;
+    padding-top:2%;
+    padding-bottom:2%;
     border: 1px solid rgba(226, 207, 158, 0.6);
     border-radius: 8px;
   }
@@ -82,7 +85,41 @@
     z-index: 1;
     position: fixed;
     top: 91%;
+    height: 10%;
+
   }
 
-  nav ul{height: 160vw; width:100%;}
+  nav ul{
+     height: 75%; 
+    width:100%;
+  }
   nav ul{overflow:hidden; overflow-y:scroll;}
+
+  .restavatar{
+    float: left;
+    width:25%;
+    margin-left:3%;
+  }
+  .resinfo{
+
+    float: right;
+    width:75%;
+  }
+
+  .avatar{
+    width:80%;
+  }
+
+  .restitle{
+    font-family: Roboto;
+    margin-bottom: 2%;
+    font-weight: 600;
+  }
+  .rates{
+    font-family: Roboto;
+    font-size:80%;
+    font-weight: 600;
+  }
+
+  .ratesnum{
+  }
