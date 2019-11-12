@@ -44,8 +44,8 @@
     border-radius: 6px;
     text-align:center;
     top:92.5%;
-    padding-top:2.5%;
-    padding-bottom:2.5%;
+    padding-top:2%;
+    padding-bottom:2%;
     -webkit-transition: all 0.1s;
     -moz-transition: all 0.1s;
     transition: all 0.1s;
@@ -108,7 +108,7 @@
   .resinfo{
 
     float: right;
-    width:34%;
+    width:42%;
   }
 
   .avatar{
@@ -124,6 +124,7 @@
     font-family: Roboto;
     font-size:80%;
     font-weight: 600;
+    margin-bottom:3%;
   }
 
   .ratesnum{
@@ -132,8 +133,35 @@
   .mintext{
     font-family: Roboto;
     font-size:80%;
-    margin-top:56%;
+    margin-top:-3%;
+    margin-bottom:0%;
   }
 
+
+  .menubutt{
+      width:31%;
+  }
+
+ .yellowmenubutt{
+    margin-top: 15%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 86%;
+    color: black;
+    background: #FFCC48;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    transition: all 0.1s;
+    border: none;
+ }
  
- 
+ .instruction{
+    color: white;
+    position: fixed;
+    text-align: center;
+    top: 6.5%;
+    /* margin-top: 1%; */
+    width: 100%;
+ }

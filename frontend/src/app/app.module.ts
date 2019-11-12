@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { SitchartComponent } from './pages/sitchart/sitchart.component';
 import { ChoosedirvoteComponent } from './pages/choosedirvote/choosedirvote.component';
 import { HostchoosestoreComponent } from './pages/hostchoosestore/hostchoosestore.component';
+import { ChoosecuisineComponent } from './pages/choosecuisine/choosecuisine.component';
+import { VoteresComponent } from './pages/voteres/voteres.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SitchartComponent,
     ChoosedirvoteComponent,
-    HostchoosestoreComponent
+    HostchoosestoreComponent,
+    ChoosecuisineComponent,
+    VoteresComponent
   ],
   imports: [
     BrowserModule,
