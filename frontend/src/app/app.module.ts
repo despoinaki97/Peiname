@@ -8,6 +8,7 @@ import { ChoosedirvoteComponent } from './pages/choosedirvote/choosedirvote.comp
 import { HostchoosestoreComponent } from './pages/hostchoosestore/hostchoosestore.component';
 import { ChoosecuisineComponent } from './pages/choosecuisine/choosecuisine.component';
 import { VoteresComponent } from './pages/voteres/voteres.component';
+import { RestmenuComponent } from './pages/restmenu/restmenu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { VoteresComponent } from './pages/voteres/voteres.component';
     ChoosedirvoteComponent,
     HostchoosestoreComponent,
     ChoosecuisineComponent,
-    VoteresComponent
+    VoteresComponent,
+    RestmenuComponent
   ],
   imports: [
     BrowserModule,

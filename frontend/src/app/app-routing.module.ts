@@ -5,6 +5,7 @@ import { SitchartComponent } from './pages/sitchart/sitchart.component';
 import { HostchoosestoreComponent } from './pages/hostchoosestore/hostchoosestore.component';
 import { ChoosecuisineComponent } from './pages/choosecuisine/choosecuisine.component';
 import { VoteresComponent } from './pages/voteres/voteres.component';
+import { RestmenuComponent } from './pages/restmenu/restmenu.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,9 @@ const routes: Routes = [
   { path: 'sitchart', component: SitchartComponent },
   { path: 'hostchoosestore', component: HostchoosestoreComponent },
   { path: 'choosecuisine', component: ChoosecuisineComponent },
-  { path: 'voteres', component: VoteresComponent }
+  { path: 'voteres', component: VoteresComponent },
+  { path: 'restmenu', component: RestmenuComponent }
+
 
 
 
