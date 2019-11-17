@@ -9,6 +9,8 @@ import { HostchoosestoreComponent } from './pages/hostchoosestore/hostchoosestor
 import { ChoosecuisineComponent } from './pages/choosecuisine/choosecuisine.component';
 import { VoteresComponent } from './pages/voteres/voteres.component';
 import { RestmenuComponent } from './pages/restmenu/restmenu.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { IngredientsComponent } from './pages/ingredients/ingredients.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RestmenuComponent } from './pages/restmenu/restmenu.component';
     HostchoosestoreComponent,
     ChoosecuisineComponent,
     VoteresComponent,
-    RestmenuComponent
+    RestmenuComponent,
+    CartComponent,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,
