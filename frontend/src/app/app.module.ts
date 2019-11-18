@@ -11,6 +11,10 @@ import { VoteresComponent } from './pages/voteres/voteres.component';
 import { RestmenuComponent } from './pages/restmenu/restmenu.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
+import { ItemdetailsComponent } from './pages/itemdetails/itemdetails.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalBackdrop } from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
+import { ModalComponent } from './pages/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,17 @@ import { IngredientsComponent } from './pages/ingredients/ingredients.component'
     VoteresComponent,
     RestmenuComponent,
     CartComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    ItemdetailsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+  ]
 })
 export class AppModule { }

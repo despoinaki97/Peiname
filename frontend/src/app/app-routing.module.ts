@@ -7,6 +7,7 @@ import { ChoosecuisineComponent } from './pages/choosecuisine/choosecuisine.comp
 import { VoteresComponent } from './pages/voteres/voteres.component';
 import { RestmenuComponent } from './pages/restmenu/restmenu.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
+import { ItemdetailsComponent } from './pages/itemdetails/itemdetails.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'choosecuisine', component: ChoosecuisineComponent },
   { path: 'voteres', component: VoteresComponent },
   { path: 'restmenu', component: RestmenuComponent },
-  { path: 'ingredients', component: IngredientsComponent }
+  { path: 'ingredients', component: IngredientsComponent },
+  { path: 'itemdetails', component: ItemdetailsComponent }
+
 
 
 
