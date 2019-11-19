@@ -8,6 +8,7 @@ import { VoteresComponent } from './pages/voteres/voteres.component';
 import { RestmenuComponent } from './pages/restmenu/restmenu.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
 import { ItemdetailsComponent } from './pages/itemdetails/itemdetails.component';
+import { StateofcuisineComponent } from './pages/stateofcuisine/stateofcuisine.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,10 @@ const routes: Routes = [
   { path: 'voteres', component: VoteresComponent },
   { path: 'restmenu', component: RestmenuComponent },
   { path: 'ingredients', component: IngredientsComponent },
-  { path: 'itemdetails', component: ItemdetailsComponent }
+  { path: 'itemdetails', component: ItemdetailsComponent },
+  { path: 'stateofcuisine', component: StateofcuisineComponent }
+  
+
 
 
 

@@ -15,6 +15,7 @@ import { ItemdetailsComponent } from './pages/itemdetails/itemdetails.component'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalBackdrop } from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
 import { ModalComponent } from './pages/modal/modal.component';
+import { StateofcuisineComponent } from './pages/stateofcuisine/stateofcuisine.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ModalComponent } from './pages/modal/modal.component';
     IngredientsComponent,
     ItemdetailsComponent,
     ModalComponent,
+    StateofcuisineComponent,
   ],
   imports: [
     BrowserModule,
