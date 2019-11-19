@@ -12,10 +12,9 @@ export class ModalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+   
   }
-  showModal():void {
-    $("#myModal").modal('show');
-  }
+  
   sendModal(): void {
     //do something here
     this.hideModal();
@@ -23,4 +22,14 @@ export class ModalComponent implements OnInit {
   hideModal():void {
     document.getElementById('close-modal').click();
   }
+
+   printhey():void{
+    $("#usershare").click(function () {
+      $(this).toggleClass("green");
+   });
+        //  document.getElementById('usershare').style.background='#FFDB7E';
+  }
+  printhey2():void{
+    document.getElementById('usershare2').style.background='#FFDB7E';
+}
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+declare var $: any;
 
 @Component({
   selector: 'ami-fullstack-itemdetails',
@@ -13,11 +14,10 @@ export class ItemdetailsComponent implements OnInit {
 
   ngOnInit() {
   }
+  showModal():void {
+    $('#myModal').appendTo("body") ;
+  }
 
-  showModal(): void {   
-    this.skat=true;
-    // communication to show the modal, I use a behaviour subject from a service layer here
-}
 
 
   

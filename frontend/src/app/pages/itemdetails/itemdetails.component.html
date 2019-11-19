@@ -61,16 +61,16 @@
                       
                 </ul>
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="showModal()">
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="showModal()">
                         Open modal
-                      </button>
+                      </button> -->
                       <app-modal></app-modal>
               
     
         </nav>
        
         <div class="floatback">
-            <button class="yellowbutt">Share with</button>
+            <button class="yellowbutt" type="button" data-toggle="modal" data-target="#myModal" (click)="showModal()">Share with</button>
             <button class="yellowbutt2">Add to cart</button>
         <div>
     
