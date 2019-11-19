@@ -16,6 +16,15 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalBackdrop } from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
 import { ModalComponent } from './pages/modal/modal.component';
 import { StateofcuisineComponent } from './pages/stateofcuisine/stateofcuisine.component';
+import { TvMainComponent } from './src/app/Gs_Pages/tv-main/tv-main.component';
+import { TvPaymentComponent } from './Gs_Pages/tv-main/Gs_Pages/tv-payment/tv-payment.component';
+import { TvComponent } from './Gs_Pages/tv/tv.component';
+import { TvStatisticsCuisineComponent } from './Gs_Pages/tv-statistics-cuisine/tv-statistics-cuisine.component';
+import { TvStatisticsRestaurantComponent } from './Gs_Pages/tv-statistics-restaurant/tv-statistics-restaurant.component';
+import { BillManagmentComponent } from './Gs_Pages/bill-managment/bill-managment.component';
+import { TrapeziConfirmationComponent } from './Gs_Pages/trapezi-confirmation/trapezi-confirmation.component';
+import { RestaurantVoteResultsComponent } from './Gs_Pages/restaurant-vote-results/restaurant-vote-results.component';
+import { FinalTableComponent } from './Gs_Pages/final-table/final-table.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +40,15 @@ import { StateofcuisineComponent } from './pages/stateofcuisine/stateofcuisine.c
     ItemdetailsComponent,
     ModalComponent,
     StateofcuisineComponent,
+    TvMainComponent,
+    TvPaymentComponent,
+    TvComponent,
+    TvStatisticsCuisineComponent,
+    TvStatisticsRestaurantComponent,
+    BillManagmentComponent,
+    TrapeziConfirmationComponent,
+    RestaurantVoteResultsComponent,
+    FinalTableComponent,
   ],
   imports: [
     BrowserModule,

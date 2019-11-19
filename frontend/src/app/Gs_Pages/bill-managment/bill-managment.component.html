@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="Bill_managment_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <p id="Your_Order">Your Order</p>
+
+    <div id="Main_Content">
+      <img
+        src="../../../assets/images/three-persons-silhouettes (1) 1.png"
+        id="three_persons"
+      />
+      <p id="Caesar">1x Caesar Salad</p>
+      <p id="Caesar_info">Tomatoes sauce , cheese , <br />tomatoes</p>
+      <p id="Primary_Value">3€</p>
+      <p id="Secondary_Value">/9€</p>
+
+      <img src="../../../assets/images/person 1.png" id="three_persons" />
+      <p id="Caesar">1x Pizza margarita</p>
+      <p id="Caesar_info">Tomatoes sauce , cheese , <br />tomatoes</p>
+      <p id="Primary_Value">8€</p>
+      <p id="Secondary_Value">/16€</p>
+
+      <div id="third">
+        <p id="Caesar">1x Pizza anana</p>
+        <p id="Caesar_info">Tomatoes sauce , cheese , <br />tomatoes</p>
+        <p id="Primary_Value">8,5€</p>
+      </div>
+
+      <img src="../../../assets/images/Line 8.png" id="Line" />
+
+      <p id="total">Total</p>
+      <p id="Total_Price">19.5€</p>
+
+      <button id="Pay_Button" class="button">Pay</button>
+      <button id="Treat_Button" class="button">Treat</button>
+    </div>
+
+    <div id="Bill_Modal" class="modal">
+      <div class="modal_content" id="content">
+        <div id="Choice">
+          <p class="Name">Giorgos</p>
+          <img
+            src="../../../assets/images/icons8-man-in-headphones-48.png"
+            id="User1_Photo"
+          />
+          <p class="Value">8,5€</p>
+        </div>
+
+        <div id="Choice2">
+          <p class="Name">Kwstas</p>
+          <img
+            src="../../../assets/images/icons8-man-in-headphones-48.png"
+            id="User2_Photo"
+          />
+          <p class="Value">10€</p>
+        </div>
+
+        <div class="Proceed">
+          <p id="Proceed_text">Proceed to Payment</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="Bill_main.js"></script>
+  </body>
+</html>
