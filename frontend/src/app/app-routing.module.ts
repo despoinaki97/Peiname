@@ -9,6 +9,11 @@ import { RestmenuComponent } from './pages/restmenu/restmenu.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
 import { ItemdetailsComponent } from './pages/itemdetails/itemdetails.component';
 import { StateofcuisineComponent } from './pages/stateofcuisine/stateofcuisine.component';
+import { TvComponent } from './Gs_Pages/tv/tv.component';
+import { TvPaymentComponent } from './Gs_Pages/tv-payment/tv-payment.component';
+import { TvStatisticsCuisineComponent } from './Gs_Pages/tv-statistics-cuisine/tv-statistics-cuisine.component';
+import { TvStatisticsRestaurantComponent } from './Gs_Pages/tv-statistics-restaurant/tv-statistics-restaurant.component';
+import { BillManagmentComponent } from './Gs_Pages/bill-managment/bill-managment.component';
 
 
 const routes: Routes = [
@@ -20,8 +25,13 @@ const routes: Routes = [
   { path: 'restmenu', component: RestmenuComponent },
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'itemdetails', component: ItemdetailsComponent },
-  { path: 'stateofcuisine', component: StateofcuisineComponent }
-  
+  { path: 'stateofcuisine', component: StateofcuisineComponent },
+  { path: 'tv', component: TvComponent},
+  { path: 'tv-payment', component: TvPaymentComponent},
+  { path: 'tv-statistics-cuisine', component: TvStatisticsCuisineComponent},
+  { path: 'tv-statistics-restaurant', component: TvStatisticsRestaurantComponent},
+  { path: 'bill-managment', component: BillManagmentComponent},
+
 
 
 
