@@ -1,0 +1,44 @@
+
+.livingroom{
+    margin-top:20%;
+    height: 50%;
+    width:100%;
+}
+
+.sitchartimg{
+    max-width: 100%;
+    width:100vw;
+}
+
+p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.5vw;
+}
+
+.chooseseat{
+    margin-left: 30%;
+}
+
+.sofa{
+    margin-left: 21%;
+}
+#sofaseat {
+    background-color: rgba(76, 203, 203, 0.4); /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+
+    padding-bottom: 25%;
+    padding-right: 22%;
+    margin-right: 2%;
+  }
+//   #sofaseat:focus{
+//       background-color: rgba(76, 203, 203, 0.7);
+//   }
