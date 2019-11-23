@@ -14,6 +14,13 @@ import { TvPaymentComponent } from './Gs_Pages/tv-payment/tv-payment.component';
 import { TvStatisticsCuisineComponent } from './Gs_Pages/tv-statistics-cuisine/tv-statistics-cuisine.component';
 import { TvStatisticsRestaurantComponent } from './Gs_Pages/tv-statistics-restaurant/tv-statistics-restaurant.component';
 import { BillManagmentComponent } from './Gs_Pages/bill-managment/bill-managment.component';
+import { FinalTableComponent } from './Gs_Pages/final-table/final-table.component';
+import { RestaurantVoteResultsComponent } from './Gs_Pages/restaurant-vote-results/restaurant-vote-results.component';
+import { TrapeziConfirmationComponent } from './Gs_Pages/trapezi-confirmation/trapezi-confirmation.component';
+import { OrderWaitComponent } from './order-wait/order-wait.component';
+import { CaloriesComponent } from './calories/calories.component';
+import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.component';
+
 
 
 const routes: Routes = [
@@ -28,9 +35,15 @@ const routes: Routes = [
   { path: 'stateofcuisine', component: StateofcuisineComponent },
   { path: 'tv', component: TvComponent},
   { path: 'tv-payment', component: TvPaymentComponent},
-  { path: 'tv-statistics-cuisine', component: TvStatisticsCuisineComponent},
+  { path: 'tv-statistics-cuisine', component: TvStatisticsCuisineComponent}, 
   { path: 'tv-statistics-restaurant', component: TvStatisticsRestaurantComponent},
   { path: 'bill-managment', component: BillManagmentComponent},
+  { path: 'Final-table' , component: FinalTableComponent},
+  { path: 'Table_restaurant_vote_results' , component: RestaurantVoteResultsComponent},
+  { path: 'Table_confirmation' , component: TrapeziConfirmationComponent},
+  { path: 'Order_Wait' , component: OrderWaitComponent} ,
+  { path: 'calories' , component: CaloriesComponent},
+  { path: 'Rating_Shop_list' , component: RatingShopListComponent}
 
 
 

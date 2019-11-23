@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SitchartComponent } from './pages/sitchart/sitchart.component';
 import { ChoosedirvoteComponent } from './pages/choosedirvote/choosedirvote.component';
@@ -24,15 +24,10 @@ import { TrapeziConfirmationComponent } from './Gs_Pages/trapezi-confirmation/tr
 import { RestaurantVoteResultsComponent } from './Gs_Pages/restaurant-vote-results/restaurant-vote-results.component';
 import { FinalTableComponent } from './Gs_Pages/final-table/final-table.component';
 import { TvPaymentComponent } from './Gs_Pages/tv-payment/tv-payment.component';
-import { AppRoutingModule } from './app.routing';
-import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.component';
-import { CaloriesComponent } from './calories/calories.component';
 import { OrderWaitComponent } from './order-wait/order-wait.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CuisineVoteCompleteTableComponent } from './kostaspages/cuisine-vote-complete-table/cuisine-vote-complete-table.component';
-import { ItemSelectionTableLoadComponent } from './kostaspages/item-selection-table-load/item-selection-table-load.component';
-import { ItemSelectionTableReadyComponent } from './kostaspages/item-selection-table-ready/item-selection-table-ready.component';
-import { VoteRestTableComponent } from './kostaspages/vote-rest-table/vote-rest-table.component';
+import { CaloriesComponent } from './calories/calories.component';
+import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.component';
 
 
 @NgModule({
@@ -43,6 +38,7 @@ import { VoteRestTableComponent } from './kostaspages/vote-rest-table/vote-rest-
     HostchoosestoreComponent,
     ChoosecuisineComponent,
     VoteresComponent,
+    CaloriesComponent,
     RestmenuComponent,
     CartComponent,
     IngredientsComponent,
@@ -56,25 +52,18 @@ import { VoteRestTableComponent } from './kostaspages/vote-rest-table/vote-rest-
     TrapeziConfirmationComponent,
     RestaurantVoteResultsComponent,
     FinalTableComponent,
-    TvPaymentComponent,
-    AppComponent,
-    RatingShopListComponent,
-    CaloriesComponent,
     OrderWaitComponent,
-    CuisineVoteCompleteTableComponent,
-    ItemSelectionTableLoadComponent,
-    ItemSelectionTableReadyComponent,
-    VoteRestTableComponent   
-
+    TvPaymentComponent,
+    RatingShopListComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule
-
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+  ]
 })
 export class AppModule { }
