@@ -1,97 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div id = "Customer1">
+<ul class="list-group list-group-horizontal" id="master">
+    <li class="list-group-item" id="user" *ngFor="let user of Users">
+        <div class="card" [style.borderColor]="user.color" [style.width.px]="innerWidth" [style.height.px]="innerHeight"
+            style="text-align: center;">
+            <div class="card-body">
+                <h5>{{user.name}}</h5>
+                <ul class="list-group" *ngFor="let item of user.orderedItems">
+                    <li class="list-group-item" id="ratings">
+                        <div class="row">
+                            <div class="col-sm-3">
 
-        <p class="Name">Giorgos</p>
-        <hr id="Horizotical_line" />
-        <img src="../../../assets/images/Ellipse 11.png" class="Blue_Eclipse" />
-        <img src="../../../assets/images/Ellipse 27.png" class="Pink_Eclipse" />
-        <img src="../../../assets/images/Ellipse 28.png" class="Green_Eclipse" />
+                                <span *ngFor="let sharedWith of item.sharedWith" class="dot"
+                                    [style.backgroundColor]="sharedWith.color" id="colors">
+                                </span>
+                            </div>
+                            <div class="col-sm-6">
+                                <p id="item_stats_2">{{item.name}}</p>
 
-        <p class="Item_Name">1x Ceasar's Salad</p>
-        <p class="Price">3€</p>
-
-        <img src="../../../assets/images/Ellipse 12.png" class="Solo_Eclipse" />
-        <p class="Item_Name">1x Pita Gyro<br> <br> Kotopoulo</p>
-        <p class="Price2">3,5€</p>
-
-
-        <br> <br>
-        <img src="../../../assets/images/Ellipse 11.png" class="Blue_Eclipse" />
-        <img src="../../../assets/images/Ellipse 27.png" class="Pink_Eclipse" />
-        <p class="Item_Name">1x Pizza Margarita</p>
-        <p class="Price">8€</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p id="item_stats">{{item.price}}€</p>
+                            </div>
 
 
-      <br>
-        <img src="../../../assets/images/Ellipse 12.png" class="Solo_Eclipse" />
-        <p class="Item_Name">1x Krema sokolata <br> <br> banana</p>
-        <p class="Price3">6€</p>
+                        </div>
+                    </li>
+                </ul>
+                <p id="total">Total:
+                    {{user.getTotalPrice()}}€</p>
 
-        <p class="Total">Total</p>
-
-        <p class="Total_Sum">20,5€</p>
-
-
-    </div>
-
-    <div id = "Customer2">
-        <p class = "Name">Despoina</p>
-        <hr id="Horizotical_line_Despoina" />
-
-        <img src="../../../assets/images/Ellipse 27.png" class="Blue_Eclipse" />
-        <img src="../../../assets/images/Ellipse 11.png" class="Pink_Eclipse" />
-        <img src="../../../assets/images/Ellipse 28.png" class="Green_Eclipse" />
-        <p class="Item_Name">1x Ceasar's Salad</p>
-        <p class="Price">3€</p>
-
-        <img src="../../../assets/images/Ellipse 14.png" class="Solo_Eclipse" />
-        <p class="Item_Name">1x Pizza Anana</p>
-        <p class="Price4">8,5€</p>
-
-        <br>
-        <img src="../../../assets/images/Ellipse 27.png" class="Blue_Eclipse2" />
-        <img src="../../../assets/images/Ellipse 11.png" class="Pink_Eclipse2" />
-        <p class="Item_Name">1x Pizza Margarita</p>
-        <p class="Price">8€</p>
-
-        <p class="Total2">Total</p>
-
-        <p class="Total_Sum">19,5€</p>
-    </div>
-
-    <div id= "Customer3">
-        <p class ="Name"> Kwstas</p>
-        <hr id="Horizotical_line_Kwstas" />
-
-        <img src="../../../assets/images/Ellipse 28.png" class="Blue_Eclipse" />
-        <img src="../../../assets/images/Ellipse 27.png" class="Pink_Eclipse" />
-        <img src="../../../assets/images/Ellipse 11.png" class="Green_Eclipse" />
-        <p class="Item_Name">1x Ceasar's Salad</p>
-        <p class="Price">3€</p>
-
-        <img src="../../../assets/images/images/../../../assets/images/Ellipse 18.png" class="Solo_Eclipse" />
-        <p class="Item_Name">1x Fileto Kotopoulo <br> <br> merida</p>
-        <p class="Price5">7,5€</p>
-
-        <br> <br>
-        <img src="../../../assets/images/images/../../../assets/images/Ellipse 18.png" class="Solo_Eclipse" />
-        <p class="Item_Name">1x Coca-Cola</p>
-        <p class="Price4">1,5€</p>
+            </div>
+        </div>
+    </li>
+</ul>
 
 
-        <p class="Total2">Total</p>
 
-        <p class="Total_Sum">12€</p>
+<style>
+    .dot {
+        height: 2vh;
+        width: 2vh;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: inline-block;
+    }
 
+    #total {
+        text-align: right;
+        position: absolute;
+        font-weight: bold;
+        bottom: 5%;
+        right: 0%;
+        transform: translate(-35%);
+    }
 
-    </div>
-</body>
-</html>
+    #master {
+        list-style-type: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .card {}
+
+    #user {
+        padding-right: 1vw;
+        ;
+        border: 0;
+        padding-left: 1vw;
+        background: transparent;
+    }
+
+    #icon {
+        width: 40%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #item_stats_2 {
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    #item_stats {
+        text-align: right;
+        ;
+        margin-bottom: 0;
+    }
+
+    .card-body {
+
+        padding: 0.55rem;
+    }
+
+    #ratings {
+        border: 0;
+        background: transparent;
+        text-align: left;
+        margin-top: 2.5%;
+    }
+
+    #rating_notstars {
+        font-size: 80%;
+
+        color: gray;
+    }
+
+    #rating_stars {
+        font-size: 80%;
+
+        color: darkorange;
+    }
+
+    #shop_notstars {
+        font-size: 125%;
+
+        color: gray;
+    }
+
+    #shop_stars {
+        font-size: 125%;
+
+        color: darkorange;
+    }
+
+    #item {
+        padding: 0;
+    }
+
+    .card {
+        border: solid 0.5vh;
+
+        background-color: white
+    }
+
+    img {
+        height: 1vh;
+
+    }
+</style>

@@ -13,7 +13,7 @@ export class AppComponent {
     // Connect to sockets server on startup
     this.socketsService.initAndConnect();
 
-
+    document.getElementById('loading').style.display = 'none';
 
 
     //How to consume an event
@@ -22,6 +22,8 @@ export class AppComponent {
     });
     
   }
+
+  
 
   
 }
