@@ -2,11 +2,13 @@ import { Rating } from './rating';
 
 
 export class Shop {
+  public address: string;
+  public tel: number;
   constructor(
     public id: number,
     public name: string,
-    public ratingVal: number,
-    public rating: Rating[]) { }
+    public ratingVal?: number,
+    public rating?: Rating[]) { }
 
     getRating(){
       return new Array(this.ratingVal).fill(0);
