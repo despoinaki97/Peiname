@@ -28,6 +28,8 @@ import { OrderWaitComponent } from './order-wait/order-wait.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CaloriesComponent } from './calories/calories.component';
 import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.component';
+import { RestaurantsComponent } from './tv_components/restaurants/restaurants.component';
+import { RestaurantItemComponent } from './tv_components/restaurant-item/restaurant-item.component';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.com
     FinalTableComponent,
     OrderWaitComponent,
     TvPaymentComponent,
-    RatingShopListComponent
+    RatingShopListComponent,
+    RestaurantsComponent,
+    RestaurantItemComponent
   ],
   imports: [
     BrowserModule,
