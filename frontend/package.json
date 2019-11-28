@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gen": "ng generate component order_wait"
+    "gen": "ng generate service databank"
   },
   "private": true,
   "dependencies": {

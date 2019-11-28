@@ -4,8 +4,8 @@
             style="text-align: center;">
             <div class="card-body">
                 <h5>{{user.name}}</h5>
-                <ul class="list-group" *ngFor="let item of user.orderedItems">
-                    <li class="list-group-item" id="ratings">
+                <ul class="list-group" id="lista" [style.borderColor]="user.color" >
+                    <li class="list-group-item"  *ngFor="let item of user.orderedItems" id="ratings">
                         <div class="row">
                             <div class="col-sm-3">
 
@@ -36,6 +36,9 @@
 
 
 <style>
+    #lista{
+        border-top: solid 0.25vh;
+    }
     .dot {
         height: 2vh;
         width: 2vh;

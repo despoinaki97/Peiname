@@ -1,4 +1,5 @@
 import { Rating } from './rating';
+import { Item } from './item';
 
 
 export class Shop {
@@ -10,7 +11,9 @@ export class Shop {
     public rating?: Rating[],
     public address?: string,
     public tel?: string,
-    public imgURL?: string,) { }
+    public imgURL?: string,
+    public shopItems?: Item[]
+    ) { }
 
     getRating(){
       return new Array(this.ratingVal).fill(0);
