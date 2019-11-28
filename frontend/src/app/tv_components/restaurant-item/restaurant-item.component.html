@@ -1,5 +1,66 @@
-<div class="row" id="row2">
-  <p>
-      {{restaurant.name}}
-  </p>
+<div class="row col-sm-12" id="row2" [ngClass]="set_First()">
+  <div id="elems" class="col-md-2" >
+    <img src="{{restaurant.imgURL}}" id="Photo1" />
+  </div>
+
+
+  <div id="elems" class="col-md-3">
+    <p class="Shop_Name">{{restaurant.name}}</p>
+    <div class="row">
+      <div class="col-sm-4" style="text-align: right;">
+        <img src="../../../assets/images/icons8-place-marker-24 5.png" class="icc" />
+      </div>
+      <p class="col-sm-8" style="text-align: left;">{{restaurant.address}}</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-4" style="text-align: right;">
+        <img class="col-sm-6" src="../../../assets/images/icons8-phone-50 5.png" class="icc" />
+      </div>
+      <p class="col-sm-8" style="text-align: left;">{{restaurant.tel}}</p>
+    </div>
+
+  </div>
+
+
+  <div id="elems" class="col-md-3">
+    <p class="">Reviews</p>
+
+    <p class="">{{restaurant.ratingVal}}</p>
+    <div id="starsGroup">
+      <i class="material-icons" id="shop_stars" *ngFor="let num of restaurant.getRating()">star</i>
+      <i class="material-icons" id="shop_notstars" *ngFor="let num of restaurant.getNRating()">star</i>
+    </div>
+
+    <p class="">({{restaurant.rating.length}} Reviews)</p>
+  </div>
+
+  <div id="elems" class="col-md-2">
+    <p class="">Min.Time</p>
+
+    <p class="">{{restaurant.MinTime}}</p>
+
+
+  </div>
+  <div id="elems" class="col-md-2">
+
+
+
+    <p class="">Min.Order</p>
+
+    <p class="">{{restaurant.Min_Order}}</p>
+  </div>
+
+
+
 </div>
+
+
+<style>
+  #elems .row {
+    /* text-align: center; */
+    /* margin-left: 100px; */
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+  }
+</style>

@@ -14,4 +14,16 @@ export class RestaurantItemComponent implements OnInit {
   ngOnInit() {
   }
 
+
+    //set_firsti()
+    set_First(){
+      let first = {
+        restaurant: true,
+        'is_first': this.restaurant.id == 1
+      }
+
+      return first;
+    }
+
+
 }

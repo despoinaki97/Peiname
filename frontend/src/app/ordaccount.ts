@@ -1,4 +1,5 @@
 import { Item } from './item';
+import { isNull } from 'util';
 
 export class ordAccount {
 
@@ -9,10 +10,12 @@ export class ordAccount {
         this.name = name;
         this.orderedItems = orderedItems;
         this.color = color;
-        this.orderedItems.forEach(element => {
-            element.sharedWith = [];
-            element.sharedWith.push(this)
-        });
+        if(this.orderedItems){
+            this.orderedItems.forEach(element => {
+                element.sharedWith = [];
+                element.sharedWith.push(this)
+            });
+        }
         // ordaccoun connect with wharedwith field in item
     }
 

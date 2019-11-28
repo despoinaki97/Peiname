@@ -2,7 +2,9 @@
 body {
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    flex:1;
+    overflow-y: auto;
     background-image: url("../../../assets/images/background-frame-with-fast-food-and-dessert-vector-20829847\ 1.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,6 +17,7 @@ body {
     color: white;
     font-weight: bolder;
     font-size: 450%;
+    margin-bottom: 5.5vh;
   }
   
   #Photo1 {
