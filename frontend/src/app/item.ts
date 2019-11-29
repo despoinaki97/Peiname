@@ -9,7 +9,8 @@ export class Item{
         public Fat?: number,
         public Calories?: number,
         public price?: number,
-        sharedWith?: ordAccount[]
+        sharedWith?: ordAccount[],
+        public item_details?:string
 
     ){
         this.sharedWith = sharedWith;

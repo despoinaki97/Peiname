@@ -20,8 +20,10 @@ export class ordAccount {
         // ordaccoun connect with wharedwith field in item
     }
 
-    public addItem(i) {
+    addItem(i) {
         this.orderedItems.push(i);
+        i.sharedWith = [];
+        i.sharedWith.push(this)
     }
     public getCalories() {
         var sum = 0;
