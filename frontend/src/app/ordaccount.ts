@@ -8,7 +8,8 @@ export class ordAccount {
     public color: string
     constructor(name: string, orderedItems?: Item[], color?: string) {
         this.name = name;
-        this.orderedItems = orderedItems;
+        this.orderedItems = [];
+        if(orderedItems)this.orderedItems = orderedItems;
         this.color = color;
         if(this.orderedItems){
             this.orderedItems.forEach(element => {
@@ -19,24 +20,24 @@ export class ordAccount {
         // ordaccoun connect with wharedwith field in item
     }
 
-    addItem(i) {
+    public addItem(i) {
         this.orderedItems.push(i);
     }
-    getCalories() {
+    public getCalories() {
         var sum = 0;
         this.orderedItems.forEach(element => {
             sum += element.Calories
         });
         return sum;
     }
-    getTotalPrice() {
+    public getTotalPrice() {
         var sum = 0;
         this.orderedItems.forEach(element => {
             sum += element.price
         });
         return sum;
     }
-    addSharedItem(withSomeone: ordAccount[], anItem: Item) {
+    public addSharedItem(withSomeone: ordAccount[], anItem: Item) {
         withSomeone.push(this); // add me first
         var newItem = new Item(anItem.name, anItem.Carbs, anItem.Sugar, anItem.Fat, anItem.Calories, anItem.price / withSomeone.length)
         newItem.sharedWith = [];

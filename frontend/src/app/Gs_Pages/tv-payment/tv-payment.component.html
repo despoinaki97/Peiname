@@ -1,5 +1,5 @@
 <ul class="list-group list-group-horizontal" id="master">
-    <li class="list-group-item" id="user" *ngFor="let user of Users">
+    <li class="list-group-item" id="user" *ngFor="let user of this.Users">
         <div class="card" [style.borderColor]="user.color" [style.width.px]="innerWidth" [style.height.px]="innerHeight"
             style="text-align: center;">
             <div class="card-body">
@@ -32,7 +32,6 @@
         </div>
     </li>
 </ul>
-
 
 
 <style>
