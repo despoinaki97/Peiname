@@ -49,32 +49,53 @@
 
     <div class="row" id="Buttons">
       <div class="col-sm-5">
-          <button class="btn">Pay</button>
+        <button class="btn">Pay</button>
 
       </div>
       <div class="col-sm-5" style="text-align: right;">
-          <button class="btn" (click)="open(content)">Treat</button>
+        <button class="btn" (click)="open(content)">Treat</button>
       </div>
     </div>
 
 
 
     <ng-template #content let-modal>
-      <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        GEIA
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-      </div>
-    </ng-template>
 
-    
+      <div class="modal-body" id="modal_body">
+        <div class="row" id="Other_Users">
+          <div class="col-sm-3">
+            <img src="../../../assets/Giorgos.png" id="photo">
+          </div>
+          <div class="col-sm-3" id="Name_col">
+            <h5>Giorgos</h5>
+          </div>
+          <div class="col-sm-3" id="Name_col">
+            <h5 id="Price_modal">{{users[1].getTotalPrice()}}€</h5>
+          </div>
+        </div>
+        <div class="row" id="line2"></div>
+
+
+        <div class="row" id="Other_Users">
+          <div class="col-sm-3">
+            <img src="../../../assets/Kostas.png" id="photo">
+          </div>
+          <div class="col-sm-3" id="Name_col">
+            <h5>Kwstas</h5>
+          </div>
+          <div class="col-sm-3" id="Name_col">
+            <h5 id="Price_modal">{{users[2].getTotalPrice()}}€</h5>
+          </div>
+        </div>
+        <div class="row" id="line2"></div>
+
+
+      </div>
+
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')"
+        id="modal_Procceed">Procceed To Payment</button>
+
+    </ng-template>
 
     <!--<hr>
 

@@ -4,7 +4,7 @@ import { Rating } from 'src/app/rating';
 import { ordAccount } from 'src/app/ordaccount';
 import { Item } from 'src/app/item';
 import { DatabankService } from 'src/app/databank.service';
-import { ThrowStmt } from '@angular/compiler';
+import { ThrowStmt, analyzeAndValidateNgModules } from '@angular/compiler';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -61,9 +61,8 @@ export class BillManagmentComponent implements OnInit {
     // new Item("Pizza anana", 1, 1, 1, 1, 8.5, [], "Tomatoes sauce , cheese ,tomatoes,blah, blah,ananna")
     // ]
 
-
-
     console.log(this.users[0].orderedItems[0].sharedWith);
 
   }
+
 }

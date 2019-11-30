@@ -122,3 +122,45 @@ main {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+#modal_body.modal-body{
+  padding-top :0;
+}
+#modal_body{
+
+  height: 150vw;
+}
+
+#Other_Users{
+  padding-top:  3vh;
+  flex-wrap:nowrap;
+  height: 24%;
+}
+
+#photo{
+  width: 20vw;
+  height: 10vh;
+}
+#Name_col{
+  padding-top: 2.8vh;
+}
+
+#Price_modal{
+ 
+  text-align: right;
+
+
+}
+
+#line2{
+  padding-top: 0.3vh;
+  width: 94.8vw;
+  background-color: orange;
+}
+
+#modal_Procceed{
+  margin-left: 20vw;
+  width: 56vw;
+  margin-bottom: 2vh;
+  font-size: small;
+}
