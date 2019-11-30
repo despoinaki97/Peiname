@@ -15,4 +15,8 @@ export class Item{
     ){
         this.sharedWith = sharedWith;
     }
+
+    public getShares(){
+        return new Array(this.sharedWith.length).fill(0);
+    }
 }

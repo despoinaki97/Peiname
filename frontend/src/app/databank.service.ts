@@ -31,13 +31,13 @@ export class DatabankService {
       new Shop(4,"Xoboli",4,[new Rating(0,this.users[2],"Πολύ καλο και γρήγορο",5.0)],"Athinas 19","24210-12345" , "../../../assets/images/Rectangle 2.2 (4).png" , "25'" , "7,5€"),
     ]
     
-    this.users[0].addSharedItem([
-      this.users[1],
-      this.users[2]
-    ], new Item("Ceasar's Salad", 100, 20, 40, 320, 9))
-    this.users[0].addSharedItem([
-      this.users[1]
-    ], new Item("Pizza Margharita", 100, 20, 40, 320, 10))
+    // this.users[0].addSharedItem([
+    //   this.users[1],
+    //   this.users[2]
+    // ], new Item("Ceasar's Salad", 100, 20, 40, 320, 9))
+    // this.users[0].addSharedItem([
+    //   this.users[1]
+    // ], new Item("Pizza Margharita", 100, 20, 40, 320, 10))
     
    }
 

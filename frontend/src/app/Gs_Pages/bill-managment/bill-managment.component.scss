@@ -4,6 +4,13 @@ body {
   min-height: 100vh;       /* body takes whole viewport's height */
 }
 
+.modal{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
 #Your_Order{
   text-align: center;
   color: white;
@@ -12,20 +19,43 @@ body {
 
 main {
   flex: 1;
+  // width: 100vw;
   background-color: #E5E5E5;
 }
 #push_down{
   margin-top: 5vh;
 }
+#icon{
+  display: inline-block;
+}
+
+#product{
+  width: 95vw;
+  height: 10vh;
+  margin-left: 0.3vw;
+ 
+}
+#Product_share{
+  width:50%;
+}
 
 #Product_Details{
-  width: 85vw;
-  margin-left: 7vw;
+  flex-wrap: nowrap;
+  
+}
+
+
+
+#product *{
+  padding-left:0;
+  padding-right:0;
+  margin-left:0;
+  margin-right:0;
 }
 
 #Product_Name{
   color: #0d0d0d;
-  margin-left: 13vw;
+  margin-left: 1vw!important;
 }
 
 #Price{
@@ -33,7 +63,62 @@ main {
   text-align: right;
 }
 #Details{
-  margin-left: 14vw;
+  margin-left: 20vw!important;
+  width: 58vw;
   font-size: small;
   color: #8e8e8e;
+}
+
+#line{
+  margin: 0;
+  margin-top: 3vh;
+  width: 100%;
+  height: 0.22vh;
+  background-color: orange;
+}
+
+#Total{
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 46vh;
+}
+
+#Total_p{
+  margin-top: 3vh;
+  margin-left: 20vw;
+}
+
+#Total_Price{
+  padding:0;
+  margin-top:3vh;
+  text-align: right;
+}
+
+#Buttons{
+  flex-wrap:nowrap;
+  margin: 0;
+  width: 100%;
+  height: 8vh;
+}
+
+.btn {
+  background: #FFCC48;
+  padding-right: 10vw ;
+  padding-left: 10vw;
+  color: black;
+  border-radius: 5px;
+  // height: 5vh;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }

@@ -12,7 +12,7 @@ import { RestmenuComponent } from './pages/restmenu/restmenu.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { IngredientsComponent } from './pages/ingredients/ingredients.component';
 import { ItemdetailsComponent } from './pages/itemdetails/itemdetails.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal,NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalBackdrop } from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
 import { ModalComponent } from './pages/modal/modal.component';
 import { StateofcuisineComponent } from './pages/stateofcuisine/stateofcuisine.component';
@@ -30,7 +30,6 @@ import { CaloriesComponent } from './calories/calories.component';
 import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.component';
 import { RestaurantsComponent } from './tv_components/restaurants/restaurants.component';
 import { RestaurantItemComponent } from './tv_components/restaurant-item/restaurant-item.component';
-
 
 @NgModule({
   declarations: [
@@ -63,7 +62,8 @@ import { RestaurantItemComponent } from './tv_components/restaurant-item/restaur
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],

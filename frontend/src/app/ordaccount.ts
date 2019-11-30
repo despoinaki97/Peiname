@@ -22,7 +22,7 @@ export class ordAccount {
 
     addItem(i) {
         this.orderedItems.push(i);
-        i.sharedWith = [];
+        // i.sharedWith = [];
         i.sharedWith.push(this)
     }
     public getCalories() {
@@ -41,12 +41,13 @@ export class ordAccount {
     }
     public addSharedItem(withSomeone: ordAccount[], anItem: Item) {
         withSomeone.push(this); // add me first
-        var newItem = new Item(anItem.name, anItem.Carbs, anItem.Sugar, anItem.Fat, anItem.Calories, anItem.price / withSomeone.length)
+        var newItem = new Item(anItem.name, anItem.Carbs, anItem.Sugar, anItem.Fat, anItem.Calories, anItem.price / withSomeone.length,[],anItem.item_details)
         newItem.sharedWith = [];
         withSomeone.forEach(element => {
             newItem.sharedWith.push(element); // populate the item's array with everyone
-            element.addItem(newItem) // add this item to everyone's list of ordered items
+            element.orderedItems.push(newItem);
         })
 
     }
+    
 }

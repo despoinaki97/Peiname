@@ -1,34 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  
-    <title>Document</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  </head>
-  <body>
+<body>
 
-    <p id="Your_Order"> Your Order </p>
+  <p id="Your_Order"> Your Order </p>
+
+
+  <main>
+    <div id="push_down"></div>
+
+
+    <div *ngFor="let orderedItem of users[0].orderedItems" id="product">
+      <div class="row" id="Product_Details">
+
+        <div class="col-sm-1" id="Product_share">
+          <div *ngFor="let icon of orderedItem.getShares()" id="icon">
+            <img src="./../../../assets/images/person 1.png">
+          </div>
+
+        </div>
+        <div class="col-sm-4" id="Product_Name">1x {{orderedItem.name}}</div>
+
+        <div class="col-sm-2" *ngIf="orderedItem.sharedWith.length == 1; else elseBlock">
+          <div id="Price">{{orderedItem.price}}€</div>
+        </div>
+        <ng-template #elseBlock>
+          <div class="col-sm-2" id="Price">{{orderedItem.price}}€ /<span style="opacity: 0.5;">
+              {{orderedItem.price * orderedItem.sharedWith.length}}€</span>
+          </div>
+        </ng-template>
+
+      </div>
+      <p id="Details"> {{orderedItem.item_details}}</p>
+    </div>
+
+    <div class="row" id="line"></div>
+
+
+    <div class="row" id="Total">
+      <div class="col-sm-5">
+        <p id="Total_p">
+          Total
+        </p>
+      </div>
+      <div class="col-sm-4" id="Total_Price">{{users[0].getTotalPrice()}}€</div>
+    </div>
+
+
+    <div class="row" id="Buttons">
+      <div class="col-sm-5">
+          <button class="btn">Pay</button>
+
+      </div>
+      <div class="col-sm-5" style="text-align: right;">
+          <button class="btn" (click)="open(content)">Treat</button>
+      </div>
+    </div>
+
+
+
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        GEIA
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+      </div>
+    </ng-template>
 
     
-    <main>
-      <div id="push_down"></div>
+
+    <!--<hr>
+
+    <pre>{{closeResult}}</pre>
+    -->
 
 
-        <div *ngFor="let orderedItem of users.orderedItems"> 
-          <div class = "row" id="Product_Details">
-              
-            <div class="col-sm-6" id="Product_Name">1x {{orderedItem.name}}</div>
-            <div class="col-sm-6" id="Price">{{orderedItem.price}}€ / {{orderedItem.price}}€</div>
+  </main>
+</body>
 
-          </div>
-          <p id="Details"> {{orderedItem.item_details}}</p>   
-        </div>
-
-      </main>
-  </body>
 </html>
