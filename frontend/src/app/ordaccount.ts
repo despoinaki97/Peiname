@@ -39,8 +39,7 @@ export class ordAccount {
         });
         return sum;
     }
-    public addSharedItem(withSomeone: ordAccount[], anItem: Item) {
-        withSomeone.push(this); // add me first
+    public static addSharedItem(withSomeone: ordAccount[], anItem: Item) {
         var newItem = new Item(anItem.name, anItem.Carbs, anItem.Sugar, anItem.Fat, anItem.Calories, anItem.price / withSomeone.length,[],anItem.item_details)
         newItem.sharedWith = [];
         withSomeone.forEach(element => {

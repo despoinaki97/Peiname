@@ -27,13 +27,22 @@ export class TvPaymentComponent implements OnInit {
   // ], "#1ED847")
   getUsers(){
     this.DataBankService.getUsers()
-        .subscribe(users => this.Users = users);
+        .subscribe(users => {
+          this.Users = users
+          console.warn("users_updated")
+          
+        });
   }
-
+  createItem(){
+    this.DataBankService.addItem([this.Users[0]],new Item("Pizza Margarita", 1, 1, 1, 1, 16, [], "Tomatoes sauce , cheese ,tomatoes"))
+    this.getUsers()
+  }
 
   ngOnInit() {
     this.getUsers();
-    // this.giorgos.addSharedItem([
+    this.DataBankService.addItem([this.Users[0]],new Item("Pizza Margarita", 1, 1, 1, 1, 16, [], "Tomatoes sauce , cheese ,tomatoes"))
+
+            // this.giorgos.addSharedItem([
     //   this.despoina,
     //   this.kostas
     // ], new Item("Ceasar's Salad", 100, 20, 40, 320, 9))

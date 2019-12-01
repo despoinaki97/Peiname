@@ -53,9 +53,8 @@ export class BillManagmentComponent implements OnInit {
   ngOnInit() {
     this.i = 0;
     this.getUsers();
-    this.users[0].addSharedItem([this.users[1], this.users[2]], new Item("Caesar Salad", 1, 1, 1, 1, 9, [], "Tomatoes sauce , cheese ,tomatoes"))
-    this.users[0].addSharedItem([this.users[1]], new Item("Pizza Margarita", 1, 1, 1, 1, 16, [], "Tomatoes sauce , cheese ,tomatoes"))
-    this.users[0].addItem(new Item("Pizza anana", 1, 1, 1, 1, 8.5, [], "Tomatoes sauce , cheese ,tomatoes,blah, blah,ananna"))
+    //this.DataBankService.addItem([this.users[0]],new Item("Pizza Margarita", 1, 1, 1, 1, 16, [], "Tomatoes sauce , cheese ,tomatoes"))
+    // this.getUsers();
     // [new Item("Caesar Salad", 1, 1, 1, 1, 9, [new ordAccount("Despoina"), new ordAccount("Kwstas")], "Tomatoes sauce , cheese ,tomatoes"),
     // new Item("Pizza Margarita", 1, 1, 1, 1, 16, [new ordAccount("Despoina")], "Tomatoes sauce , cheese ,tomatoes"),
     // new Item("Pizza anana", 1, 1, 1, 1, 8.5, [], "Tomatoes sauce , cheese ,tomatoes,blah, blah,ananna")
