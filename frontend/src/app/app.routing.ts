@@ -20,6 +20,8 @@ import { BillManagmentComponent } from './Gs_Pages/bill-managment/bill-managment
 import { FinalTableComponent } from './Gs_Pages/final-table/final-table.component';
 import { RestaurantVoteResultsComponent } from './Gs_Pages/restaurant-vote-results/restaurant-vote-results.component';
 import { TrapeziConfirmationComponent } from './Gs_Pages/trapezi-confirmation/trapezi-confirmation.component';
+import { TableComponent } from './Gs_Pages/table/table.component';
+
 
 
 
@@ -48,6 +50,7 @@ const routes: Routes = [
   { path: 'ratings', component:RatingShopListComponent },
   { path: 'calories', component:CaloriesComponent },
   { path: 'wall_order_waiting', component:OrderWaitComponent },
+  { path: 'Table' , component:TableComponent },
  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ]
 

@@ -16,9 +16,9 @@ export class DatabankService {
   private users_subject: BehaviorSubject<ordAccount[]>;
   constructor() {
     this.users = [
-      new ordAccount("Giorgos.S", [], "#0057FF"),
-      new ordAccount("Despoina.S", [], "#FF00F5"),
-      new ordAccount("Kostas.D", [], "#1ED847")
+      new ordAccount("Giorgos.S", [], "#0057FF","../assets/Giorgos.png"),
+      new ordAccount("Despoina.S", [], "#FF00F5","../assets/girl.png"),
+      new ordAccount("Kostas.D", [], "#1ED847","../assets/Kostas.png")
     ]
     this.users_subject = new BehaviorSubject(this.users);
     /*[

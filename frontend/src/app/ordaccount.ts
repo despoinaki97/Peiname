@@ -6,7 +6,8 @@ export class ordAccount {
     public orderedItems: Item[]
     public name: string
     public color: string
-    constructor(name: string, orderedItems?: Item[], color?: string) {
+    public user_Icon: string
+    constructor(name: string, orderedItems?: Item[], color?: string , user_Icon?: string) {
         this.name = name;
         this.orderedItems = [];
         if(orderedItems)this.orderedItems = orderedItems;
@@ -18,6 +19,7 @@ export class ordAccount {
             });
         }
         // ordaccoun connect with wharedwith field in item
+        this.user_Icon = user_Icon;
     }
 
     addItem(i) {

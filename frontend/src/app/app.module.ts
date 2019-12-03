@@ -30,6 +30,7 @@ import { CaloriesComponent } from './calories/calories.component';
 import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.component';
 import { RestaurantsComponent } from './tv_components/restaurants/restaurants.component';
 import { RestaurantItemComponent } from './tv_components/restaurant-item/restaurant-item.component';
+import { TableComponent } from './Gs_Pages/table/table.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { RestaurantItemComponent } from './tv_components/restaurant-item/restaur
     TvPaymentComponent,
     RatingShopListComponent,
     RestaurantsComponent,
-    RestaurantItemComponent
+    RestaurantItemComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
