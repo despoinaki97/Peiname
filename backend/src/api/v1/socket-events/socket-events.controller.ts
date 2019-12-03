@@ -27,7 +27,7 @@ export class SocketEventsController {
         const socketService = DIContainer.get(SocketsService);
         socketService.broadcast(req.params.event, req.body);
 
-        return res.sendStatus(NO_CONTENT);
+        return res.sendStatus(200);
 
       } catch (e) {
         next(e);

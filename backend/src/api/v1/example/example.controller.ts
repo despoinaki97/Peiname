@@ -37,6 +37,7 @@ export class ExampleController {
         const event: string = req.body.event;
 
         //Sending a broadcast message to all clients
+        logger.debug(req.body.event);
         const socketService = DIContainer.get(SocketsService);
         socketService.broadcast(event, message);
 

@@ -17,7 +17,7 @@ export class AppComponent {
 
 
     //How to consume an event
-    this.socketsService.syncMessages('eventName').subscribe((data)=>{
+    this.socketsService.syncMessages('test').subscribe((data)=>{
       console.log('The message i received for this event is: ', data);
     });
     
