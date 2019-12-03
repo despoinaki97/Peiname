@@ -26,11 +26,11 @@ export class DatabankService {
         new Rating(0,new ordAccount("Giorgos.S"),"Good, but late!",4.0),
         new Rating(0,new ordAccount("Despoina.G"),"Κακο",2.0) // cannot support *.5
       ] */
-    this.shops = [new Shop(1, "Coffee-Land", 2.0, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "62 Martyrwn 87", "24210-12345", "../../../assets/images/Rectangle 2.2.png", "15'", "1,5€"),
-    new Shop(1, "Magevmata", 3.5, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Therissos", "24210-12345", "../../../assets/images/Rectangle 2.2 (1).png", "30'", " 5€"),
-    new Shop(2, "H Pita tou Papu", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Aigaiou 3", "24210-12345", "./../../assets/images/Rectangle 2.2 (2).png", "32'", "4€"),
-    new Shop(3, "Gyrogonia", 5, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Dodekanissou 20", "24210-12345", "../../../assets/images/Rectangle 2.2 (3).png", "45'", "3,5€"),
-    new Shop(4, "Xoboli", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Athinas 19", "24210-12345", "../../../assets/images/Rectangle 2.2 (4).png", "25'", "7,5€"),
+    this.shops = [new Shop(1, "Coffee-Land", 2.0, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "62 Martyrwn 87", "24210-12345", "../../../assets/images/Rectangle 2.2.png", "15'", "1,5€","(94 ratings)"),
+    new Shop(1, "Magevmata", 3.5, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Therissos", "24210-12345", "../../../assets/images/Rectangle 2.2 (1).png", "30'", " 5€","(186 ratings)"),
+    new Shop(2, "H Pita tou Papu", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Aigaiou 3", "24210-12345", "./../../assets/images/Rectangle 2.2 (2).png", "32'", "4€","(240 ratings)"),
+    new Shop(3, "Gyrogonia", 5, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Dodekanissou 20", "24210-12345", "../../../assets/images/Rectangle 2.2 (3).png", "45'", "3,5€","(72 ratings)"),
+    new Shop(4, "Xoboli", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Athinas 19", "24210-12345", "../../../assets/images/Rectangle 2.2 (4).png", "25'", "7,5€","(133 ratings)"),
     ]
 
     // this.users[0].addSharedItem([

@@ -5,109 +5,20 @@
     <!-- <div class="restaus"> -->
         <nav>
         <ul  class="restauslist">
-            <li class="restlistitem">
-                <div class="restavatar"><img class="avatar" src="../../../assets/logo.png"/></div>
+            <li class="restlistitem" *ngFor="let shop of shops">
+                <div class="restavatar"><img class="avatar" src="{{shop.imgURL}}"/></div>
                 <div class="resinfo">
-                    <p class="restitle">Krassas</p>
+                    <p class="restitle">{{shop.name}}</p>
                     <p class="rates">
                             <span style='font-size:15px; color:yellow;'>&#9733;</span>
-                                4.7<font color="lightgrey">(133 ratings)</font> 
+                            {{shop.ratingVal}}<font color="lightgrey">{{shop.ratingsAmount}}</font> 
                     </p>
                 </div>
                 <div class="min">
-                    <p class="mintext">1.5&euro; &nbsp; 30'</p>
+                    <p class="mintext">{{shop.Min_Order}} &nbsp; {{shop.MinTime}}</p>
                 </div>
             </li>
-            <li class="restlistitem">
-                    <div class="restavatar"><img class="avatar" src="../../../assets/guro.png"/></div>
-                    <div class="resinfo">
-                        <p class="restitle">Krassas</p>
-                        <p class="rates">
-                            <span style='font-size:15px; color:yellow;'>&#9733;</span>
-                                4.7<font color="lightgrey">(133 ratings)</font></p>
-
-                    </div>
-                    <div class="min">
-                            <p class="mintext">1.5&euro; &nbsp; 30'</p>
-                        </div>
-            </li>
-            <li class="restlistitem">
-                    <div class="restavatar"><img class="avatar" src="../../../assets/xov.png"/></div>
-                    <div class="resinfo">
-                        <p class="restitle">Krassas</p>
-                        <p class="rates">
-                            <span style='font-size:15px; color:yellow;'>&#9733;</span>
-                                4.7<font color="lightgrey">(133 ratings)</font></p>
-
-                    </div>
-                    <div class="min">
-                            <p class="mintext">1.5&euro; &nbsp; 30'</p>
-                        </div>
-            </li>
-            <li class="restlistitem">
-                    <div class="restavatar"><img class="avatar" src="../../../assets/pita.png"/></div>
-                    <div class="resinfo">
-                        <p class="restitle">Krassas</p>
-                        <p class="rates">
-                            <span style='font-size:15px; color:yellow;'>&#9733;</span>
-                                4.7<font color="lightgrey">(133 ratings)</font></p>
-                    </div>
-                    <div class="min">
-                            <p class="mintext">1.5&euro; &nbsp; 30'</p>
-                        </div>
-            </li>
-            <li class="restlistitem">
-                    <div class="restavatar"><img class="avatar" src="../../../assets/guro.png"/></div>
-                    <div class="resinfo">
-                        <p class="restitle">Krassas</p>
-                        <p class="rates">
-                            <span style='font-size:15px; color:yellow;'>&#9733;</span>
-                                4.7<font color="lightgrey">(133 ratings)</font></p>
-
-                    </div>
-                    <div class="min">
-                            <p class="mintext">1.5&euro; &nbsp; 30'</p>
-                        </div>
-            </li>
-            <li class="restlistitem">
-                    <div class="restavatar"><img class="avatar" src="../../../assets/pita.png"/></div>
-                    <div class="resinfo">
-                        <p class="restitle">Krassas</p>
-                        <p class="rates">
-                            <span style='font-size:15px; color:yellow;'>&#9733;</span>
-                                4.7<font color="lightgrey">(133 ratings)</font></p>
-                    </div>
-                    <div class="min">
-                            <p class="mintext">1.5&euro; &nbsp; 30'</p>
-                        </div>
-            </li>
-            <li class="restlistitem">
-                    <div class="restavatar"><img class="avatar" src="../../../assets/pita.png"/></div>
-                    <div class="resinfo">
-                        <p class="restitle">Krassas</p>
-                        <p class="rates">
-                            <span style='font-size:15px; color:yellow;'>&#9733;</span>
-                                4.7<font color="lightgrey">(133 ratings)</font></p>
-                    </div>
-                    <div class="min">
-                            <p class="mintext">1.5&euro; &nbsp; 30'</p>
-                        </div>
-            </li>
-            <li class="restlistitem">
-                    <div class="restavatar"><img class="avatar" src="../../../assets/pita.png"/></div>
-                    <div class="resinfo">
-                        <p class="restitle">Krassas</p>
-                        <p class="rates">
-                            <span style='font-size:15px; color:yellow;'>&#9733;</span>
-                                4.7<font color="lightgrey">(133 ratings)</font></p>
-                    </div>
-                    <div class="min">
-                            <p class="mintext">1.5&euro; &nbsp; 30'</p>
-                        </div>
-            </li>
-                
-
-
+      
         </ul>
     </nav>
     <!-- </div> -->
