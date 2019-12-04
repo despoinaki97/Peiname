@@ -10,7 +10,7 @@ export class Item{
         public Calories?: number,
         public price?: number,
         sharedWith?: ordAccount[],
-        public item_details?:string
+        public item_details?:string[]
 
     ){
         this.sharedWith = sharedWith;
@@ -19,4 +19,5 @@ export class Item{
     public getShares(){
         return new Array(this.sharedWith.length).fill(0);
     }
+    
 }

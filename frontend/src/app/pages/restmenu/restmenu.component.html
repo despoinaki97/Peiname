@@ -10,16 +10,16 @@
                     <button class="accordion">Gyros</button>
                     <div class="panel">
                         <ul class="menulist" style="list-style: none;">
-                            <li class="catitem">
+                            <li class="catitem" *ngFor="let item of shopItems">
                               <div class="item">
-                                Gyros pork<br>
+                                {{item.name}}<br>
                                 <!-- <font color="red">cheese, tomato, pepperoni, pepper</font> -->
-                                <p class="ingr">Pork, tomato, onion, potatos</p>
+                                <p class="ingr">{{item.item_details}}</p>
 
                               </div>
-                            <div class="price">3€</div><br>
+                            <div class="price">{{item.price}}€</div><br>
                             </li>
-                            <li class="catitem">
+                          <!--  <li class="catitem">
                             <div class="item">Gyros chicken<br>
                               <p class="ingr">Chicken, tomato, mayonaise, potatos...</p>
                             </div>
@@ -36,14 +36,14 @@
                               </div>
                               <div class="price">3.2€</div><br>
                               </li>
-                              <!-- <li class="catitem"><div class="item">Pizza Hawaiian</div>
+                                 <li class="catitem"><div class="item">Pizza Hawaiian</div>
                                 <div class="price">8€</div><br>
                                 </li>
                                 <li class="catitem">
                                 <div class="item">Pizza Napolitana</div>
                                 <div class="price">7.5€</div><br>
                                 </li> -->
-                           
+                                
                         </ul>
                     </div>
                     <button class="accordion">Pizza</button>
@@ -75,6 +75,7 @@
                                   </div>
                                   <div class="price">7€</div><br>
                                   </li>
+                                
                                   <!-- <li class="catitem"><div class="item">Pizza Hawaiian</div>
                                     <div class="price">8€</div><br>
                                     </li>
