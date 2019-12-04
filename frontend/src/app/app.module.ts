@@ -31,6 +31,7 @@ import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.com
 import { RestaurantsComponent } from './tv_components/restaurants/restaurants.component';
 import { RestaurantItemComponent } from './tv_components/restaurant-item/restaurant-item.component';
 import { TableComponent } from './Gs_Pages/table/table.component';
+import { HttpClientModule  } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { TableComponent } from './Gs_Pages/table/table.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent],

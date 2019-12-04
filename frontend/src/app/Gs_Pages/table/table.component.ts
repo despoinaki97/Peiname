@@ -7,6 +7,7 @@ import { DatabankService } from 'src/app/databank.service';
 import { ThrowStmt, analyzeAndValidateNgModules } from '@angular/compiler';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
+import { SocketsService } from 'src/app/global/services';
 
 
 @Component({
@@ -25,12 +26,15 @@ export class TableComponent implements OnInit {
     })
   }
 
-  constructor(private DataBankService: DatabankService,@Inject(PLATFORM_ID) private plaformId:Object,private injector: Injector) {
+  constructor(private DataBankService: DatabankService,@Inject(PLATFORM_ID) private plaformId:Object,private injector: Injector,private socket: SocketsService) {
    }
   
 
   ngOnInit() {
     this.getUsers();
+    this.socket.syncMessages("vote_done").subscribe((data)=>{
+      this.change_load_status(data.message);
+    })
     // this.change_load_status(id);
     //this.DataBankService.addItem([this.users[0]],new Item("Pizza Margarita", 1, 1, 1, 1, 16, [], "Tomatoes sauce , cheese ,tomatoes"))
     // this.getUsers();
