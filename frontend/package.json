@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gen": "ng generate service databank"
+    "gen": "ng generate component TableVoteCompleted"
   },
   "private": true,
   "dependencies": {

@@ -1,4 +1,8 @@
 <div class="nav flex-column nav-pills" id="host_choice">
-    <button (click)="callServer(0)"class="nav-link btn btn-dark">VOTE</button><br>
-    <button (click)="callServer(1)"class="nav-link btn btn-dark">ORDER</button>
+    <button (click)="callServer('vote_done',0)"class="nav-link btn btn-dark">VOTE 1</button>
+    <br>
+    <button (click)="callServer('vote_done',1)"class="nav-link btn btn-dark">VOTE 2</button>
+    <br>
+    <button (click)="callServer('start_voting',' ')"class="nav-link btn btn-dark">START_VOTING</button>
+
 </div>

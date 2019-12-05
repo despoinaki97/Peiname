@@ -2,12 +2,13 @@ import { Item } from './item';
 import { isNull } from 'util';
 
 export class ordAccount {
-
+    public id: number
     public orderedItems: Item[]
     public name: string
     public color: string
     public user_Icon: string
-    constructor(name: string, orderedItems?: Item[], color?: string , user_Icon?: string) {
+    constructor(id:number,name: string, orderedItems?: Item[], color?: string , user_Icon?: string) {
+        this.id = id;
         this.name = name;
         this.orderedItems = [];
         if(orderedItems)this.orderedItems = orderedItems;

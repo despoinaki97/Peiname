@@ -32,6 +32,8 @@ import { RestaurantsComponent } from './tv_components/restaurants/restaurants.co
 import { RestaurantItemComponent } from './tv_components/restaurant-item/restaurant-item.component';
 import { TableComponent } from './Gs_Pages/table/table.component';
 import { HttpClientModule  } from '@angular/common/http';
+import { TableStartComponent } from './table-start/table-start.component';
+import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-completed.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { HttpClientModule  } from '@angular/common/http';
     RatingShopListComponent,
     RestaurantsComponent,
     RestaurantItemComponent,
-    TableComponent
+    TableComponent,
+    TableStartComponent,
+    TableVoteCompletedComponent
   ],
   imports: [
     BrowserModule,

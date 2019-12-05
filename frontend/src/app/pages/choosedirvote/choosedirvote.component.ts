@@ -18,24 +18,12 @@ export class ChoosedirvoteComponent implements OnInit {
     })
   }
 
-  constructor(private http: HttpClient, private DatabankService: DatabankService) { }
-  callServer(x) {
-    this.event_json = {
-      event: "vote_done",
-      message: this.users[x].name
-    }
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json');
-
-    this.http.post('http://'+environment.host+'/api/example/sendMessageToClients', JSON.stringify(this.event_json), {
-      headers: headers
-    })
-      .subscribe(data => {
-        console.log(data);
-      });
+  constructor( private DatabankService: DatabankService) { }
+  callServer(event,message){
+    this.DatabankService.call(event,message);
   }
-  ngOnInit() {
 
+  ngOnInit() {
     this.getUsers();
   }
 

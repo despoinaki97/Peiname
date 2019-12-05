@@ -1,7 +1,7 @@
 <body>
         <h1 id="Status"> Vote for restaurant</h1>
         <div class="row" id="Main_Row">
-                <div *ngFor="let user of users" class="col-sm-4" id="columns">
+                <div *ngFor="let user of users" class="col-sm" id="columns">
                         <img src={{user.user_Icon}} id="photo">
                         <h2 id="Names"> {{user.name}}</h2>
                         <!-- <button id="lala" (click)="change_load_status(user.name)">Click me</button> -->
@@ -23,6 +23,10 @@
                         </div>
                 </div>
 
+        </div>
+
+        <div class="alert alert-primary" id="alert" role="alert">
+                Vote Ended! Proceeding ... 
         </div>
 
 </body>

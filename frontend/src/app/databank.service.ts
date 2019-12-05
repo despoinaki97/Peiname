@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Shop } from './shop';
 import { Rating } from './rating';
 import { Item } from './item';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from './../environments/environment';
 
 import { ordAccount } from './ordaccount';
 import { BehaviorSubject , of } from 'rxjs';
@@ -14,11 +16,12 @@ export class DatabankService {
   private shops: Shop[];
   private users: ordAccount[];
   private users_subject: BehaviorSubject<ordAccount[]>;
-  constructor() {
+  private event_json;
+  constructor(private http: HttpClient) {
     this.users = [
-      new ordAccount("Giorgos.S", [], "#0057FF","../assets/Giorgos.png"),
-      new ordAccount("Despoina.S", [], "#FF00F5","../assets/girl.png"),
-      new ordAccount("Kostas.D", [], "#1ED847","../assets/Kostas.png")
+      new ordAccount(0,"Giorgos.S", [], "#0057FF","../assets/Giorgos.png"),
+      new ordAccount(1,"Despoina.S", [], "#FF00F5","../assets/girl.png")
+      // ,new ordAccount("Kostas.D", [], "#1ED847","../assets/Kostas.png")
     ]
     this.users_subject = new BehaviorSubject(this.users);
     /*[
@@ -84,4 +87,20 @@ export class DatabankService {
     console.warn("DatabankService:getUsers()")
     return this.users_subject;
   }
+  call(event_t,message_t){
+    this.event_json = {
+      event: event_t,
+      message: message_t
+    }
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json');
+
+    this.http.post('http://'+environment.host+'/api/example/sendMessageToClients', JSON.stringify(this.event_json), {
+      headers: headers
+    })
+      .subscribe(data => {
+        console.log(data);
+      });
+  }
+  
 }

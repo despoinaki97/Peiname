@@ -21,6 +21,8 @@ import { FinalTableComponent } from './Gs_Pages/final-table/final-table.componen
 import { RestaurantVoteResultsComponent } from './Gs_Pages/restaurant-vote-results/restaurant-vote-results.component';
 import { TrapeziConfirmationComponent } from './Gs_Pages/trapezi-confirmation/trapezi-confirmation.component';
 import { TableComponent } from './Gs_Pages/table/table.component';
+import {TableStartComponent} from './table-start/table-start.component';
+import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-completed.component';
 
 
 
@@ -50,7 +52,9 @@ const routes: Routes = [
   { path: 'ratings', component:RatingShopListComponent },
   { path: 'calories', component:CaloriesComponent },
   { path: 'wall_order_waiting', component:OrderWaitComponent },
-  { path: 'Table' , component:TableComponent },
+  { path: 'tableStart' , component:TableStartComponent},
+  { path: 'table' , component:TableComponent},
+  { path: 'tableEndvote' , component:TableVoteCompletedComponent},
  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ]
 
