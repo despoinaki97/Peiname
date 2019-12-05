@@ -34,6 +34,8 @@ import { TableComponent } from './Gs_Pages/table/table.component';
 import { HttpClientModule  } from '@angular/common/http';
 import { TableStartComponent } from './table-start/table-start.component';
 import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-completed.component';
+import { FormModalComponent } from './form-modal/form-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -64,18 +66,22 @@ import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-c
     RestaurantItemComponent,
     TableComponent,
     TableStartComponent,
-    TableVoteCompletedComponent
+    TableVoteCompletedComponent,
+    FormModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    HttpClientModule 
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[
+  entryComponents:[FormModalComponent
   ]
 })
 export class AppModule { }

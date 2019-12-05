@@ -6,6 +6,8 @@ export class ordAccount {
     public orderedItems: Item[]
     public name: string
     public color: string
+    public seat: number
+    public isHost: boolean
     public user_Icon: string
     constructor(id:number,name: string, orderedItems?: Item[], color?: string , user_Icon?: string) {
         this.id = id;

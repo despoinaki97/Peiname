@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { ResourceController } from '../shared';
-import { ITask, TaskModel } from '@app/models';
+import { ITask, TaskModel, IUser, UserModel, IItem, ItemModel} from '@app/models';
 import { FilesController } from './files/files.controller';
 import { SocketEventsController } from './socket-events/socket-events.controller';
 import { ExampleController } from './example/example.controller';
@@ -25,6 +25,15 @@ apiV1Router
   .use(
     '/tasks',
     new ResourceController<ITask>(TaskModel).applyRoutes()
+  )
+
+  .use(
+    '/users',
+    new ResourceController<IUser>(UserModel).applyRoutes()
+  )
+  .use(
+    '/items',
+    new ResourceController<IItem>(ItemModel).applyRoutes()
   )
 
   // Example routes
