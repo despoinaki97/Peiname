@@ -19,4 +19,5 @@ export class Item{
     public getShares(){
         return new Array(this.sharedWith.length).fill(0);
     }
+    
 }

@@ -10,86 +10,47 @@
                     <button class="accordion">Gyros</button>
                     <div class="panel">
                         <ul class="menulist" style="list-style: none;">
-                            <li class="catitem">
+                            <li class="catitem" *ngFor="let item of pites">
                               <div class="item">
-                                Gyros pork<br>
+                                {{item.name}}<br>
                                 <!-- <font color="red">cheese, tomato, pepperoni, pepper</font> -->
-                                <p class="ingr">Pork, tomato, onion, potatos</p>
+                                <p class="ingr">{{item.item_details}}</p>
 
                               </div>
-                            <div class="price">3€</div><br>
+                            <div class="price">{{item.price}}€</div><br>
                             </li>
-                            <li class="catitem">
-                            <div class="item">Gyros chicken<br>
-                              <p class="ingr">Chicken, tomato, mayonaise, potatos...</p>
-                            </div>
-                            <div class="price">3.5€</div><br>
-                            </li>
-                            <li class="catitem"><div class="item">Kebab<br>
-                                <p class="ingr">Kebab, tomato, onion, potatos, mustard</p>
-                              </div>
-                              <div class="price">3.5€</div><br>
-                              </li>
-                              <li class="catitem">
-                              <div class="item">Pita beef<br>
-                                <p class="ingr">Beef, potatos, iceberg, ketchup, must...</p>
-                              </div>
-                              <div class="price">3.2€</div><br>
-                              </li>
-                              <!-- <li class="catitem"><div class="item">Pizza Hawaiian</div>
-                                <div class="price">8€</div><br>
-                                </li>
-                                <li class="catitem">
-                                <div class="item">Pizza Napolitana</div>
-                                <div class="price">7.5€</div><br>
-                                </li> -->
-                           
+                                
                         </ul>
                     </div>
                     <button class="accordion">Pizza</button>
                         <div class="panel">
                             <ul class="menulist" style="list-style: none;">
-                                <li class="catitem">
+                                <li class="catitem"  *ngFor="let item of pizzes">
                                   <div class="item">
-                                    Pizza Pepperoni<br>
-                                    <!-- <font color="red">cheese, tomato, pepperoni, pepper</font> -->
-                                    <p class="ingr">Mozzarella, tomato sauce , pepperoni</p>
+                                    {{item.name}}<br>
+                                    <p class="ingr">{{item.item_details}}</p>
 
                                   </div>
-                                <div class="price">8€</div><br>
+                                <div class="price">{{item.price}}€</div><br>
                                 </li>
-                                <li class="catitem">
-                                <div class="item">Pizza Margarita<br>
-                                  <p class="ingr">Mozzarella, tomato sauce</p>
-                                </div>
-                                <div class="price">9€</div><br>
-                                </li>
-                                <li class="catitem"><div class="item">Pizza 4 cheese<br>
-                                    <p class="ingr">Mozzarella, gouda, roquefort, graviera...</p>
-                                  </div>
-                                  <div class="price">7.5€</div><br>
-                                  </li>
-                                  <li class="catitem">
-                                  <div class="item">Pizza fish<br>
-                                    <p class="ingr">Tomato sauce, tuna, corn, onion</p>
-                                  </div>
-                                  <div class="price">7€</div><br>
-                                  </li>
-                                  <!-- <li class="catitem"><div class="item">Pizza Hawaiian</div>
-                                    <div class="price">8€</div><br>
-                                    </li>
-                                    <li class="catitem">
-                                    <div class="item">Pizza Napolitana</div>
-                                    <div class="price">7.5€</div><br>
-                                    </li> -->
                                
                             </ul>
                         </div>
                         
                         <button class="accordion">Salads</button>
                         <div class="panel">
-                          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p> -->
-                        </div>
+                          <ul class="menulist" style="list-style: none;">
+                            <li class="catitem"  *ngFor="let item of salads">
+                              <div class="item" (click)="gotoingredients()">
+                                {{item.name}}<br>
+                                <p class="ingr">{{item.item_details}}</p>
+
+                              </div>
+                            <div class="price">{{item.price}}€</div><br>
+                            </li>
+                           
+                        </ul>                        
+                      </div>
                         <button class="accordion">Pasta</button>
                         <div class="panel">
                           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p> -->

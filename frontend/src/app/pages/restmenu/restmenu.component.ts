@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Shop } from 'src/app/shop';
+import { DatabankService } from 'src/app/databank.service';
+import { Item } from 'src/app/item';
+import { element } from 'protractor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ami-fullstack-restmenu',
@@ -6,11 +11,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restmenu.component.scss']
 })
 export class RestmenuComponent implements OnInit {
+  found:boolean=false;
+  shops:Shop[];
+  shopItems:Item[];
+  pites:Item[];
+  pizzes:Item[];
+  salads:Item[];
 
-  constructor() { }
+  constructor(private databank:DatabankService,private router: Router) { }
 
   ngOnInit() {
+    this.shops=this.databank.getShops();
+    this.shops.forEach(element => {
+      this.shopItems=element.shopItems;
+    });
 
+    this.pites = this.shopItems.slice(0, 4);
+    this.pizzes = this.shopItems.slice(4, 7);
+    this.salads = this.shopItems.slice(7,11);
+
+    
     
   let acc = document.getElementsByClassName("accordion");
   let i;
@@ -28,6 +48,16 @@ for (i = 0; i < acc.length; i++) {
 }
   }
 
-
+  gotoingredients(){
+      this.salads.forEach(element=>{
+          if(element.name=="Ceasar's Salad")
+            return this.found=true;
+      });  
+      if(this.found==true)
+        this.router.navigate(['/ingredients']);
+  }
+// printhello(){
+//   console.log("wtf");
+// }
 
 }

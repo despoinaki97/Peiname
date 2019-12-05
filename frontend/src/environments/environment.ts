@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
   host : "192.168.2.4:8080"
+=======
+  host : "192.168.99.100:8080/socket.io-client"
+>>>>>>> origin/dg/angular
 };
 
 /*

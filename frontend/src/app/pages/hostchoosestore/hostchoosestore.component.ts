@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabankService } from 'src/app/databank.service';
+import { Shop } from 'src/app/shop';
 
 @Component({
   selector: 'app-hostchoosestore',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hostchoosestore.component.scss']
 })
 export class HostchoosestoreComponent implements OnInit {
-
-  constructor() { }
+  shops:Shop[];
+  constructor(private databank:DatabankService) { }
 
   ngOnInit() {
+    this.shops=this.databank.getShops();
+    
   }
 
 }
