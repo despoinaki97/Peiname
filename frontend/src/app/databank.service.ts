@@ -33,6 +33,12 @@ export class DatabankService {
     new Shop(4, "Xoboli", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Athinas 19", "24210-12345", "../../../assets/images/Rectangle 2.2 (4).png", "25'", "7,5€"),
     ]
 
+/*Item Initialisation for user 0 -> Giorgos */
+    this.addItem( [this.users[0], this.users[1] , this.users[2] ] , new Item("Caesar Salad", 100 , 20 , 40 , 320 , 9 , [] , "Tomatoes sauce , cheese ,tomatoes"));
+    this.addItem( [ this.users[0] , this.users[1] ] , new Item("Pizza Margarita" , 100 , 20 ,40 , 320 , 16 , [] , "Tomatoes sauce , cheese ,tomatoes,blah, blah") );
+    this.addItem( [this.users[0]] , new Item("Pizza Anana" , 100 , 20 , 40 , 320 , 8.5 , [] , "Tomatoes sauce , cheese ,tomatoes,blah, blah,ananna"));
+    
+
     // this.users[0].addSharedItem([
     //   this.users[1],
     //   this.users[2]

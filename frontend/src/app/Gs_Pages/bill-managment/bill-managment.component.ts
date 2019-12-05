@@ -60,8 +60,6 @@ export class BillManagmentComponent implements OnInit {
     // new Item("Pizza anana", 1, 1, 1, 1, 8.5, [], "Tomatoes sauce , cheese ,tomatoes,blah, blah,ananna")
     // ]
 
-    console.log(this.users[0].orderedItems[0].sharedWith);
-
   }
-
+  
 }
