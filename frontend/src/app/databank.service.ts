@@ -21,7 +21,7 @@ export class DatabankService {
     this.users = [
       new ordAccount(0,"Giorgos.S", [], "#0057FF","../assets/Giorgos.png"),
       new ordAccount(1,"Despoina.S", [], "#FF00F5","../assets/girl.png")
-      // ,new ordAccount("Kostas.D", [], "#1ED847","../assets/Kostas.png")
+      ,new ordAccount(2,"Kostas.D", [], "#1ED847","../assets/Kostas.png")
     ]
     this.users_subject = new BehaviorSubject(this.users);
     /*[
@@ -60,7 +60,7 @@ export class DatabankService {
     ]
 
 /*Item Initialisation for user 0 -> Giorgos */
-    this.addItem( [this.users[0], this.users[1] , this.users[2] ] , new Item("Caesar Salad", 100 , 20 , 40 , 320 , 9 , [] , "Tomatoes sauce , cheese ,tomatoes"));
+    this.addItem( [this.users[0], this.users[1],this.users[2]] , new Item("Caesar Salad", 100 , 20 , 40 , 320 , 9 , [] , "Tomatoes sauce , cheese ,tomatoes"));
     this.addItem( [ this.users[0] , this.users[1] ] , new Item("Pizza Margarita" , 100 , 20 ,40 , 320 , 16 , [] , "Tomatoes sauce , cheese ,tomatoes,blah, blah") );
     this.addItem( [this.users[0]] , new Item("Pizza Anana" , 100 , 20 , 40 , 320 , 8.5 , [] , "Tomatoes sauce , cheese ,tomatoes,blah, blah,ananna"));
     
