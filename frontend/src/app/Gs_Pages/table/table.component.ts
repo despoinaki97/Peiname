@@ -59,7 +59,7 @@ export class TableComponent implements OnInit {
   }
 
   init_checked_users() {
-    this.checked_users = new Array(this.users.length).fill(0);
+    this.checked_users = new Array(3).fill(0);
     console.log(this.checked_users);
   }
 
