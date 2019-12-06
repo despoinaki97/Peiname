@@ -95,6 +95,8 @@ main {
 }
 
 #Buttons{
+  position: absolute;
+  bottom: 1vh;
   flex-wrap:nowrap;
   margin: 0;
   width: 100%;
@@ -110,6 +112,7 @@ main {
   // height: 5vh;
   text-align: center;
 }
+
 
 .modal {
   display: none;

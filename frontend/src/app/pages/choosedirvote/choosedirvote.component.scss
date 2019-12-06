@@ -1,42 +1,14 @@
 
 
-.back{
-  //  background-color: aqua;
-
+#host_choice{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
 }
-.backimg{
-    background-size: contain; 
-
-    margin:0%;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    //z-index: -100; 
-}
-
-.butts{
-    background-size: contain; 
-
-    // height:100%;
-    // width:100%;
-    margin-top:58vw;
-}
-.hostchoice{
-    
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: white;
-    border: none;
-    color: black;
-    padding: 11%;
-    width:80%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px;
-    margin-left: 10%;
-    margin-bottom:10%;
+.btn{
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    font-size: 4vh;
 }

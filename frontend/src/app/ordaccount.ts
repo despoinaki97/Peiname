@@ -2,11 +2,15 @@ import { Item } from './item';
 import { isNull } from 'util';
 
 export class ordAccount {
-
+    public id: number
     public orderedItems: Item[]
     public name: string
     public color: string
-    constructor(name: string, orderedItems?: Item[], color?: string) {
+    public seat: number
+    public isHost: boolean
+    public user_Icon: string
+    constructor(id:number,name: string, orderedItems?: Item[], color?: string , user_Icon?: string) {
+        this.id = id;
         this.name = name;
         this.orderedItems = [];
         if(orderedItems)this.orderedItems = orderedItems;
@@ -18,6 +22,7 @@ export class ordAccount {
             });
         }
         // ordaccoun connect with wharedwith field in item
+        this.user_Icon = user_Icon;
     }
 
     addItem(i) {

@@ -2,6 +2,7 @@ import { ordAccount } from './ordaccount';
 
 export class Item{
     public sharedWith: ordAccount[];
+    public image: string;
     constructor(
         public name: string,
         public Carbs?: number,

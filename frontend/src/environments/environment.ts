@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  host : "192.168.99.100:8080/socket.io-client"
+  host : "192.168.2.4:8080"
 };
 
 /*

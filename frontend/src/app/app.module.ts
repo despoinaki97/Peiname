@@ -30,6 +30,12 @@ import { CaloriesComponent } from './calories/calories.component';
 import { RatingShopListComponent } from './rating-shop-list/rating-shop-list.component';
 import { RestaurantsComponent } from './tv_components/restaurants/restaurants.component';
 import { RestaurantItemComponent } from './tv_components/restaurant-item/restaurant-item.component';
+import { TableComponent } from './Gs_Pages/table/table.component';
+import { HttpClientModule  } from '@angular/common/http';
+import { TableStartComponent } from './table-start/table-start.component';
+import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-completed.component';
+import { FormModalComponent } from './form-modal/form-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -57,17 +63,25 @@ import { RestaurantItemComponent } from './tv_components/restaurant-item/restaur
     TvPaymentComponent,
     RatingShopListComponent,
     RestaurantsComponent,
-    RestaurantItemComponent
+    RestaurantItemComponent,
+    TableComponent,
+    TableStartComponent,
+    TableVoteCompletedComponent,
+    FormModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[
+  entryComponents:[FormModalComponent
   ]
 })
 export class AppModule { }

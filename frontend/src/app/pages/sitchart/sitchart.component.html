@@ -3,10 +3,10 @@
     <p class="chooseseat">Please choose your seat</p>
     <img class="sitchartimg" src="../../assets/sitchart.png"/>
 </div>
-<div class="sofa">
-    <button id="sofaseat" (click)="entername()"></button>
-    <button id="sofaseat"></button>
-    <button id="sofaseat"></button>
+<div class="row ">
+    <button class="btn sofaseat col-sm" [disabled]="seats[0]" id="b0" (click)="openFormModal(0)"></button>
+    <button class="btn sofaseat col-sm" [disabled]="seats[1]" id="b1" (click)="openFormModal(1)"></button>
+    <button class="btn sofaseat col-sm" [disabled]="seats[2]" id="b2" (click)="openFormModal(2)"></button>
 
 </div>
 </div>
