@@ -17,7 +17,7 @@ export class RestmenuComponent implements OnInit {
   pites:Item[];
   pizzes:Item[];
   salads:Item[];
-
+  open:boolean;
   constructor(private databank:DatabankService,private router: Router) { }
 
   ngOnInit() {
@@ -40,6 +40,7 @@ for (i = 0; i < acc.length; i++) {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
+      this.open=true;
       panel.style.maxHeight = null;
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";

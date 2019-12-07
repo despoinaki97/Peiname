@@ -5,22 +5,26 @@
     <!-- <div class="restaus"> -->
         <nav>
         <ul  class="restauslist">
-            <li class="restlistitem" *ngFor="let shop of shops">
-                <div class="restavatar"><img class="avatar" src="{{shop.imgURL}}"/></div>
-                <div class="resinfo">
-                    <p class="restitle">{{shop.name}}</p>
-                    <p class="rates">
+            <label class="restlistitem" *ngFor="let shop of shops">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                         <div class="restavatar"><img class="avatar" src="{{shop.imgURL}}"/></div>
+                        <div class="resinfo">
+                            <p class="restitle">{{shop.name}}</p>
+                            <p class="rates">
                             <span style='font-size:15px; color:yellow;'>&#9733;</span>
                             {{shop.ratingVal}}<font color="lightgrey">{{shop.ratingsAmount}}</font> 
-                    </p>
-                </div>
+                            </p>
+                        </div>
                 <div class="min">
                     <p class="mintext">{{shop.Min_Order}} &nbsp; {{shop.MinTime}}</p>
                 </div>
-            </li>
+            </span>
+
+            </label>
       
         </ul>
     </nav>
     <!-- </div> -->
-    <div class="floatback"><button class="yellowbutt">ORDER</button><div>
+    <div class="floatback"><button class="yellowbutt" [routerLink]="['/restmenu']" >ORDER</button><div>
 </div>
