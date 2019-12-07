@@ -1,14 +1,14 @@
 <div class="back">
         
-        <img class="backarr" src="../../../assets/back.png"/>
+        <img class="backarr" src="../../../assets/back.png"  [routerLink]="['/voteres']" />
         <img class="backimg" src="../../../assets/taverna.jpg"/>
-        <p class="instruction">Store</p>
+        <p class="instruction">Krassas</p>
         
         <nav class="scroll">
             <!-- <ul class="menulist"> -->
                 <!-- <li class="menuitem"> -->
                     <button class="accordion">Gyros</button>
-                    <div class="panel">
+                    <div class="panel" style="max-height: 250px;">
                         <ul class="menulist" style="list-style: none;">
                             <li class="catitem" *ngFor="let item of pites">
                               <div class="item">
@@ -26,7 +26,7 @@
                         <div class="panel">
                             <ul class="menulist" style="list-style: none;">
                                 <li class="catitem"  *ngFor="let item of pizzes">
-                                  <div class="item">
+                                  <div class="item" (click)="gotoitemdetails()">
                                     {{item.name}}<br>
                                     <p class="ingr">{{item.item_details}}</p>
 

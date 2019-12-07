@@ -95,7 +95,7 @@
 }
 
 
-.loader {
+#loader1 {
      /* width: 100%; */
      color: black;
      font-size: 3%;
@@ -111,6 +111,24 @@
      margin-left: 46%;
  
   }
+
+  #loader2 {
+    /* width: 100%; */
+    color: black;
+    font-size: 3%;
+    /* margin: 100px auto; */
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    /* text-indent: -9999em; */
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+    transform: translateZ(0);
+    margin-left: 46%;
+
+ }
+
   @-webkit-keyframes load4 {
     0%,
     100% {
@@ -167,14 +185,24 @@
   }
 
 
-  .loadercont{
+  #loadercont{
     height: 0vw;
     /* padding-top: 10%; */
     /* padding-bottom: 10%; */
     padding-bottom: 0%;
   }
 
-  .checkicon{
+  #checkicon1{
+    display: none;
+    margin-left: 35%;
+    width: 23%;
+    border-radius: 50%;
+    margin-top: -14%;
+  }
+
+  
+  #checkicon2{
+    display: none;
     margin-left: 35%;
     width: 23%;
     border-radius: 50%;

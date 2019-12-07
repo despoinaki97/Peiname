@@ -4,11 +4,11 @@
         <div class="scroll">
 
                 <div class="choices">
-                    <div class="dot"></div>
+                    <div class="dot" (click)="changestate1()"></div>
                     <p class="cuiz">Chinese</p>
                 </div>
-                <div class="choices">
-                    <div class="dot"></div>
+                <div class="choices" >
+                    <div class="dot" (click)="changestate2()"></div>
                     <p class="cuiz">Souvlaki</p>
 
                 </div>
@@ -20,16 +20,21 @@
                 <p class="wait">Wait for everyone to finish</p>
                 <div class="waitusers">
                     <div class="wuser">
-                            <div class="loadercont"><div class="loader"></div></div>
+                            <div id="loadercont">
+                                <div id="loader1"> </div>
+                                        <img id="checkicon1" src="../../../assets/checkbox.jpg">
+                               
+                            </div>
                             <img class="userav" src="../../../assets/Giorgos.png">
                             <p style="text-align:center;">Giorgos</p>
 
                     </div>
-                    <div class="wuser">
-                            <div class="loadercont">
-                                <img class="checkicon" src="../../../assets/checkbox.jpg">
-                            </div>
-
+                    <div class="wuser" >
+                            <div id="loadercont">
+                                <div id="loader2"></div>
+                                    <img id="checkicon2" src="../../../assets/checkbox.jpg">
+                            
+                        </div>
                             <img class="userav" src="../../../assets/Kostas.png">
                             <p style="text-align:center;">Kostas</p>
 

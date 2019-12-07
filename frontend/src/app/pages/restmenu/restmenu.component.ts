@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class RestmenuComponent implements OnInit {
   found:boolean=false;
+  foundpizza:boolean=false;
+
   shops:Shop[];
   shopItems:Item[];
   pites:Item[];
@@ -37,7 +39,7 @@ export class RestmenuComponent implements OnInit {
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
+   // this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       this.open=true;
@@ -57,6 +59,15 @@ for (i = 0; i < acc.length; i++) {
       if(this.found==true)
         this.router.navigate(['/ingredients']);
   }
+
+  gotoitemdetails(){
+    this.pizzes.forEach(element=>{
+        if(element.name=="Pizza Margarita")
+          return this.foundpizza=true;
+    });  
+    if(this.foundpizza==true)
+      this.router.navigate(['/itemdetails']);
+}
 // printhello(){
 //   console.log("wtf");
 // }
