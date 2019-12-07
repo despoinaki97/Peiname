@@ -1,6 +1,6 @@
-<div class="back">
+<div class="back"  >
         
-    <img class="backarr" src="../../../assets/back.png"/>
+    <img class="backarr" src="../../../assets/back.png" [routerLink]="['/restmenu']"/>
     <img class="backimg" src="../../../assets/sizar.jpg"/>
     <p class="instruction">Caesar's Salad</p>
     
@@ -50,7 +50,7 @@
     </nav>
    
     <div class="floatback">
-        <button class="yellowbutt">Share with</button>
+            <button class="yellowbutt" type="button" data-toggle="modal" data-target="#myModal" (click)="showModal()">Share with</button>
         <button class="yellowbutt2">Add to cart</button>
     <div>
 

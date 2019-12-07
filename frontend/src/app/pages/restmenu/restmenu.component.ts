@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./restmenu.component.scss']
 })
 export class RestmenuComponent implements OnInit {
-  found:boolean=false;
-  foundpizza:boolean=false;
+  found:boolean;
+  foundpizza:boolean;
 
   shops:Shop[];
   shopItems:Item[];
@@ -53,20 +53,30 @@ for (i = 0; i < acc.length; i++) {
 
   gotoingredients(){
       this.salads.forEach(element=>{
-          if(element.name=="Ceasar's Salad")
-            return this.found=true;
+          if(element.name=="Ceasar's Salad"){
+             this.found=true;
+          }
       });  
-      if(this.found==true)
+      if(this.found==true){
         this.router.navigate(['/ingredients']);
+      }else{
+        console.log("Pare ");
+      }
   }
 
   gotoitemdetails(){
     this.pizzes.forEach(element=>{
-        if(element.name=="Pizza Margarita")
-          return this.foundpizza=true;
+        if(element.name=="Pizza Margarita"){
+           this.foundpizza=true;
+           
+        }
+        
     });  
-    if(this.foundpizza==true)
+    if(this.foundpizza==true){
       this.router.navigate(['/itemdetails']);
+    }else{
+      console.log("Pare ");
+    }
 }
 // printhello(){
 //   console.log("wtf");
