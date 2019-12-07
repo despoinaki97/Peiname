@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  host : "147.52.127.188:8080"
+  host : "192.168.2.4:8080"
 };
 
 /*
