@@ -3,7 +3,7 @@ import { Shop } from 'src/app/shop';
 import { DatabankService } from 'src/app/databank.service';
 import { Item } from 'src/app/item';
 import { element } from 'protractor';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ami-fullstack-restmenu',
@@ -13,19 +13,24 @@ import { Router } from '@angular/router';
 export class RestmenuComponent implements OnInit {
   found:boolean;
   foundpizza:boolean;
-
+  shop:Shop;
   shops:Shop[];
   shopItems:Item[];
   pites:Item[];
   pizzes:Item[];
   salads:Item[];
   open:boolean;
-  constructor(private databank:DatabankService,private router: Router) { }
+  constructor(private databank:DatabankService,private router: Router,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    const id = this.activatedRoute.snapshot.paramMap.get('name');
+
     this.shops=this.databank.getShops();
     this.shops.forEach(element => {
       this.shopItems=element.shopItems;
+      if(element.name==id){
+        this.shop=element;
+      }
     });
 
     this.pites = this.shopItems.slice(0, 4);

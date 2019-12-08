@@ -2,7 +2,8 @@
         
         <img class="backarr" src="../../../assets/back.png"  [routerLink]="['/voteres']" />
         <img class="backimg" src="../../../assets/taverna.jpg"/>
-        <p class="instruction">Krassas</p>
+        <!-- <img class="backimg" src={{shop.imgURL}}/> -->
+        <p class="instruction" *ngIf ="shop">{{shop.name}}</p>
         
         <nav class="scroll">
             <!-- <ul class="menulist"> -->
@@ -58,6 +59,9 @@
                         <button class="accordion">Desserts</button>
                         <div class="panel">
                           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p> -->
+                        </div>
+                        <button class="accordion">Drinks</button>
+                        <div class="panel">
                         </div>
                 <!-- </li> -->
               <!-- </ul> -->

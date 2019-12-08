@@ -17,6 +17,10 @@ export class ItemdetailsComponent implements OnInit {
   shopItems:Item[];
   closeResult: string;
   skat:boolean;
+  defaults:string[];
+  ingredients:string[];
+  extra:string[];
+
   constructor(private databank:DatabankService,private modalService: NgbModal, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -30,10 +34,19 @@ export class ItemdetailsComponent implements OnInit {
     this.shopItems.forEach(element => {
       if(element.name==id){
         this.item=element;
+        this.defaults = this.item.defaulting;
+        this.ingredients = this.item.ingredients;
+        this.extra = this.item.extra;
+
       }
 
     });
     
+    
+
+
+
+
   }
   showModal():void {
     $('#myModal').appendTo("body") ;

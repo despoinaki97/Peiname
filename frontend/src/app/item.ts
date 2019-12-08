@@ -12,7 +12,11 @@ export class Item{
         public price?: number,
         sharedWith?: ordAccount[],
         public item_details?:string,
-        public item_img?:string
+        public item_img?:string,
+        public defaulting?:string[],
+        public ingredients?:string[],
+        public extra?:string[]
+
     ){
         this.sharedWith = sharedWith;
     }
