@@ -30,21 +30,22 @@ export class DatabankService {
         new Rating(0,new ordAccount("Giorgos.S"),"Good, but late!",4.0),
         new Rating(0,new ordAccount("Despoina.G"),"Κακο",2.0) // cannot support *.5
       ] */
-    this.shops = [new Shop(1, "Coffee-Land", 2.0, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "62 Martyrwn 87", "24210-12345", "../../../assets/images/Rectangle 2.2.png", "15'", "1,5€",
-      [new Item("freddo espresso")]
-      , "(94 ratings)"),
+    this.shops = [
+    // new Shop(1, "Coffee-Land", 2.0, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "62 Martyrwn 87", "24210-12345", "../../../assets/images/Rectangle 2.2.png", "15'", "1,5€",
+    //   [new Item("freddo espresso")]
+    //   , "(94 ratings)","../../../assets/coffeeland.jpg"),
     new Shop(1, "Magevmata", 3.5, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Therissos", "24210-12345", "../../../assets/images/Rectangle 2.2 (1).png", "30'", " 5€",
       [new Item("kotosoupa")]
-      , "(186 ratings)"),
+      , "(186 ratings)","../../../assets/taverna.jpg"),
     new Shop(2, "H Pita tou Papu", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Aigaiou 3", "24210-12345", "./../../assets/images/Rectangle 2.2 (2).png", "32'", "4€",
       [new Item("guros")]
-      , "(240 ratings)"),
+      , "(240 ratings)","../../../assets/taverna.jpg"),
     new Shop(3, "Gyrogonia", 5, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Dodekanissou 20", "24210-12345", "../../../assets/images/Rectangle 2.2 (3).png", "45'", "3,5€",
       [new Item("guros")]
-      , "(72 ratings)"),
+      , "(72 ratings)","../../../assets/taverna.jpg"),
     new Shop(4, "Xoboli", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Athinas 19", "24210-12345", "../../../assets/images/Rectangle 2.2 (4).png", "25'", "7,5€",
       [new Item("guros")]
-      , "(133 ratings)"),
+      , "(133 ratings)","../../../assets/taverna.jpg"),
     new Shop(5, "Krassas", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Parlama&Menelaou", "24210-12345", "../../../assets/krassas.webp", "25'", "7,5€",
      [new Item("Guros Pork", null, null, null, null, 3, null, "Pork ,tomato, onion, potatos","../../../assets/xoirinos.jpg",
      ["Traditional Pita","Small Pita","Open pita"],["Pork gyros","Tomato","Onion","ketcup","Potatos"],["Bacon","Lettuce"]
@@ -69,7 +70,7 @@ export class DatabankService {
       new Item("Village Salad", null, null, null, null, 4.5, null, "Cucumber,tomato,feta,olives"),
       new Item("Koukouvagia Salad", null, null, null, null, 4, null, "Paximadi,tomato,feta,oregano")
 
-      ], "(133 ratings)"),
+      ], "(133 ratings)","../../../assets/taverna.jpg"),
     ]
 
     /*Item Initialisation for user 0 -> Giorgos */
