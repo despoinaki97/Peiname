@@ -11,8 +11,8 @@ export class Item{
         public Calories?: number,
         public price?: number,
         sharedWith?: ordAccount[],
-        public item_details?:string
-
+        public item_details?:string,
+        public item_img?:string
     ){
         this.sharedWith = sharedWith;
     }

@@ -1,8 +1,8 @@
 <div class="back" >
         
         <img class="backarr" src="../../../assets/back.png"  [routerLink]="['/restmenu']"/>
-        <img class="backimg" src="../../../assets/margarita.png"/>
-        <p class="instruction">Pizza Margarita</p>
+        <img class="backimg" src={{item.item_img}}/>
+        <p class="instruction" *ngIf="item">{{item.name}}</p>
         
         <nav class="scroll">
             <p class="ingrtitle">Choose Dough *</p>

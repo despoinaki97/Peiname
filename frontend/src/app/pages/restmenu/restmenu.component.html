@@ -10,7 +10,7 @@
                     <button class="accordion">Gyros</button>
                     <div class="panel" style="max-height: 250px;">
                         <ul class="menulist" style="list-style: none;">
-                            <li class="catitem" *ngFor="let item of pites">
+                            <li class="catitem" *ngFor="let item of pites"  [routerLink]="['/', 'itemdetails', item.name]">
                               <div class="item">
                                 {{item.name}}<br>
                                 <!-- <font color="red">cheese, tomato, pepperoni, pepper</font> -->
@@ -25,8 +25,8 @@
                     <button class="accordion">Pizza</button>
                         <div class="panel">
                             <ul class="menulist" style="list-style: none;">
-                                <li class="catitem"  *ngFor="let item of pizzes">
-                                  <div class="item" (click)="gotoitemdetails()">
+                                <li class="catitem"  *ngFor="let item of pizzes" [routerLink]="['/', 'itemdetails', item.name]">
+                                  <div class="item">
                                     {{item.name}}<br>
                                     <p class="ingr">{{item.item_details}}</p>
 
@@ -40,8 +40,8 @@
                         <button class="accordion">Salads</button>
                         <div class="panel">
                           <ul class="menulist" style="list-style: none;">
-                            <li class="catitem"  *ngFor="let item of salads">
-                              <div class="item" (click)="gotoingredients()">
+                            <li class="catitem"  *ngFor="let item of salads" [routerLink]="['/', 'itemdetails', item.name]">
+                              <div class="item" >
                                 {{item.name}}<br>
                                 <p class="ingr">{{item.item_details}}</p>
 
@@ -55,7 +55,7 @@
                         <div class="panel">
                           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p> -->
                         </div>
-                        <button class="accordion">Vegan</button>
+                        <button class="accordion">Desserts</button>
                         <div class="panel">
                           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p> -->
                         </div>

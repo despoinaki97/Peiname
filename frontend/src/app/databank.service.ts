@@ -46,14 +46,14 @@ export class DatabankService {
       [new Item("guros")]
       , "(133 ratings)"),
     new Shop(5, "Krassas", 4, [new Rating(0, this.users[2], "Πολύ καλο και γρήγορο", 5.0)], "Parlama&Menelaou", "24210-12345", "../../../assets/krassas.webp", "25'", "7,5€",
-      [new Item("Guros Pork", null, null, null, null, 3, null, "Pork ,tomato, onion, potatos"),
-      new Item("Guros Chicken", null, null, null, null, 3.2, null, "Chicken, tomato, mayonaise, potatos"),
+      [new Item("Guros Pork", null, null, null, null, 3, null, "Pork ,tomato, onion, potatos","../../../assets/xoirinos.jpg"),
+      new Item("Guros Chicken", null, null, null, null, 3.2, null, "Chicken, tomato, mayonaise, potatos","../../../assets/xoirinos.jpg"),
       new Item("Kebab", null, null, null, null, 3.5, null, "Kebab ,tomato, onion, potatos, must..."),
       new Item("Pita Beef", null, null, null, null, 3.2, null, "Beef, potatos, iceberg, ketchup, must..."),
       new Item("Pizza Pepperoni", null, null, null, null, 8.0, null, "Mozzarella,tomato sauce,tepperoni"),
-      new Item("Pizza Margarita", null, null, null, null, 7.0, null, "Mozzarella,tomato sauce"),
-      new Item("Pizza 4 cheese", null, null, null, null, 7.5, null, "Mozzarella,gouda,roquefort,graviera..."),
-      new Item("Ceasar's Salad", null, null, null, null, 6.5, null, "Letuce,chicken,regatto,corn,.."),
+      new Item("Pizza Margarita", null, null, null, null, 7.0, null, "Mozzarella,tomato sauce","../../../assets/margarita.png"),
+      new Item("Pizza Hawaiian", null, null, null, null, 7.5, null, "Mozzarella,anana,tomato sauce...","../../../assets/hawaiian.jpg"),
+      new Item("Ceasar's Salad", null, null, null, null, 6.5, null, "Letuce,chicken,regatto,corn,..","../../../assets/sizar.jpg"),
       new Item("Village Salad", null, null, null, null, 4.5, null, "Cucumber,tomato,feta,olives"),
       new Item("Koukouvagia Salad", null, null, null, null, 4, null, "Paximadi,tomato,feta,oregano")
 

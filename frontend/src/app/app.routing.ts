@@ -37,6 +37,7 @@ const routes: Routes = [
   { path: 'restmenu', component: RestmenuComponent },
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'itemdetails', component: ItemdetailsComponent },
+  { path: 'itemdetails/:name', component: ItemdetailsComponent },
   { path: 'stateofcuisine', component: StateofcuisineComponent },
   { path: 'stateofrest', component: StateofrestComponent },
   { path: 'tv', component: TvComponent},
