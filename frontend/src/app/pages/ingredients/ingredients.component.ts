@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+declare var $;
 @Component({
   selector: 'ami-fullstack-ingredients',
   templateUrl: './ingredients.component.html',
@@ -11,5 +11,7 @@ export class IngredientsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  showModal():void {
+    $('#myModal').appendTo("body") ;
+  }
 }

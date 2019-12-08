@@ -4,7 +4,9 @@
     <!-- <div class="restaus"> -->
     <nav>
         <ul class="restauslist">
-            <li class="restlistitem" *ngFor="let shop of this.shops">
+            <label class="restlistitem" *ngFor="let shop of shops">
+                <input type="checkbox">
+                <span class="checkmark">
                 <div class="restavatar"><img class="avatar" src="{{shop.imgURL}}" /></div>
                 <div class="resinfo">
                     <p class="restitle">{{shop.name}}</p>
@@ -16,16 +18,18 @@
                     <div class="min">
                         <p class="mintext">{{shop.Min_Order}} &nbsp; {{shop.MinTime}}</p>
                     </div>
+               
                 </div>
                 <div class="menubutt">
                     <button class="yellowmenubutt" (click)="gotokrassas()">Menu</button>
                 </div>
-            </li>
-
+            <!-- </li> -->
+        </span>
+    </label>
 
         </ul>
     </nav>
     <!-- </div> -->
-    <div class="floatback"><button class="yellowbutt">ORDER</button>
+    <div class="floatback"><button class="yellowbutt" [routerLink]="['/stateofrest']">Vote</button>
         <div>
         </div>
