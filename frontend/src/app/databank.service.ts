@@ -92,7 +92,7 @@ export class DatabankService {
   }
 
 
-  createUser(seat_num: number, name: string,isHost:boolean) {
+  createUser(seat_num: number, name: string, isHost: boolean) {
     var color = '#0057FF'
     var image = '../assets/Giorgos.png'
     if (seat_num === 1) {
@@ -122,6 +122,7 @@ export class DatabankService {
         console.log(data);
       });
 
+    this.createLocal(name,isHost,seat_num)
   }
 
   addItem(users: ordAccount[], item: Item) {
@@ -141,7 +142,7 @@ export class DatabankService {
     this.update()
   }
 
-  getUsersFromDB(){
+  getUsersFromDB() {
 
     const headers = new HttpHeaders()
       .set('Content-Type', 'application/json');
@@ -149,26 +150,28 @@ export class DatabankService {
     this.http.get('http://' + environment.host + '/api/users', {
       headers: headers
     }).subscribe((json: ordAccount[]) => {
-        this.users_subject.next(json);
+      this.users_subject.next(json);
     })
   }
 
-  update() {
-    // const headers = new HttpHeaders()
-    //   .set('Content-Type', 'application/json');
-    // this.http.get('http://' + environment.host + '/api/users', {
-    //   headers: headers
-    // })
-    //   .subscribe((res: Response) => {
-    //     console.log(Array.of(res.json()));
+  checkWho():string {
+    return localStorage.getItem('username')
+  }
+  createLocal(name,isHost,seat) {
+    localStorage.setItem('username', name);
+    localStorage.setItem('isHost', isHost);
+    localStorage.setItem('seat', seat);
 
-    //   });
-    this.getUsersFromDB();
-    this.users_subject.subscribe((array)=>{
+  }
+
+  update() {
+    this.users_subject.subscribe((array) => {
       this.users = array;
     })
-    console.log("update " + this.users)
-    // console.warn(this.users[0].orderedItems)
+
+    this.getUsersFromDB();
+    console.log("update ")
+    console.log(this.users)
   }
   getShops(): Shop[] {
     // this.update();
@@ -196,12 +199,12 @@ export class DatabankService {
       });
   }
 
-  fromJSON(json) :ordAccount[]{
-    let tmp : ordAccount[] = []
+  fromJSON(json): ordAccount[] {
+    let tmp: ordAccount[] = []
     for (var propName in json)
-        tmp[propName] = json[propName];
+      tmp[propName] = json[propName];
     return tmp;
-}
+  }
 
 }
 

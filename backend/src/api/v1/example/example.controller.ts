@@ -2,6 +2,7 @@ import { Request, Response, NextFunction, Router } from 'express';
 import { NotFound, BadRequest } from 'http-errors';
 import { DIContainer, MinioService, SocketsService } from '@app/services';
 import { logger } from '../../../utils/logger';
+import { UserModel } from '@app/models';
 
 export class ExampleController {
 
@@ -15,7 +16,7 @@ export class ExampleController {
 
         router
             .post('/sendMessageToClients', this.sendMessageToClients)
-            .get('/getMessage', this.getMessage);
+            .get('/reset', this.reset);
 
         return router;
     }
@@ -23,10 +24,11 @@ export class ExampleController {
     /**
      * Sens a message back as a response
      */
-    public getMessage(req: Request, res: Response) {
-        logger.info('e getMessage request print message');
-
-        res.json({ message: 'hello' });
+    public reset(req: Request, res: Response) {
+        UserModel.remove({}, (err: any) => { // reset users
+            logger.warn('Users collection removed');
+          });
+        res.json({ message: 'reset' });
     }
 
     /**

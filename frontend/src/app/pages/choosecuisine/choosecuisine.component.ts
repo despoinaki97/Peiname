@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabankService } from 'src/app/databank.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ami-fullstack-choosecuisine',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChoosecuisineComponent implements OnInit {
 
-  constructor() { }
+  constructor( private DatabankService: DatabankService,private router:Router) { }
+
+  callServer(){
+    this.DatabankService.call('vote_done',localStorage.getItem("seat"));
+    this.router.navigateByUrl("/stateofcuisine");
+  }
 
   ngOnInit() {
   }

@@ -95,10 +95,10 @@
 }
 
 
-#loader1 {
+.load {
      /* width: 100%; */
      color: black;
-     font-size: 3%;
+     font-size: 25%;
      /* margin: 100px auto; */
      width: 1em;
      height: 1em;
@@ -108,7 +108,7 @@
      -webkit-animation: load4 1.3s infinite linear;
      animation: load4 1.3s infinite linear;
      transform: translateZ(0);
-     margin-left: 46%;
+     margin-left: 50%;
  
   }
 
@@ -201,10 +201,86 @@
   }
 
   
-  #checkicon2{
-    display: none;
-    margin-left: 35%;
-    width: 23%;
-    border-radius: 50%;
-    margin-top: -14%;
+  .row{
+    height : 40vh;
   }
+  .col{
+    width: 50vw;
+    padding: 0;
+    height: 40vh;
+  }
+
+  
+
+  *, *:after, *:before {box-sizing: border-box;}
+
+  .checker{
+    margin-top: 15%;
+    margin-left: 50%;
+  }
+
+
+input.check {
+position: absolute;
+opacity: 0;
+
+&:checked + label svg path {
+stroke-dashoffset: 0;
+}
+
+
+&:focus + label {
+transform: scale(1.03);
+}
+}
+
+@keyframes bor {
+from {
+border: 5px solid #fff;
+border-radius: 10px;
+background-color: white;
+}
+to {border-radius: 30px;
+border: 5px solid #333;
+background-color: #FFCC48;
+}
+}
+
+.check + label {
+padding-top:2vw;
+
+display: block;
+width: 5vw; 
+height: 5vw;
+border-radius: 14px;
+cursor: pointer;
+transition: all .2s ease;
+background-color: white;
+
+&:active {
+transform: scale(1.05);
+border-radius: 30px;
+}
+
+
+svg {
+pointer-events: none;
+path {			
+  fill: none;			
+  stroke: #333;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 101;
+  transition: all 350ms cubic-bezier(1,0,.37,.91);
+}
+}
+}
+
+#photo{
+  height : 20vh;
+  width: 37vw;
+  margin-top: 4vh;
+  margin-left: 10vw;
+}

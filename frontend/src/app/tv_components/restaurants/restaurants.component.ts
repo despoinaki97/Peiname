@@ -24,6 +24,7 @@ export class RestaurantsComponent implements OnInit {
   ngOnInit() {
     document.getElementById("alert").style.display = 'none';
     this.getShops();
+    
     this.Socket.syncMessages("vote_ended").subscribe((data) => {
         document.getElementById("alert").style.display = 'block';
         setTimeout(() => {
