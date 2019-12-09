@@ -18,9 +18,6 @@ export class Api {
     const apiRouter = express.Router();
 
     apiRouter.use('/api/', apiV1Router);
-    UserModel.remove({}, (err: any) => { // reset users
-      logger.warn('Users collection removed');
-    });
     return apiRouter;
   }
 

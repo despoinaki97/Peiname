@@ -18,22 +18,48 @@
 
                 </div>
                 <p class="wait">Wait for everyone to finish</p>
-                <div class="waitusers">
+
+                <div class="row"> 
+                    <div *ngFor="let user of remaining">
+                            <div class="col" > 
+                                    <div class="checker">
+
+                                            <div class="form">
+                                                    <input type="checkbox" class="check" id="check_{{user.name}}" />
+                                                    <label id="label_{{user.name}}" for="check">
+                                                            <div class="loadercont" id="loader_{{user.name}}">
+                                                                    <div class="load" ></div>
+                                                            </div>
+                                                            <svg viewBox="0,0,50,50" >
+                                                                    <path d="M5 30 L 20 45 L 45 5"></path>
+                                                            </svg>
+                                                    </label>
+                                            </div>
+
+                                    </div>
+                                    <img src="../../../assets/{{user.user_Icon}}" id="photo"> 
+                            </div>
+                    </div>
+                </div>
+
+
+
+
+                <!--<div class="waitusers">
                     <div class="wuser">
                             <div class="loadercont"><div class="loader"></div></div>
-                            <img class="userav" src="../../../assets/Giorgos.png">
-                            <p style="text-align:center;">Giorgos</p>
+                            <img class="userav" src="../../../assets/girl.png">
+                            <p style="text-align:center;">Despoina</p>
 
                     </div>
                     <div class="wuser">
-                            <div class="loadercont">
-                                <img class="checkicon" src="../../../assets/checkbox.jpg">
-                            </div>
+                        <div class="loadercont"><div class="loader"></div></div>
+
 
                             <img class="userav" src="../../../assets/Kostas.png">
                             <p style="text-align:center;">Kostas</p>
 
                     </div>
                 </div>
-        </div>
+        </div>-->
 </div>
