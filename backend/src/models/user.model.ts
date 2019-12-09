@@ -10,6 +10,8 @@ export interface IUser extends Document {
     user_Icon: string;
     seat: number;
     isHost: boolean;
+    hasVotedRestaurant: boolean;
+    hasVotedCuisine: boolean;
     orderedItems: [[{ type: Schema.Types.ObjectId, ref: 'Item' }]];
 }
 
@@ -22,6 +24,8 @@ const UserSchema = new Schema(
     user_Icon: { type: String, required: true},
     seat: { type: Number, required: true},
     isHost: { type: Boolean, required: true},
+    hasVotedRestaurant: { type: Boolean, required: true},
+    hasVotedCuisine: { type: Boolean, required: true},
     orderedItems: [[{ type: Schema.Types.ObjectId, ref: 'Item' }]]
   },
   { ...DefaultSchemaOptions }

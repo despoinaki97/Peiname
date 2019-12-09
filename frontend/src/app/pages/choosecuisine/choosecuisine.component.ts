@@ -12,7 +12,10 @@ export class ChoosecuisineComponent implements OnInit {
   constructor( private DatabankService: DatabankService,private router:Router) { }
 
   callServer(){
-    this.DatabankService.call('vote_done',localStorage.getItem("seat"));
+    this.DatabankService.call('vote_done',localStorage.getItem("id"));
+    this.DatabankService.updateFieldinDB({
+      hasVotedCuisine: true
+    })
     this.router.navigateByUrl("/stateofcuisine");
   }
 

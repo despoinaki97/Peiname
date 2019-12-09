@@ -9,6 +9,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
 import { SocketsService } from 'src/app/global/services';
 import { Router } from '@angular/router';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -19,45 +20,60 @@ import { Router } from '@angular/router';
 })
 export class StateofcuisineComponent implements OnInit {
   allUsers: ordAccount[];
-  remaining: ordAccount[] = [];
-  constructor(private router: Router, private DataBankService: DatabankService, @Inject(PLATFORM_ID) private plaformId: Object, private injector: Injector, private socket: SocketsService) { }
+  public remaining: ordAccount[] = [];
+  constructor(private router: Router, private DataBankService: DatabankService, @Inject(PLATFORM_ID) private plaformId: Object, private injector: Injector, private socket: SocketsService) {
+    let username = localStorage.getItem('username');
+    this.DataBankService.getUsers().subscribe((users) => {
+      users.forEach((each) => {
+        if ( each.name != username) this.remaining.push(each)
+      })
+    })
+  }
 
   ngOnInit() {
     let username = localStorage.getItem('username');
-    let userSeat = localStorage.getItem('seat');
-    this.DataBankService.getUsers().subscribe((users: ordAccount[]) => {
-      this.allUsers = users
-      users.forEach((elem) => {
-        if (elem.name != username) {
-          this.remaining.push(elem);
-        } 
+    this.DataBankService.getUsers().subscribe((users) => {
+      users.forEach((each) => {
+        if (each.hasVotedCuisine && each.name != username) this.remaining.push(each)
       })
     })
+    console.log(this.remaining)
+
     this.socket.syncMessages("vote_done").subscribe((data) => {
-      if (data.message != userSeat) {
-        console.log(data.message, userSeat);
-        this.change_load_status(data.message)
-      }
+
+      this.DataBankService.getUsers().subscribe((users) => {
+        users.forEach((each) => {
+          if (each.hasVotedCuisine && each.name != username) this.change_load_status(each)
+        })
+      })
     })
+
+    window.onload = () => {
+          this.DataBankService.call('vote_done',localStorage.getItem("id"));
+    }
   }
-  
-  
-  changestate1(){
-    var load=document.getElementById('checkicon1');
+
+  // checkVoted(user: ordAccount) {
+  //   console.warn("checkVoted")
+  //   if (user.hasVotedCuisine) {
+  //     this.change_load_status(user)
+  //   }
+  // }
 
 
-
-  change_load_status(id: number) {
-    var name = this.allUsers[id].name
-    const loader = document.getElementById('loader_' + name);
-    loader.style.display = 'none';
-    const check: HTMLElement = document.getElementById('check_' + name);
-    const label: HTMLElement = document.getElementById('label_' + name);
-    label.style.paddingTop = '0';
-    check.setAttribute("checked", "true");
-    label.style.animation = 'bor 1s';
-    label.style.animationFillMode = 'forwards';
-
+  change_load_status(user: ordAccount) {
+    console.log(user.name+'_change_load_status')
+    // if (user.seat != +localStorage.getItem('seat')) {
+      var name = user.name
+      const loader = document.getElementById('loader_' + name);
+      loader.style.display = 'none';
+      const check: HTMLElement = document.getElementById('check_' + name);
+      const label: HTMLElement = document.getElementById('label_' + name);
+      label.style.paddingTop = '0';
+      check.setAttribute("checked", "true");
+      label.style.animation = 'bor 1s';
+      label.style.animationFillMode = 'forwards';
+    // }
   }
 }
 

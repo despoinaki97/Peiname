@@ -2,11 +2,14 @@ import { Item } from './item';
 import { isNull } from 'util';
 
 export class ordAccount {
+    public _id: any // DB
     public id: number
     public orderedItems: Item[]
     public name: string
     public color: string
     public seat: number
+    public hasVotedRestaurant: boolean
+    public hasVotedCuisine: boolean
     public isHost: boolean
     public user_Icon: string
     constructor(id:number,name: string, orderedItems?: Item[], color?: string , user_Icon?: string) {
