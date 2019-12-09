@@ -37,7 +37,7 @@ import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-c
 import { FormModalComponent } from './form-modal/form-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StateofrestComponent } from './pages/stateofrest/stateofrest.component';
-
+import { SmartSpeakerService} from './smart-speaker.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +81,7 @@ import { StateofrestComponent } from './pages/stateofrest/stateofrest.component'
     ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [ SmartSpeakerService],
   bootstrap: [AppComponent],
   entryComponents:[FormModalComponent
   ]
