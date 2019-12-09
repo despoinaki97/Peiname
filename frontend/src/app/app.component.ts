@@ -34,6 +34,16 @@ export class AppComponent implements OnInit {
       that.router.navigate(['/tv']);
 
     });
+    this._smartSpeaker.addCommand( ["show me cuisine statistics"], function(){ 
+      that._smartSpeaker.speak("Hey buddy ! How are you today?");
+      that.router.navigate(['/tv-statistics-cuisine']);
+
+    });
+    this._smartSpeaker.addCommand( ["show me restaurant votes"], function(){ 
+      that._smartSpeaker.speak("Hey buddy ! How are you today?");
+      that.router.navigate(['/table']);
+
+    });
   }
   
 }

@@ -22,6 +22,18 @@ export class StateofcuisineComponent implements OnInit {
   remaining: ordAccount[] = [];
   constructor(private router: Router, private DataBankService: DatabankService, @Inject(PLATFORM_ID) private plaformId: Object, private injector: Injector, private socket: SocketsService) { }
 
+  change_load_status(id: number) {
+    var name = this.allUsers[id].name
+    const loader = document.getElementById('loader_' + name);
+    loader.style.display = 'none';
+    const check: HTMLElement = document.getElementById('check_' + name);
+    const label: HTMLElement = document.getElementById('label_' + name);
+    label.style.paddingTop = '0';
+    check.setAttribute("checked", "true");
+    label.style.animation = 'bor 1s';
+    label.style.animationFillMode = 'forwards';
+
+  }
   ngOnInit() {
     let username = localStorage.getItem('username');
     let userSeat = localStorage.getItem('seat');
@@ -47,18 +59,7 @@ export class StateofcuisineComponent implements OnInit {
 
 
 
-  change_load_status(id: number) {
-    var name = this.allUsers[id].name
-    const loader = document.getElementById('loader_' + name);
-    loader.style.display = 'none';
-    const check: HTMLElement = document.getElementById('check_' + name);
-    const label: HTMLElement = document.getElementById('label_' + name);
-    label.style.paddingTop = '0';
-    check.setAttribute("checked", "true");
-    label.style.animation = 'bor 1s';
-    label.style.animationFillMode = 'forwards';
-
-  }
+ 
 }
 
-
+}
