@@ -1,0 +1,45 @@
+.cart{
+    border-top: 2.5px solid #FFCC48;
+
+    width: 100%;
+    padding-top: 9%;
+    padding-bottom: 9%;
+    background-color: #FFFBF4;
+    z-index: 1;
+    position: fixed;
+    top: 91%;
+    height: 10%;
+  }
+  .dot {
+    background-color: #FFCC48;
+    border-radius: 50%;
+    display: inline-block;
+    position: fixed;
+    top: 93.5%;
+    margin-left: 10%;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    color:white;
+   // width:20%;
+  }
+
+  .yourcart{
+    display: inline-block;
+    position: fixed;
+    top: 93%;
+    margin-left: 20%;
+    padding: 1.5%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .sum{
+    display: inline-block;
+    position: fixed;
+    top: 93%;
+    margin-left: 85%;
+    padding: 1.5%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }

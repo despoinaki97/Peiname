@@ -40,6 +40,10 @@ export class StateofcuisineComponent implements OnInit {
       }
     })
   }
+  
+  
+  changestate1(){
+    var load=document.getElementById('checkicon1');
 
 
 

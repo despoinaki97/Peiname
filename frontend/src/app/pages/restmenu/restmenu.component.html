@@ -1,16 +1,17 @@
 <div class="back">
         
-        <img class="backarr" src="../../../assets/back.png"/>
-        <img class="backimg" src="../../../assets/taverna.jpg"/>
-        <p class="instruction">Store</p>
+        <img class="backarr" src="../../../assets/back.png"  [routerLink]="['/voteres']" />
+        <!-- <img class="backimg" src="../../../assets/taverna.jpg"/> -->
+        <img class="backimg" src={{shop.shopimg}}/>
+        <p class="instruction" *ngIf ="shop">{{shop.name}}</p>
         
         <nav class="scroll">
             <!-- <ul class="menulist"> -->
                 <!-- <li class="menuitem"> -->
                     <button class="accordion">Gyros</button>
-                    <div class="panel">
+                    <div class="panel" style="max-height: 250px;">
                         <ul class="menulist" style="list-style: none;">
-                            <li class="catitem" *ngFor="let item of pites">
+                            <li class="catitem" *ngFor="let item of pites"  [routerLink]="['/', 'itemdetails', item.name]">
                               <div class="item">
                                 {{item.name}}<br>
                                 <!-- <font color="red">cheese, tomato, pepperoni, pepper</font> -->
@@ -25,7 +26,7 @@
                     <button class="accordion">Pizza</button>
                         <div class="panel">
                             <ul class="menulist" style="list-style: none;">
-                                <li class="catitem"  *ngFor="let item of pizzes">
+                                <li class="catitem"  *ngFor="let item of pizzes" [routerLink]="['/', 'itemdetails', item.name]">
                                   <div class="item">
                                     {{item.name}}<br>
                                     <p class="ingr">{{item.item_details}}</p>
@@ -40,8 +41,8 @@
                         <button class="accordion">Salads</button>
                         <div class="panel">
                           <ul class="menulist" style="list-style: none;">
-                            <li class="catitem"  *ngFor="let item of salads">
-                              <div class="item" (click)="gotoingredients()">
+                            <li class="catitem"  *ngFor="let item of salads" [routerLink]="['/', 'itemdetails', item.name]">
+                              <div class="item" >
                                 {{item.name}}<br>
                                 <p class="ingr">{{item.item_details}}</p>
 
@@ -55,9 +56,12 @@
                         <div class="panel">
                           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p> -->
                         </div>
-                        <button class="accordion">Vegan</button>
+                        <button class="accordion">Desserts</button>
                         <div class="panel">
                           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore .</p> -->
+                        </div>
+                        <button class="accordion">Drinks</button>
+                        <div class="panel">
                         </div>
                 <!-- </li> -->
               <!-- </ul> -->
@@ -66,5 +70,5 @@
             <div class="dot">0</div>
             <div class="yourcart">Your cart</div>
           </div> -->
-
+         <ami-fullstack-cart></ami-fullstack-cart>
     </div>

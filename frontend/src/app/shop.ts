@@ -15,7 +15,8 @@ export class Shop {
     public MinTime?: string,
     public Min_Order?: string,
     public shopItems?: Item[],
-    public ratingsAmount?: string
+    public ratingsAmount?: string,
+    public shopimg?: string
 
     ) { }
 

@@ -1,18 +1,18 @@
-<div class="back">
+<div class="back" >
         
-        <img class="backarr" src="../../../assets/back.png"/>
-        <img class="backimg" src="../../../assets/margarita.png"/>
-        <p class="instruction">Pizza Margarita</p>
+        <img class="backarr" src="../../../assets/back.png"  [routerLink]="['/restmenu']"/>
+        <img class="backimg" src={{item.item_img}}/>
+        <p class="instruction" *ngIf="item">{{item.name}}</p>
         
         <nav class="scroll">
-            <p class="ingrtitle">Choose Dough *</p>
-                <ul class="menulist" >
-                        <li class="ingrbar">
+            <p class="ingrtitle">Choose *</p>
+                <ul class="menulist" *ngFor="let def of defaults">
+                        <li class="ingrbar" >
                                 <div class="form-check">
-                                    <label><input type="checkbox" name="check" checked><span class="label-text">Thin Dough</span></label>
+                                    <label><input type="checkbox" name="check" checked><span class="label-text">{{def}}</span></label>
                                 </div>         
                         </li>
-                        <li class="ingrbar">
+                        <!-- <li class="ingrbar">
                                 <div class="form-check">
                                     <label><input type="checkbox" name="check" ><span class="label-text">Rye Dough</span></label>
                                 </div>         
@@ -21,16 +21,16 @@
                                 <div class="form-check">
                                     <label><input type="checkbox" name="check" ><span class="label-text">Dough Dough</span></label>
                                 </div>         
-                        </li>
+                        </li> -->
                 </ul>
                 <p class="ingrtitle">Ingredients</p>
-                <ul class="menulist" >
+                <ul class="menulist" *ngFor="let ing of ingredients">
                         <li class="ingrbar">
                                 <div class="form-check">
-                                    <label><input type="checkbox" name="check3" checked><span class="label-text">Philadelphia</span></label>
+                                    <label><input type="checkbox" name="check3" checked><span class="label-text">{{ing}}</span></label>
                                 </div>         
                         </li>
-                        <li class="ingrbar">
+                        <!-- <li class="ingrbar">
                                 <div class="form-check">
                                     <label><input type="checkbox" name="check2" checked><span class="label-text">Mozzarela</span></label>
                                 </div>         
@@ -44,20 +44,20 @@
                                 <div class="form-check">
                                     <label><input type="checkbox" name="check2" checked ><span class="label-text">Bacon</span></label>
                                 </div>         
-                        </li>
+                        </li> -->
                 </ul>
                 <p class="ingrtitle">Add extra</p>
-                <ul class="menulist" >
+                <ul class="menulist" *ngFor="let ex of extra">
                         <li class="ingrbar">
                                 <div class="form-check">
-                                    <label><input type="checkbox" name="check3" ><span class="label-text">Mushrooms</span></label>
+                                    <label><input type="checkbox" name="check3" ><span class="label-text">{{ex}}</span></label>
                                 </div>         
                         </li>
-                        <li class="ingrbar">
+                        <!-- <li class="ingrbar">
                                 <div class="form-check">
                                     <label><input type="checkbox" name="check2" ><span class="label-text">Salami</span></label>
                                 </div>         
-                        </li>
+                        </li> -->
                       
                 </ul>
 
@@ -71,7 +71,7 @@
        
         <div class="floatback">
             <button class="yellowbutt" type="button" data-toggle="modal" data-target="#myModal" (click)="showModal()">Share with</button>
-            <button class="yellowbutt2">Add to cart</button>
+            <button class="yellowbutt2" [routerLink]="['/restmenu']">Add to cart</button>
         <div>
     
 

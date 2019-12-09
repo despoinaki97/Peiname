@@ -23,6 +23,7 @@ import { TrapeziConfirmationComponent } from './Gs_Pages/trapezi-confirmation/tr
 import { TableComponent } from './Gs_Pages/table/table.component';
 import {TableStartComponent} from './table-start/table-start.component';
 import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-completed.component';
+import { StateofrestComponent } from './pages/stateofrest/stateofrest.component';
 
 
 
@@ -34,9 +35,12 @@ const routes: Routes = [
   { path: 'choosecuisine', component: ChoosecuisineComponent },
   { path: 'voteres', component: VoteresComponent },
   { path: 'restmenu', component: RestmenuComponent },
+  { path: 'restmenu/:name', component: RestmenuComponent },
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'itemdetails', component: ItemdetailsComponent },
+  { path: 'itemdetails/:name', component: ItemdetailsComponent },
   { path: 'stateofcuisine', component: StateofcuisineComponent },
+  { path: 'stateofrest', component: StateofrestComponent },
   { path: 'tv', component: TvComponent},
   { path: 'tv-payment', component: TvPaymentComponent},
   { path: 'tv-statistics-restaurant', component: TvStatisticsCuisineComponent}, 
