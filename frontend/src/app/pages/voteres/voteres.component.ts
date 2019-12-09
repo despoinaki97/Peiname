@@ -16,12 +16,7 @@ export class VoteresComponent implements OnInit {
 
   ngOnInit() {
     this.shops=this.databank.getShops();
-    
-    var that =this;
- 
-  this._smartSpeaker.addCommand( ["hello","good morning","hey"], function(){ 
-    that._smartSpeaker.speak("Hey buddy ! How are you today?");
-  }); // Add the command with addCommands method. Now
+ // Add the command with addCommands method. Now
   
   }
   
