@@ -19,12 +19,12 @@ export class ChoosecuisineComponent implements OnInit {
 
 
   ngOnInit() {
-    // this._leapService.gestureRecognizer().subscribe((gesture)=>{
-    //   if(gesture == Gestures.SWIPE_UP){
-    //     console.log('swipe up cuis');
-    //     document.getElementById('scroll').scrollTo(0, 40);
+    this._leapService.gestureRecognizer().subscribe((gesture)=>{
+      if(gesture == Gestures.SWIPE_UP){
+        console.log('swipe up cuis');
+        document.getElementById('scroll').scrollTo(0, 40);
 
-    //         }
-    // });
+            }
+    });
   }
 }
