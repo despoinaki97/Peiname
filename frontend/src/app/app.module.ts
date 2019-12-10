@@ -38,6 +38,8 @@ import { FormModalComponent } from './form-modal/form-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StateofrestComponent } from './pages/stateofrest/stateofrest.component';
 import { SmartSpeakerService} from './smart-speaker.service';
+import {VirtualComponent} from './cursor/virtual/virtual.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +71,8 @@ import { SmartSpeakerService} from './smart-speaker.service';
     TableStartComponent,
     TableVoteCompletedComponent,
     FormModalComponent,
-    StateofrestComponent
+    StateofrestComponent,
+    VirtualComponent
   ],
   imports: [
     BrowserModule,
