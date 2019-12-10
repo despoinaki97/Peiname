@@ -28,7 +28,7 @@ export class RestaurantsComponent implements OnInit {
     this.Socket.syncMessages("vote_ended").subscribe((data) => {
         document.getElementById("alert").style.display = 'block';
         setTimeout(() => {
-          this.router.navigateByUrl("/TvStatisticsCuisineComponent")
+          this.router.navigateByUrl("/tv-statistics-cuisine")
         }, 5000);
     })
   }

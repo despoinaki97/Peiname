@@ -8,7 +8,7 @@ import { ThrowStmt, analyzeAndValidateNgModules } from '@angular/compiler';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
 import { SocketsService } from 'src/app/global/services';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -28,18 +28,20 @@ export class TableComponent implements OnInit {
     })
   }
 
-  constructor(private router: Router, private DataBankService: DatabankService, @Inject(PLATFORM_ID) private plaformId: Object, private injector: Injector, private socket: SocketsService) {
+  constructor(private router: Router,private activatedRoute:ActivatedRoute, private DataBankService: DatabankService, @Inject(PLATFORM_ID) private plaformId: Object, private injector: Injector, private socket: SocketsService) {
   }
 
 
   ngOnInit() {
+    const type = this.activatedRoute.snapshot.paramMap.get('type');
+    document.getElementById('Status').innerHTML = "Vote for "+type;
     document.getElementById("alert").style.display = 'none';
     this.getUsers();
     this.init_checked_users();
 
     this.socket.syncMessages("vote_done").subscribe((data) => {
       this.change_load_status(data.message);
-      this.checked_users[data.message] = 1;
+      this.checked_users.push(data.message);
       if (this.check_users()) {
         document.getElementById("alert").style.display = 'block';
         this.DataBankService.call("vote_ended",0);
@@ -59,24 +61,18 @@ export class TableComponent implements OnInit {
   }
 
   init_checked_users() {
-    this.checked_users = new Array(3).fill(0);
+    this.checked_users = [];
     console.log(this.checked_users);
   }
 
   check_users(): boolean {
-    let flag = 0;
-    this.checked_users.forEach(element => {
-      console.log(element)
-      if (element === 0) {
-        flag++;
-      }
-    })
-    return flag == 0 ? true : false;
+    if (this.check_users === undefined) return false;
+    return this.checked_users.length == 3 ? true : false;
 
   }
 
-  change_load_status(id: number) {
-    var name = this.users[id].name
+  change_load_status(username: string) {
+    var name = username
     const loader = document.getElementById('loader_' + name);
     loader.style.display = 'none';
     const check: HTMLElement = document.getElementById('check_' + name);

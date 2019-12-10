@@ -122,7 +122,7 @@ export class DatabankService {
       headers: headers
     })
       .subscribe((data: ordAccount) => {
-        console.log(data);
+        console.log(data, seat_num);
         this.createLocal(name, isHost, seat_num, data._id)
 
       });

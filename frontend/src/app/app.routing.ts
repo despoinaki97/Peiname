@@ -24,6 +24,7 @@ import { TableComponent } from './Gs_Pages/table/table.component';
 import {TableStartComponent} from './table-start/table-start.component';
 import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-completed.component';
 import { StateofrestComponent } from './pages/stateofrest/stateofrest.component';
+import { WallComponent } from './wall/wall.component';
 
 
 
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'Table_restaurant_vote_results' , component: RestaurantVoteResultsComponent},
   { path: 'Table_confirmation' , component: TrapeziConfirmationComponent},
   { path: 'Order_Wait' , component: OrderWaitComponent} ,
+  { path: 'Wall' , component: WallComponent} ,
   { path: 'calories' , component: CaloriesComponent},
   { path: 'Rating_Shop_list' , component: RatingShopListComponent},
   { path: 'home', loadChildren: () => import('./pageswall/home/home.module').then(m => m.HomeModule) },
@@ -57,7 +59,7 @@ const routes: Routes = [
   { path: 'calories', component:CaloriesComponent },
   { path: 'wall_order_waiting', component:OrderWaitComponent },
   { path: 'tableStart' , component:TableStartComponent},
-  { path: 'table' , component:TableComponent},
+  { path: 'table/:type' , component:TableComponent},
   { path: 'tableEndvote' , component:TableVoteCompletedComponent},
  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ]

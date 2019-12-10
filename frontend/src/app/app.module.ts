@@ -37,6 +37,7 @@ import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-c
 import { FormModalComponent } from './form-modal/form-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StateofrestComponent } from './pages/stateofrest/stateofrest.component';
+import { WallComponent } from './wall/wall.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { StateofrestComponent } from './pages/stateofrest/stateofrest.component'
     TableStartComponent,
     TableVoteCompletedComponent,
     FormModalComponent,
-    StateofrestComponent
+    StateofrestComponent,
+    WallComponent
   ],
   imports: [
     BrowserModule,

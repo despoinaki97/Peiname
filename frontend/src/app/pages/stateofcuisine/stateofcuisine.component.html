@@ -17,7 +17,8 @@
                         <p class="cuiz">Pizza</p>
 
                 </div>
-                <p class="wait">Wait for everyone to finish</p>
+                <p id="wait" class="wait">Wait for everyone to finish</p>
+                <button id="continue" (click)="proceedToVoteforRestaurants()" class="btn btn-primary">Continue</button>
 
                 <div class="row" >
                         <div *ngFor="let user of remaining">

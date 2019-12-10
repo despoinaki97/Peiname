@@ -10,6 +10,9 @@
     top: 0;
     left: 0;
     //z-index: -100; 
+    overflow-y: hidden;
+    overflow-x: hidden;
+
 
 }
   .backimg{
@@ -42,7 +45,6 @@
     height: 74%; 
     width:100%;
     overflow:hidden; 
-    overflow-y:scroll;
 }
 
 .dot {
@@ -58,6 +60,14 @@
     margin-top: 1%;
 
   }
+
+#continue{
+  position: absolute;
+  top:27vh;
+  left:50%;
+  transform: translate(-50%);
+  display: none;
+}
 
   .choices{
       margin-top: 5%;

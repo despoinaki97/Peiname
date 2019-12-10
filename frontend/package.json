@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gen": "ng generate component FormModal"
+    "gen": "ng generate component Wall"
   },
   "private": true,
   "dependencies": {
