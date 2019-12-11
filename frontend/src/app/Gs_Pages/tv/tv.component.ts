@@ -20,13 +20,15 @@ export class TvComponent implements OnInit {
       //  document.getElementById('scroll').scrollTo(0, 80);
         document.getElementById('Welcome').style.color='blue';
       }
-    });
-
-
-    this._leapService.gestureRecognizer().subscribe((gesture1)=>{
-      if(gesture1 == Gestures.SWIPE_UP){
+      if(gesture == Gestures.SWIPE_UP){
         console.log('swipe up tv');
-        document.getElementById('scroll').scrollTo(0, 60);
+        document.getElementById('scroll').scrollTo(0, 40);
+        document.getElementById('Welcome').style.color='red';
+
+      }
+      if(gesture == Gestures.SWIPE_UP){
+        console.log('swipe up tv');
+        document.getElementById('scroll').scrollTo(0, 40);
         document.getElementById('Welcome').style.color='red';
 
       }
