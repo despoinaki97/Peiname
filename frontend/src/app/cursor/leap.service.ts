@@ -144,7 +144,7 @@ export class LeapService {
 
   /*****************************/
 
-  private resetGestures() {
+  public resetGestures() {
     this.currGesture = null;
     this.gestureCounter = -1;
 
