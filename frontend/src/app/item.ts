@@ -1,8 +1,10 @@
 import { ordAccount } from './ordaccount';
-
+import { DatabankService } from './databank.service'
 export class Item{
     public sharedWith: ordAccount[];
     public image: string;
+    public _id: any // DB
+    public id : string;
     constructor(
         public name: string,
         public Carbs?: number,

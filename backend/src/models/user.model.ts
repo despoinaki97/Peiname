@@ -26,7 +26,7 @@ const UserSchema = new Schema(
     isHost: { type: Boolean, required: true},
     hasVotedRestaurant: { type: Boolean, required: true},
     hasVotedCuisine: { type: Boolean, required: true},
-    orderedItems: [[{ type: Schema.Types.ObjectId, ref: 'Item' }]]
+    orderedItems: [{ type: Schema.Types.ObjectId, ref: 'Item' }]
   },
   { ...DefaultSchemaOptions }
 );

@@ -145,44 +145,32 @@ input[type="checkbox"]:disabled + .label-text{
 
 
 .yellowbutt{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 7%;
     position: fixed;
     width: 38%;
-    color: black;
     background: #FFCC48;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
+    border-radius: 9px;
     text-align: center;
     top: 92.5%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
     transition: all 0.1s;
-    border: none;
   
   }
 
   .yellowbutt2{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 54%;
     position: fixed;
     width: 38%;
-    color: black;
     background: #FFCC48;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
+    border-radius: 9px;
     text-align: center;
     top: 92.5%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
     transition: all 0.1s;
-    border: none;
   
   }
-
-
- 
-
 
   .floatback{
     width: 100%;
@@ -201,3 +189,12 @@ input[type="checkbox"]:disabled + .label-text{
       margin-bottom: 2%;
   }
 
+  #Back{
+    background-color: #FFCC48;
+    width: 50vw;
+    border-radius: 9px 9px 9px 9px;
+    box-shadow: 0px;
+    height: 5vh;
+    margin-left: 23vw;
+    margin-top: -1%;
+  }

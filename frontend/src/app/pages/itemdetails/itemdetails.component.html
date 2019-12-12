@@ -60,7 +60,7 @@
                         </li> -->
                       
                 </ul>
-
+                
                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="showModal()">
                         Open modal
                       </button> -->
@@ -68,10 +68,17 @@
               
     
         </nav>
-       
+        
         <div class="floatback">
-            <button class="yellowbutt" type="button" data-toggle="modal" data-target="#myModal" (click)="showModal()">Share with</button>
-            <button class="yellowbutt2" [routerLink]="['/restmenu']">Add to cart</button>
+        <button id ="Back" class="yellowbutt" type="button"  (click)="go_Back()">Back to Menu</button>
+         
+
+            <button id ="Sharewith" class="yellowbutt" type="button" data-toggle="modal" data-target="#myModal" (click)="showModal()">Share with</button>
+           
+            <!--<button class="yellowbutt2" [routerLink]="['/restmenu']">Add to cart</button>-->
+            <button id="Add" class="yellowbutt2" (click) = "add_to_Cart()">Add to cart</button>
+              
+
         <div>
     
 

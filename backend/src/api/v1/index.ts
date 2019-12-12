@@ -4,6 +4,7 @@ import { ITask, TaskModel, IUser, UserModel, IItem, ItemModel} from '@app/models
 import { FilesController } from './files/files.controller';
 import { SocketEventsController } from './socket-events/socket-events.controller';
 import { ExampleController } from './example/example.controller';
+import { CartController } from './cart/cart.controller';
 
 const apiV1Router = express.Router();
 
@@ -34,6 +35,10 @@ apiV1Router
   .use(
     '/items',
     new ResourceController<IItem>(ItemModel).applyRoutes()
+  )
+  .use(
+    '/cart',
+    new CartController().applyRoutes()
   )
 
   // Example routes

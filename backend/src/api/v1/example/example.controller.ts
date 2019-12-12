@@ -2,7 +2,7 @@ import { Request, Response, NextFunction, Router } from 'express';
 import { NotFound, BadRequest } from 'http-errors';
 import { DIContainer, MinioService, SocketsService } from '@app/services';
 import { logger } from '../../../utils/logger';
-import { UserModel } from '@app/models';
+import { UserModel, ItemModel } from '@app/models';
 
 export class ExampleController {
 
@@ -27,7 +27,10 @@ export class ExampleController {
     public reset(req: Request, res: Response) {
         UserModel.remove({}, (err: any) => { // reset users
             logger.warn('Users collection removed');
-          });
+        });
+        ItemModel.remove({}, (err: any) => { // reset users
+            logger.warn('Items collection removed');
+        });
         res.json({ message: 'reset' });
     }
 

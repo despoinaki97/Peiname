@@ -37,12 +37,12 @@ export class VoteresComponent implements OnInit {
 
 
 callServer(){
-  this.DataBankService.call('vote_done',localStorage.getItem("id"));
-  /*this.DataBankService.updateFieldinDB({
-    hasVotedCuisine: true
-  })*/
-  this.router.navigateByUrl("/stateofrest");
-}
+  this.DataBankService.call('vote_done',localStorage.getItem("username"));
+  this.DataBankService.updateUserinDB({
+    hasVotedRestaurant: true
+  })
+    this.router.navigateByUrl("/stateofrest");
+  }
 
 
 }

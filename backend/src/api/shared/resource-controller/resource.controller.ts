@@ -4,6 +4,7 @@ import { MongooseQueryParser, QueryOptions } from 'mongoose-query-parser';
 import { Model, Document } from 'mongoose';
 import { OK, CREATED, NO_CONTENT } from 'http-status-codes';
 import { ICrudController, ICrudRouteOptions, CrudOperations, IPaginateOptions } from '@app/api/shared/interfaces/crud.interface';
+import { logger } from '@app/utils/logger';
 
 export class ResourceController<T extends Document> implements ICrudController {
 
@@ -99,7 +100,15 @@ export class ResourceController<T extends Document> implements ICrudController {
   public create() {
     return async (req: Request, res: Response, next?: NextFunction): Promise<Response> => {
       try {
-        const resource = await new this.modelSchema(req.body)
+        const query = req.body.name;
+        let resource = await this.modelSchema
+          .findOne({ name: query })
+          .exec();
+        if (resource) {
+          logger.warn('The element already exists');
+          return res.status(NO_CONTENT).json(resource);
+        }
+        resource = await new this.modelSchema(req.body)
           .save();
 
         return res

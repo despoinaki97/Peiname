@@ -13,26 +13,28 @@ export interface IItem extends Document {
        price: number;
        sharedWith: [{ type: Schema.Types.ObjectId, ref: 'User' }];
        item_details: string;
-       image: string;
-
-
+       item_img: string;
+       defaulting: string[];
+       ingredients: string[];
+       extra: string[];
 }
 
 // ------------------------------------------
 // Schema definition
 const ItemSchema = new Schema(
   {
-    title: { type: String, required: true },
-    description: { type: String, required: true },
     name: { type: String, required: true },
     Carbs: { type: Number, required: false },
     Sugar: { type: Number, required: false },
     Fat: { type: Number, required: false },
     Calories: { type: Number, required: false },
-    price: { type: Number, required: true },
-    sharedWith: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-    item_details: { type: String, required: true },
-    image: { type: String, required: true }
+    price: { type: Number, required: false },
+    sharedWith: [{ type: Schema.Types.ObjectId, ref: 'User', required: false }],
+    item_details: { type: String, required: false },
+    item_img: { type: String, required: false },
+    defaulting: [{ type: String, required: false }],
+    ingredients: [{ type: String, required: false }],
+    extra: [{ type: String, required: false }]
   },
   { ...DefaultSchemaOptions }
 );

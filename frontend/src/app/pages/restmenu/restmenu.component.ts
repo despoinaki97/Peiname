@@ -20,9 +20,12 @@ export class RestmenuComponent implements OnInit {
   pizzes:Item[];
   salads:Item[];
   open:boolean;
-  constructor(private databank:DatabankService,private router: Router,private activatedRoute: ActivatedRoute) { }
+  constructor(private databank:DatabankService,private router: Router,private activatedRoute: ActivatedRoute) { 
+    
+  }
 
   ngOnInit() {
+    
     const id = this.activatedRoute.snapshot.paramMap.get('name');
 
     this.shops=this.databank.getShops();

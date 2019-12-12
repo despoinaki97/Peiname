@@ -46,7 +46,8 @@ export class TableComponent implements OnInit {
         document.getElementById("alert").style.display = 'block';
         this.DataBankService.call("vote_ended",0);
         setTimeout(() => {
-          this.router.navigateByUrl("/tableEndvote")
+          if( type == "restaurant" ) this.router.navigateByUrl("/Table_restaurant_vote_results")
+         else this.router.navigateByUrl("/tableEndvote")
         }, 5000);
       }
 
@@ -70,7 +71,6 @@ export class TableComponent implements OnInit {
     return this.checked_users.length == 3 ? true : false;
 
   }
-
   change_load_status(username: string) {
     var name = username
     const loader = document.getElementById('loader_' + name);

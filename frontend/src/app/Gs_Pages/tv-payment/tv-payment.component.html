@@ -4,8 +4,9 @@
             style="text-align: center;">
             <div class="card-body">
                 <h5>{{user.name}}</h5>
+
                 <ul class="list-group" id="lista" [style.borderColor]="user.color" >
-                    <li class="list-group-item"  *ngFor="let item of user.orderedItems" id="ratings">
+                    <li class="list-group-item"  *ngFor="let item of cart[user.seat]" id="ratings">
                         <div class="row">
                             <div class="col-sm-3">
 
@@ -13,21 +14,22 @@
                                     [style.backgroundColor]="sharedWith.color" id="colors">
                                 </span>
                             </div>
-                            <div class="col-sm-6">
-                                <p id="item_stats_2">{{item.name}}</p>
+                            <div class="col-sm-2">
+                                <p id="item_stats_2">{{item.quantity}}x</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <p id="item_stats_2">{{item.item.name}}</p>
 
                             </div>
                             <div class="col-sm-3">
-                                <p id="item_stats">{{item.price}}€</p>
+                                <p id="item_stats">{{item.item.price * item.quantity}}€</p>
                             </div>
-                            <button (click)="createItem()" class="btn">CLICK</button>
-
 
                         </div>
                     </li>
                 </ul>
                 <p id="total">Total:
-                    {{user.getTotalPrice()}}€</p>
+                    {{getTotalPrice(user.seat)}}€</p>
 
             </div>
         </div>

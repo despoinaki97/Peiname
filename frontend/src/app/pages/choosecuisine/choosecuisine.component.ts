@@ -13,7 +13,7 @@ export class ChoosecuisineComponent implements OnInit {
 
   callServer(){
     this.DatabankService.call('vote_done',localStorage.getItem("username"));
-    this.DatabankService.updateFieldinDB({
+    this.DatabankService.updateUserinDB({
       hasVotedCuisine: true
     })
     this.router.navigateByUrl("/stateofcuisine");
