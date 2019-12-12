@@ -5,18 +5,18 @@
 
 
   <div id="elems" class="col-md-3">
-    <p class="Shop_Name">{{restaurant.name}}</p>
+    <p class="Shop_Name" style="margin-bottom: 0;">{{restaurant.name}}</p>
     <div class="row">
       <div class="col-sm-4" style="text-align: right;">
         <img src="../../../assets/images/icons8-place-marker-24 5.png" class="icc" />
       </div>
-      <p class="col-sm-8" style="text-align: left;">{{restaurant.address}}</p>
+      <p class="col-sm-8" style="text-align: left;margin-bottom: 0;">{{restaurant.address}}</p>
     </div>
     <div class="row">
-      <div class="col-sm-4" style="text-align: right;">
+      <div class="col-sm-4" style="text-align: right;margin-bottom: 0;">
         <img class="col-sm-6" src="../../../assets/images/icons8-phone-50 5.png" class="icc" />
       </div>
-      <p class="col-sm-8" style="text-align: left;">{{restaurant.tel}}</p>
+      <p class="col-sm-8" style="text-align: left;margin-bottom: 0;">{{restaurant.tel}}</p>
     </div>
 
   </div>
@@ -25,19 +25,19 @@
   <div id="elems" class="col-md-3">
     <p class="" style="margin-bottom: 0;">Reviews</p>
 
-    <p class="">{{restaurant.ratingVal}}</p>
+    <p class=""  style="margin-bottom: 0;">{{restaurant.ratingVal}}</p>
     <div id="starsGroup">
       <i class="material-icons" id="shop_stars" *ngFor="let num of restaurant.getRating()">star</i>
       <i class="material-icons" id="shop_notstars" *ngFor="let num of restaurant.getNRating()">star</i>
     </div>
 
-    <p class="">({{restaurant.rating.length}} Reviews)</p>
+    <p class=""  style="margin-bottom: 0;">({{restaurant.rating.length}} Reviews)</p>
   </div>
 
   <div id="elems" class="col-md-2">
-    <p class="">Min.Time</p>
+    <p class="" style="margin-bottom: 0;">Min.Time</p>
 
-    <p class="">{{restaurant.MinTime}}</p>
+    <p class="" style="margin-bottom: 0;">{{restaurant.MinTime}}</p>
 
 
   </div>
@@ -45,9 +45,9 @@
 
 
 
-    <p class="">Min.Order</p>
+    <p class="" style="margin-bottom: 0;">Min.Order</p>
 
-    <p class="">{{restaurant.Min_Order}}</p>
+    <p class="" style="margin-bottom: 0;" >{{restaurant.Min_Order}}</p>
   </div>
 
 

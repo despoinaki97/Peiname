@@ -18,18 +18,17 @@ export class TvComponent implements OnInit {
       if(gesture == Gestures.SWIPE_LEFT){
         console.log('swipe left tv');
       //  document.getElementById('scroll').scrollTo(0, 80);
-        document.getElementById('Welcome').style.color='blue';
+    //    document.getElementById('Welcome').style.color='blue';
       }
       if(gesture == Gestures.SWIPE_UP){
         console.log('swipe up tv');
-        document.getElementById('scroll').scrollTo(0, 40);
-        document.getElementById('Welcome').style.color='red';
+        document.getElementById('scroll').scrollTo(0, 300);
 
       }
-      if(gesture == Gestures.SWIPE_UP){
-        console.log('swipe up tv');
-        document.getElementById('scroll').scrollTo(0, 40);
-        document.getElementById('Welcome').style.color='red';
+
+      if(gesture == Gestures.SWIPE_DOWN){
+        console.log('swipe DOWN tv');
+        document.getElementById('scroll').scrollTo(0, -80);
 
       }
     });

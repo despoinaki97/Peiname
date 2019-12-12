@@ -31,7 +31,7 @@ body {
     background-color: #fffbf4;
     margin-left: 2.5%;
     margin-top: 4.5%;
-    height: 8vw;
+    height: 12vw;
     border-radius: 8px 8px 0 0;
     margin-right: 0;
   }
@@ -141,8 +141,8 @@ body {
   #scroll{
     position: fixed;
     top:18%;
-    height: 100%; 
+    height: 85%; 
     width:100%;
-    overflow:hidden; 
+    //overflow:hidden; 
     overflow-y:scroll;
   }
