@@ -19,7 +19,7 @@ body {
 
 main {
   flex: 1;
-  // width: 100vw;
+  width: 100%;
   background-color: #E5E5E5;
 }
 #push_down{
@@ -79,8 +79,9 @@ main {
 
 #Total{
   flex-wrap: nowrap;
-  width: 100%;
+  width: 95%;
   height: 46vh;
+  margin-left: 1vw;
 }
 
 #Total_p{
@@ -92,6 +93,7 @@ main {
   padding:0;
   margin-top:3vh;
   text-align: right;
+  padding-right: 1%;
 }
 
 #Buttons{
@@ -167,3 +169,32 @@ main {
   margin-bottom: 2vh;
   font-size: small;
 }
+
+.col-5{
+  padding: 0;
+}
+.col-sm-5{
+  padding-right: 0;
+  width: 75%;
+}
+
+#lista{
+  list-style-type: none;
+}
+
+#Product{
+  width: 80%;
+}
+
+.col-4{
+  text-align: right;
+  padding-right: 0;
+  padding-left: 15vw;
+}
+
+#item_details{
+    color: gray;
+    font-size: medium;
+    padding-right: 0;
+    padding-left: 18vw;
+  }

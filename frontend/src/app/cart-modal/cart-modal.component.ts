@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute, Router } from '@angular/router';
-import { DatabankService } from 'src/app/databank.service';
-import { Shop } from 'src/app/shop';
-import { Item } from 'src/app/item';
-import { ordAccount } from 'src/app/ordaccount';
-import { SocketsService } from 'src/app/global/services';
-import { CartModalComponent } from 'src/app/cart-modal/cart-modal.component';
-
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router, ActivatedRoute } from '@angular/router';
+import { SocketsService } from '../global/services';
+import { DatabankService } from '../databank.service';
+import { ordAccount } from '../ordaccount';
+import { Item } from '../item';
 @Component({
-  selector: 'ami-fullstack-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  selector: 'ami-fullstack-cart-modal',
+  templateUrl: './cart-modal.component.html',
+  styleUrls: ['./cart-modal.component.scss']
 })
-export class CartComponent implements OnInit {
-  public users: ordAccount[];
+export class CartModalComponent implements OnInit {
+
   constructor(private router: Router, private databank: DatabankService, private modalService: NgbModal, private activatedRoute: ActivatedRoute, private socket: SocketsService) {
 
   }
@@ -25,11 +22,10 @@ export class CartComponent implements OnInit {
     item: Item
   }[][]
 
-  public voted:boolean = false;
 
   open: boolean = false;
   getName() {
-    return localStorage.getItem('name')
+    return localStorage.getItem('username')
   }
   getLength() {
 
@@ -84,25 +80,13 @@ export class CartComponent implements OnInit {
     this.socket.syncMessages('update_cart').subscribe((data) => {
       this.updateCarts();
     })
-    if (!this.databank.has_Voted()) { //VALE ! GIA THN SWSTH LEITOYRGIA
-      // let cart = document.getElementById("cart").style.display = 'none';
-      this.voted = false;
-    }
-    else {
-      // let back = document.getElementById("Back").style.display = 'none';
-      this.voted = true;
-    }
   }
 
-
-
-
-  go_Back() {
-    this.router.navigateByUrl("/voteres")
+  close(){
+    this.modalService.dismissAll();
   }
-
-  toggleCart() {
-    this.modalService.open(CartModalComponent)
-
+  submit(){
+    this.modalService.dismissAll();
+    this.router.navigateByUrl('/bill-managment');
   }
 }

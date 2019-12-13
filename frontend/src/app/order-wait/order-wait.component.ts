@@ -8,6 +8,7 @@ import {
   // ...
 } from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -37,11 +38,13 @@ export class OrderWaitComponent implements OnInit {
   flag = false;
   interval;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    const min = +this.activatedRoute.snapshot.paramMap.get('min');
+
     this.hide = false;
-    this.min = 0.16;
+    this.min = min;
     this.timeLeft = 59 * this.min;
     this.duration = this.min;
     this.startTimer();
@@ -68,7 +71,7 @@ export class OrderWaitComponent implements OnInit {
       } else {
         console.log("end");
         this.duration = "Ring Ring!";
-
+        
         clearInterval(this.interval)
       }
     }, 1000)

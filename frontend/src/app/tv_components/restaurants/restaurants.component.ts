@@ -3,7 +3,7 @@ import { Shop } from 'src/app/shop';
 import { Rating } from '../../rating';
 import { ordAccount } from '../../ordaccount';
 import { DatabankService } from '../../databank.service';
-import { Observable, of,Subscribable } from 'rxjs';
+import { Observable, of,Subscribable, Subscription } from 'rxjs';
 import { SocketsService } from 'src/app/global/services';
 import { Router } from '@angular/router';
 
@@ -25,12 +25,23 @@ export class RestaurantsComponent implements OnInit {
     document.getElementById("alert").style.display = 'none';
     this.getShops();
     
-    this.Socket.syncMessages("vote_ended").subscribe((data) => {
+    let sub:Subscription = this.Socket.syncMessages("vote_ended").subscribe((data) => {
         document.getElementById("alert").style.display = 'block';
-        setTimeout(() => {
-          this.router.navigateByUrl("/tv-statistics-cuisine")
-        }, 5000);
+        console.log(data.message)
+        sub.unsubscribe();
+        if(data.message === 'rest'){
+          setTimeout(() => {
+            this.router.navigateByUrl("/tv-statistics-restaurant")
+          }, 5000);
+        }else{
+          setTimeout(() => {
+            this.router.navigateByUrl("/tv-statistics-cuisine")
+          }, 5000);
+        }
+       
     })
-  }
+
+
+    }
 
 }

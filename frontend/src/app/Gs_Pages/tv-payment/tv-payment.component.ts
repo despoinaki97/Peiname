@@ -49,14 +49,14 @@ export class TvPaymentComponent implements OnInit {
   //   });
   // }
 
-  getTotalPrice(x): number {
+  getTotalPrice(x): string {
     let sum = 0;
     if (this.Items[x]) {
       this.Items[x].forEach((each: Item) => {
         sum += each.price
       })
     }
-    return sum
+    return sum.toFixed(2)
   }
 
   updateCarts() {

@@ -42,7 +42,7 @@ export class StateofrestComponent implements OnInit {
     })
     this.DataBankService.getUsers().subscribe((users) => {
       users.forEach((each) => {
-        this.uncheck_change_load_status(each);
+        // this.uncheck_change_load_status(each);
         if (each.hasVotedRestaurant && each.name != username && this.remaining.length < 2) this.remaining.push(each)
       })
     })
@@ -69,7 +69,9 @@ export class StateofrestComponent implements OnInit {
   }
 
   proceedToVoteforRestaurants() {
-    this.DataBankService.call('host_proceed', localStorage.getItem("id"));
+    this.DataBankService.call('host_proceed', "restaurant");
+    // this.DataBankService.call('host_proceed_rest', 0);
+    
   }
 
 
@@ -77,10 +79,10 @@ export class StateofrestComponent implements OnInit {
     console.log(user.name + '_change_load_status')
     // if (user.seat != +localStorage.getItem('seat')) {
     var name = user.name
-    const loader = document.getElementById('loader_' + name);
+    const loader = document.getElementById('loader_rest_' + name);
     loader.style.display = 'none';
-    const check: HTMLElement = document.getElementById('check_' + name);
-    const label: HTMLElement = document.getElementById('label_' + name);
+    const check: HTMLElement = document.getElementById('check_rest_' + name);
+    const label: HTMLElement = document.getElementById('label_rest_' + name);
     label.style.paddingTop = '0';
     check.setAttribute("checked", "true");
     label.style.animation = 'bor 1s';
@@ -91,10 +93,10 @@ export class StateofrestComponent implements OnInit {
     console.log(user.name + '_change_load_status')
     // if (user.seat != +localStorage.getItem('seat')) {
     var name = user.name
-    const loader = document.getElementById('loader_' + name);
+    const loader = document.getElementById('loader_rest_' + name);
     loader.style.display = 'block';
-    const check: HTMLElement = document.getElementById('check_' + name);
-    const label: HTMLElement = document.getElementById('label_' + name);
+    const check: HTMLElement = document.getElementById('check_rest_' + name);
+    const label: HTMLElement = document.getElementById('label_rest_' + name);
     // label.style.paddingTop = '0';
     check.setAttribute("checked", "false");
     // label.style.animation = 'bor 1s';

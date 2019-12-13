@@ -9,6 +9,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
 import { SocketsService } from 'src/app/global/services';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -39,16 +40,17 @@ export class TableComponent implements OnInit {
     this.getUsers();
     this.init_checked_users();
 
-    this.socket.syncMessages("vote_done").subscribe((data) => {
+    const sub:Subscription = this.socket.syncMessages("vote_done").subscribe((data) => {
       this.change_load_status(data.message);
       this.checked_users.push(data.message);
       if (this.check_users()) {
         document.getElementById("alert").style.display = 'block';
         this.DataBankService.call("vote_ended",0);
-        setTimeout(() => {
+        // setTimeout(() => {
+          sub.unsubscribe();
           if( type == "restaurant" ) this.router.navigateByUrl("/Table_restaurant_vote_results")
          else this.router.navigateByUrl("/tableEndvote")
-        }, 5000);
+        // }, 5000);
       }
 
 

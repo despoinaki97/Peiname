@@ -7,6 +7,8 @@ import { DatabankService } from 'src/app/databank.service';
 import { ThrowStmt, analyzeAndValidateNgModules } from '@angular/compiler';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
+import { Router, ActivatedRoute } from '@angular/router';
+import { SocketsService } from '../../global/services';
 
 @Component({
   selector: 'ami-fullstack-bill-managment',
@@ -19,6 +21,14 @@ export class BillManagmentComponent implements OnInit {
   i: number;
   private modalComponent: NgbModal;
   users: ordAccount[];
+  public Users: ordAccount[];
+  public Items: Item[][] = [];
+  public cart: {
+    quantity: number,
+    item: Item
+  }[][]
+
+  //open: boolean = false;
 
   getUsers() {
     this.DataBankService.getUsers().subscribe(users => {
@@ -26,7 +36,7 @@ export class BillManagmentComponent implements OnInit {
     })
   }
 
-  constructor(private DataBankService: DatabankService,@Inject(PLATFORM_ID) private plaformId:Object,private injector: Injector) {
+  constructor(private DataBankService: DatabankService,@Inject(PLATFORM_ID) private plaformId:Object,private injector: Injector,private router:Router, private socket:SocketsService) {
     if(isPlatformBrowser(this.plaformId)){
       this.modalComponent = this.injector.get(NgbModal);
     }
@@ -49,17 +59,63 @@ export class BillManagmentComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+  getName() {
+    return localStorage.getItem('username')
+  }
+  getLength() {
+
+    return this.Items[+localStorage.getItem("seat")].length;
+  }
+  getSeat() {
+    return +localStorage.getItem("seat");
+  }
+  getTotalPrice(): number {
+    let x = localStorage.getItem("seat")
+    let sum = 0;
+    if (this.Items[x]) {
+      this.Items[x].forEach((each: Item) => {
+        sum += each.price
+      })
+    }
+    return +sum.toFixed(2);
+  }
+
+  updateCarts() {
+    this.Items = [];
+    this.cart = [];
+    for (let i: number = 0; i < 3; i++) {
+      this.Items[i] = [];
+      this.cart[i] = [];
+    }
+    this.DataBankService.getUsersOrderedItems((item, user) => {
+
+      // console.log(item, user);
+      this.Items[user.seat].push(item)
+      this.checkDouble(user.seat, item);
+    })
+
+  }
+  checkDouble(seat, item) {
+    let result = false;
+    this.cart[seat].forEach(each => {
+      if (each.item.name == item.name) {
+        each.quantity++;
+        result = true;
+      }
+    })
+    if (result === false) {
+      this.cart[seat].push({
+        quantity: 1,
+        item: item
+      })
+    }
+  }
 
   ngOnInit() {
     this.i = 0;
-    this.getUsers();
-    //this.DataBankService.addItem([this.users[0]],new Item("Pizza Margarita", 1, 1, 1, 1, 16, [], "Tomatoes sauce , cheese ,tomatoes"))
-    // this.getUsers();
-    // [new Item("Caesar Salad", 1, 1, 1, 1, 9, [new ordAccount("Despoina"), new ordAccount("Kwstas")], "Tomatoes sauce , cheese ,tomatoes"),
-    // new Item("Pizza Margarita", 1, 1, 1, 1, 16, [new ordAccount("Despoina")], "Tomatoes sauce , cheese ,tomatoes"),
-    // new Item("Pizza anana", 1, 1, 1, 1, 8.5, [], "Tomatoes sauce , cheese ,tomatoes,blah, blah,ananna")
-    // ]
+    this.updateCarts();
+    this.socket.syncMessages('update_cart').subscribe((data) => {
+      this.updateCarts();
+    })
 
-  }
-  
-}
+}}

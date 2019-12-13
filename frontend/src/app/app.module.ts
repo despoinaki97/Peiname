@@ -38,6 +38,8 @@ import { FormModalComponent } from './form-modal/form-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StateofrestComponent } from './pages/stateofrest/stateofrest.component';
 import { WallComponent } from './wall/wall.component';
+import { CartModalComponent } from './cart-modal/cart-modal.component';
+import { IdleComponent } from './idle/idle.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { WallComponent } from './wall/wall.component';
     TableVoteCompletedComponent,
     FormModalComponent,
     StateofrestComponent,
-    WallComponent
+    WallComponent,
+    CartModalComponent,
+    IdleComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +89,7 @@ import { WallComponent } from './wall/wall.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[FormModalComponent
+  entryComponents:[FormModalComponent,CartModalComponent
   ]
 })
 export class AppModule { }

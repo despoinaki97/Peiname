@@ -4,7 +4,7 @@
             <i class="material-icons " style="color: black;font-size: 400%;" id="icon">account_circle</i>
             <div class="card-body">
                 <h5>{{user.name}}</h5>
-                <ul class="list-group" *ngFor="let item of user.orderedItems">
+                <ul class="list-group" *ngFor="let item of this.Items[getSeat()]">
                     <li class="list-group-item" id="ratings">
                         <div class="row">
                             <div class="col-sm-6">
@@ -32,7 +32,7 @@
                         </div>
                     </li>
                 </ul>
-                <p style="text-align: right; position:absolute;font-weight: bold; bottom:5%;left: 50%;">Total Calories: {{user.getCalories()}}</p>
+                <!-- <p style="text-align: right; position:absolute;font-weight: bold; bottom:5%;left: 50%;">Total Calories: {{user.getCalories()}}</p> -->
 
             </div>
         </div>

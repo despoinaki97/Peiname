@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocketsService } from '../global/services';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ami-fullstack-wall',
@@ -13,11 +14,14 @@ export class WallComponent implements OnInit {
 
   ngOnInit() {
     
-    this.socket.syncMessages("host_proceed").subscribe((data) => {
+    const sub:Subscription = this.socket.syncMessages("host_proceed").subscribe((data) => {
       setTimeout(() => {
+        sub.unsubscribe();
         this.router.navigateByUrl("/Rating_Shop_list")
+
       }, 5000);
     })
+
   }
 
 }

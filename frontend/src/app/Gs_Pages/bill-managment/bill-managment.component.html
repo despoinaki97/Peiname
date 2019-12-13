@@ -10,7 +10,7 @@
     <div id="push_down"></div>
 
 
-    <div *ngFor="let orderedItem of users[0].orderedItems" id="product">
+    <!--<div *ngFor="let orderedItem of users[0].orderedItems" id="product">
       <div class="row" id="Product_Details">
 
         <div class="col-sm-1" id="Product_share">
@@ -32,17 +32,41 @@
 
       </div>
       <p id="Details"> {{orderedItem.item_details}}</p>
-    </div>
+    </div>-->
+    <ul id="lista">
+      <li  *ngFor="let item of cart[getSeat()]" id="ratings">
+          <div class="row" id="Product">
+              <div class="col-3">
+                  <p id="item_stats_2">{{item.quantity}}x</p>
+              </div>
+              <div class="col-5">
+                  <p id="item_stats_2">{{item.item.name}}</p>
+
+              </div>
+              <div class="col-4">
+                  <p id="item_stats">{{item.item.price * item.quantity}}€</p>
+              </div>
+          </div>
+          <div class="row" id="Product">
+                <div class="col-12" id="item_details">
+                      {{item.item.item_details}}
+                </div>
+          </div>
+      </li>
+  </ul>
 
     <div class="row" id="line"></div>
 
 
     <div class="row" id="Total">
-      <div class="col-sm-5">
+      <div class="col-5">
         <p id="Total_p">
           Total
         </p>
       </div>
+        <div class="col-5" id="Total_Price">
+          {{getTotalPrice(getSeat())}}€
+        </div>
       <!-- <div class="col-sm-4" id="Total_Price">{{users[0].getTotalPrice()}}€</div> -->
     </div>
 
@@ -52,7 +76,7 @@
         <button class="btn">Pay</button>
 
       </div>
-      <div class="col-sm-5" style="text-align: right;">
+      <div class="col-sm-5" style="text-align: right; padding-right: 4%;">
         <button class="btn" (click)="open(content)">Treat</button>
       </div>
     </div>

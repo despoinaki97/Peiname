@@ -34,7 +34,7 @@ export class ItemdetailsComponent implements OnInit {
     this.databank.getUsers().subscribe((users) => { this.users = users });
     this.id = this.activatedRoute.snapshot.paramMap.get('name');
 
-    if (!this.has_Voted()) {
+    if (!this.databank.has_Voted()) {
       let ShareBtn = document.getElementById("Sharewith").style.display = 'none';
       let Add = document.getElementById("Add").style.display = 'none';
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'ami-fullstack-restaurant-vote-results',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantVoteResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+
+    setTimeout(() => {
+      this.router.navigateByUrl("/idle/table")
+    }, 5000);
   }
 
-}
+  }

@@ -54,7 +54,7 @@ export class DatabankService {
         [], "(133 ratings)", "../../../assets/taverna.jpg"),
     ]
 
-    var items = [new Item("Guros Pork", null, null, null, null, 3, null, "Pork ,tomato, onion, potatos", "../../../assets/xoirinos.jpg",
+    var items = [new Item("Guros Pork", 150, 100, 200, 500, 3, null, "Pork ,tomato, onion, potatos", "../../../assets/xoirinos.jpg",
       ["Traditional Pita", "Small Pita", "Open pita"], ["Pork gyros", "Tomato", "Onion", "ketcup", "Potatos"], ["Bacon", "Lettuce"]
     ),
     new Item("Guros Chicken", null, null, null, null, 3.2, null, "Chicken, tomato, mayonaise, potatos", "../../../assets/xoirinos.jpg",
@@ -139,49 +139,63 @@ export class DatabankService {
   }
 
   async addToCart(item_id: string, users: ordAccount[]) {
-    new Promise(resolve =>{
-    console.warn(users);
-    let curr_item_sharedWith = [];
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json');
+    new Promise(resolve => {
+      console.warn(users);
+      let curr_item_sharedWith = [];
+      const headers = new HttpHeaders()
+        .set('Content-Type', 'application/json');
 
-    const prom1 = new Promise<Item>(resolve => {
-      this.http.get('http://' + environment.host + '/api/items/' + item_id, {
-        headers: headers
-      }).subscribe((item: Item) => {
-        console.log(item)
-        resolve(item);
-      })
-    }).then(item => {
-
-      users.forEach((each: ordAccount) => {
-        this.http.get('http://' + environment.host + '/api/users/' + each._id, {
+      const prom1 = new Promise<Item>(resolve => {
+        this.http.get('http://' + environment.host + '/api/items/' + item_id, {
           headers: headers
-        }).subscribe((user: ordAccount) => {
+        }).subscribe((item: Item) => {
+          console.log(item)
+          resolve(item);
+        })
+      }).then(item => {
 
-          user.orderedItems.push(item_id)
-          this.updateUserinDB({
-            orderedItems:  user.orderedItems
-          });
-          // if (item.sharedWith == null) {
-          //   item.sharedWith = [];
-          // }
-          // item.sharedWith.push(user)
-          // let shared_ids: string[] = [];
-          // item.sharedWith.forEach(elem => {
-          //   shared_ids.push(elem._id);
-          // })
-          // this.updateIteminDB(item_id, {
-          //   sharedWith: shared_ids
-          // })
+        users.forEach((each: ordAccount) => {
+          this.http.get('http://' + environment.host + '/api/users/' + each._id, {
+            headers: headers
+          }).subscribe((user: ordAccount) => {
+
+            user.orderedItems.push(item_id)
+            this.updateUserinDB({
+              orderedItems: user.orderedItems
+            });
+            // if (item.sharedWith == null) {
+            //   item.sharedWith = [];
+            // }
+            // item.sharedWith.push(user)
+            // let shared_ids: string[] = [];
+            // item.sharedWith.forEach(elem => {
+            //   shared_ids.push(elem._id);
+            // })
+            // this.updateIteminDB(item_id, {
+            //   sharedWith: shared_ids
+            // })
+          })
         })
       })
-    })
-  });
+    });
 
 
   }
 
+  async getAllUsers(): Promise<ordAccount[]> {
+
+    return new Promise(resolve => {
+      const headers = new HttpHeaders()
+        .set('Content-Type', 'application/json');
+
+      this.http.get('http://' + environment.host + '/api/users', {
+        headers: headers
+      }).subscribe((json: ordAccount[]) => {
+        // console.log(json)
+        resolve(json);
+      })
+    });
+  }
   async getAllItems(): Promise<Item[]> {
 
     return new Promise(resolve => {
@@ -197,7 +211,23 @@ export class DatabankService {
     });
   }
 
-  async getUsersOrderedItems(cb?: (a: Item,b:ordAccount) => any): Promise<Item[][]> {
+  async has_Voted() {
+    return new Promise<boolean>((resolve,reject)=>{
+      this.getAllUsers().then((users) => {
+        this.users = users;
+  
+        let username = localStorage.getItem('username');
+        console.log(this.users)
+        this.users.forEach((each) => {
+          if ((each.name == username) && (each.hasVotedRestaurant == true)) resolve(true);
+        })
+        resolve(false);
+      })
+    })
+    
+  }
+
+  async getUsersOrderedItems(cb?: (a: Item, b: ordAccount) => any): Promise<Item[][]> {
     return new Promise(resolve => {
       var Items: Item[][] = [];
       const headers = new HttpHeaders()
@@ -212,7 +242,7 @@ export class DatabankService {
               headers: headers
             }).toPromise().then((item: Item) => {
               // Items[each.seat].push(item);
-              if(cb)cb(item, each)
+              if (cb) cb(item, each)
             })
           })
         })
@@ -351,6 +381,9 @@ export class DatabankService {
   }
   getUsers(): BehaviorSubject<ordAccount[]> {
     this.update();
+    this.getAllUsers().then((users) => {
+      this.users = users;
+    })
     console.warn("DatabankService:getUsers()")
     return this.users_subject;
   }

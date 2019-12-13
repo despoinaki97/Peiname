@@ -25,6 +25,7 @@ import {TableStartComponent} from './table-start/table-start.component';
 import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-completed.component';
 import { StateofrestComponent } from './pages/stateofrest/stateofrest.component';
 import { WallComponent } from './wall/wall.component';
+import {IdleComponent} from './idle/idle.component';
 
 
 
@@ -44,23 +45,24 @@ const routes: Routes = [
   { path: 'stateofrest', component: StateofrestComponent },
   { path: 'tv', component: TvComponent},
   { path: 'tv-payment', component: TvPaymentComponent},
-  { path: 'tv-statistics-restaurant', component: TvStatisticsCuisineComponent}, 
-  { path: 'tv-statistics-cuisine', component: TvStatisticsRestaurantComponent},
+  { path: 'tv-statistics-cuisine', component: TvStatisticsCuisineComponent}, 
+  { path: 'tv-statistics-restaurant', component: TvStatisticsRestaurantComponent},
   { path: 'bill-managment', component: BillManagmentComponent},
   { path: 'Final-table' , component: FinalTableComponent},
   { path: 'Table_restaurant_vote_results' , component: RestaurantVoteResultsComponent},
   { path: 'Table_confirmation' , component: TrapeziConfirmationComponent},
   { path: 'Order_Wait' , component: OrderWaitComponent} ,
-  { path: 'Wall' , component: WallComponent} ,
+  { path: 'wall' , component: WallComponent} ,
   { path: 'calories' , component: CaloriesComponent},
   { path: 'Rating_Shop_list' , component: RatingShopListComponent},
   { path: 'home', loadChildren: () => import('./pageswall/home/home.module').then(m => m.HomeModule) },
   { path: 'ratings', component:RatingShopListComponent },
   { path: 'calories', component:CaloriesComponent },
-  { path: 'wall_order_waiting', component:OrderWaitComponent },
+  { path: 'wall_order_waiting/:min', component:OrderWaitComponent },
   { path: 'tableStart' , component:TableStartComponent},
   { path: 'table/:type' , component:TableComponent},
   { path: 'tableEndvote' , component:TableVoteCompletedComponent},
+  { path: 'idle/:name' , component:IdleComponent},
  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ]
 
