@@ -1,0 +1,114 @@
+<ul class="list-group list-group-horizontal" >
+    <li class="list-group-item" id="user" *ngFor="let user of Users">
+        <div class="card" [style.width.px]="innerWidth" [style.height.px]="innerHeight"  style="text-align: center;">
+            <i class="material-icons " style="color: black;font-size: 400%;" id="icon">account_circle</i>
+            <div class="card-body">
+                <h5>{{user.name}}</h5>
+                <ul class="list-group" *ngFor="let item of this.Items[getSeat()]">
+                    <li class="list-group-item" id="ratings">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p id="item_stats">{{item.name}}</p>
+                                <i class="material-icons">
+                                    fastfood
+                                </i>
+                            </div>
+                            <div class="col-sm-3">
+                                <p id="item_stats">Carbs {{item.Carbs}} g</p>
+                                <p id="item_stats">Sugar {{item.Sugar}} g</p>
+                                <p id="item_stats">Fat {{item.Fat}} g</p>
+                                <!--public name: string,
+                                    public Carbs: number,
+                                    public Sugar: number,
+                                    public Fat: number,
+                                    public Calories: number, -->
+                            </div>
+                            <div class="col-sm-3">
+                                <br>
+                                <p id="item_stats">{{item.Calories}} Calories</p>
+                            
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <!-- <p style="text-align: right; position:absolute;font-weight: bold; bottom:5%;left: 50%;">Total Calories: {{user.getCalories()}}</p> -->
+
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+
+<style>
+    .card {
+        padding: 0;
+
+    }
+
+    #user {
+        padding: 0;
+
+        border: 0;
+    }
+
+    #icon {
+        width: 40%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #item_stats {
+        margin-bottom: 0;
+    }
+
+    .card-body {
+        padding: 0.55rem;
+    }
+
+    #ratings {
+        text-align: left;
+        margin-top: 2.5%;
+    }
+
+    #rating_notstars {
+        font-size: 80%;
+
+        color: gray;
+    }
+
+    #rating_stars {
+        font-size: 80%;
+
+        color: darkorange;
+    }
+
+    #shop_notstars {
+        font-size: 125%;
+
+        color: gray;
+    }
+
+    #shop_stars {
+        font-size: 125%;
+
+        color: darkorange;
+    }
+
+    #item {
+        padding: 0;
+    }
+
+    .card {
+        background-color: #ffe5a5
+    }
+
+    img {
+        width: 40%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>

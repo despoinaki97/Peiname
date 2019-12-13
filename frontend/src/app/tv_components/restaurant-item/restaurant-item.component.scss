@@ -1,0 +1,63 @@
+
+*{
+  text-align: center;
+  overflow-x: hidden; // hide horizontal
+
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../assets/images/background-frame-with-fast-food-and-dessert-vector-20829847\ 1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+  #elems{
+    margin-top: 1.5%;
+  }
+  
+   #row2 {
+    font-size: 150%;
+    width: 92vw;
+    background-color: #fffbf4;
+    left: 4vw;
+    margin-top: 0.1%;
+    height: 12vw;
+  }
+  
+  #Photo1{
+    margin-top:14%;
+  }
+  
+  .Shop_Name {
+    color: black;
+    font-size: 40px !important;
+
+  }
+  
+.icc{
+  height : 25px!important;
+  width: 25px!important;
+}
+
+  .is_first{
+    border-radius: 8px 8px 0 0;
+  }
+
+  #shop_notstars {
+    
+    font-size: 145%;
+
+    color: gray;
+}
+
+#shop_stars {
+    font-size: 145%;
+
+    color: darkorange;
+}
+
+#starsGroup{
+  // margin-left: -6vw;
+}

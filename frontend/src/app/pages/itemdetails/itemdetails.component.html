@@ -1,0 +1,90 @@
+<div class="back" >
+        
+        <img class="backarr" src="../../../assets/back.png"  [routerLink]="['/restmenu']"/>
+        <img class="backimg" src={{item.item_img}}/>
+        <p class="instruction" *ngIf="item">{{item.name}}</p>
+        
+        <nav class="scroll">
+            <p class="ingrtitle">Choose *</p>
+                <ul class="menulist" *ngFor="let def of defaults">
+                        <li class="ingrbar" >
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check" checked><span class="label-text">{{def}}</span></label>
+                                </div>         
+                        </li>
+                        <!-- <li class="ingrbar">
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check" ><span class="label-text">Rye Dough</span></label>
+                                </div>         
+                        </li>
+                        <li class="ingrbar">
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check" ><span class="label-text">Dough Dough</span></label>
+                                </div>         
+                        </li> -->
+                </ul>
+                <p class="ingrtitle">Ingredients</p>
+                <ul class="menulist" *ngFor="let ing of ingredients">
+                        <li class="ingrbar">
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check3" checked><span class="label-text">{{ing}}</span></label>
+                                </div>         
+                        </li>
+                        <!-- <li class="ingrbar">
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check2" checked><span class="label-text">Mozzarela</span></label>
+                                </div>         
+                        </li>
+                        <li class="ingrbar">
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check2" checked ><span class="label-text">Cheddar</span></label>
+                                </div>         
+                        </li>
+                        <li class="ingrbar">
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check2" checked ><span class="label-text">Bacon</span></label>
+                                </div>         
+                        </li> -->
+                </ul>
+                <p class="ingrtitle">Add extra</p>
+                <ul class="menulist" *ngFor="let ex of extra">
+                        <li class="ingrbar">
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check3" ><span class="label-text">{{ex}}</span></label>
+                                </div>         
+                        </li>
+                        <!-- <li class="ingrbar">
+                                <div class="form-check">
+                                    <label><input type="checkbox" name="check2" ><span class="label-text">Salami</span></label>
+                                </div>         
+                        </li> -->
+                      
+                </ul>
+                
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="showModal()">
+                        Open modal
+                      </button> -->
+                      <app-modal></app-modal>
+              
+    
+        </nav>
+        
+        <div class="floatback">
+        <button id ="Back" class="yellowbutt" type="button"  (click)="go_Back()">Back to Menu</button>
+         
+
+            <button id ="Sharewith" class="yellowbutt" type="button" data-toggle="modal" data-target="#myModal" (click)="showModal()">Share with</button>
+           
+            <!--<button class="yellowbutt2" [routerLink]="['/restmenu']">Add to cart</button>-->
+            <button id="Add" class="yellowbutt2" (click) = "add_to_Cart()">Add to cart</button>
+              
+
+        <div>
+    
+
+
+
+            
+
+
+        </div>

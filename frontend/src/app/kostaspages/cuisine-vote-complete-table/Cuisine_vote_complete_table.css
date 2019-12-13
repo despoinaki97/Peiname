@@ -1,0 +1,32 @@
+html{
+    height: 100vh;
+}
+body{
+    min-height: 100vh;
+    background-color: #E5E5E5;
+}
+
+#Voting_Title{
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-size: 400%;
+    margin-top: 5%;
+}
+
+#Souvlaki{
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-size: 400%;
+    margin-top: 1%;
+}
+
+
+
+#souvlaki_pic{
+    margin-left: 30%;
+    height: 40;
+    width: 40%;
+    margin-top: 5%;
+}

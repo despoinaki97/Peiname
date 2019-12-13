@@ -1,0 +1,20 @@
+body{
+        background-image: none;
+}
+
+#photo{
+        margin-top: 3vh;
+        width: 50vw;
+        height: 50vh;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+}
+#text{
+        text-align: center;
+        padding-top: 8vh;
+}
+#text2{
+        text-align: center;
+}

@@ -1,0 +1,100 @@
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item" id = "shops" *ngFor="let shop of shops">
+        <div class="card" style="width: 18rem;    text-align: center;
+        ">
+            <img src="/assets/cropped-logo-dummy.png" class="card-img-top " alt="logo">
+            <div class="card-body">
+                <h3>{{shop.name}}</h3>
+
+                <div class="col-sm-12" id="starsGroup">
+                    {{shop.ratingVal}}
+                    <i class="material-icons" id="shop_stars" *ngFor="let num of shop.getRating()">star</i>
+                    <i class="material-icons" id="shop_notstars" *ngFor="let num of shop.getNRating()">star</i>
+                </div>
+                <p id="ratings_label">({{shop.rating.length}} ratings)</p>
+                <ul class="list-group" *ngFor="let rating of shop.rating">
+                    <li class="list-group-item" id="ratings">
+                        <div class="row">
+                            <i class="material-icons " style="color: black;" id="icon">account_circle</i>
+                            <p class="col-sm-5" id="user">{{rating.user.name}}</p>
+                            {{rating.ratingVal}}
+                            <div class="col-sm-5" id="starsGroup">
+                                <i class="material-icons" id="rating_stars"
+                                    *ngFor="let num of rating.getRating()">star</i>
+                                <i class="material-icons" id="rating_notstars"
+                                    *ngFor="let num of rating.getNRating()">star</i>
+                            </div>
+
+                        </div>
+
+                        <p> {{rating.comment}}</p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </li>
+</ul>
+
+<style>
+    #shops{
+        padding-right: 0;
+        border: 0;
+    }
+    #icon{
+        margin-left: 2.5%;;
+    }
+
+    #ratings_label{
+        color:grey;
+    }
+    .card-body {
+        padding: 0.55rem;
+    }
+
+    #ratings {
+        text-align: left;
+        margin-top: 2.5%;
+    }
+
+    #rating_notstars {
+        font-size: 80%;
+
+        color: gray;
+    }
+
+    #rating_stars {
+        font-size: 80%;
+
+        color: darkorange;
+    }
+
+    #shop_notstars {
+        font-size: 125%;
+
+        color: gray;
+    }
+
+    #shop_stars {
+        font-size: 125%;
+
+        color: darkorange;
+    }
+
+    #user {
+        padding: 0;
+        font-weight: bold;
+
+    }
+
+    .card {
+        background-color: #ffe5a5
+    }
+
+    img {
+        width: 40%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>

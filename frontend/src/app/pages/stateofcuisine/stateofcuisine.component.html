@@ -1,0 +1,45 @@
+<div class="back">
+        <img class="backimg" src="../../../assets/backburgerscut.jpg" />
+        <p class="instruction">Your Votes</p>
+        <div class="scroll">
+
+                <div class="choices">
+                        <div class="dot" (click)="changestate1()"></div>
+                        <p class="cuiz">Chinese</p>
+                </div>
+                <div class="choices">
+                        <div class="dot" (click)="changestate2()"></div>
+                        <p class="cuiz">Souvlaki</p>
+
+                </div>
+                <div class="choices">
+                        <div class="dot"></div>
+                        <p class="cuiz">Pizza</p>
+
+                </div>
+                <p id="wait" class="wait">Wait for everyone to finish</p>
+                <button id="continue" (click)="proceedToVoteforRestaurants()" class="btn btn-primary">Continue</button>
+
+                <div class="row" >
+                        <div *ngFor="let user of remaining">
+                                <div class="col">
+                                        <div class="checker">
+
+                                                <div class="form">
+                                                        <input type="checkbox" class="check" id="check_{{user.name}}" />
+                                                        <label id="label_{{user.name}}" for="check">
+                                                                <div class="loadercont" id="loader_{{user.name}}">
+                                                                        <div class="load"></div>
+                                                                </div>
+                                                                <svg viewBox="0,0,50,50">
+                                                                        <path d="M5 30 L 20 45 L 45 5"></path>
+                                                                </svg>
+                                                        </label>
+                                                </div>
+
+                                        </div>
+                                        <img src="../../../assets/{{user.user_Icon}}" id="photo">
+                                </div>
+                        </div>
+                </div>
+        </div>

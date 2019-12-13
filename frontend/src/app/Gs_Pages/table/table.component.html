@@ -1,0 +1,32 @@
+<body>
+        <h1 id="Status">Vote for restaurant</h1>
+        <div class="row" id="Main_Row">
+                <div *ngFor="let user of users" class="col-sm" id="columns">
+                        <img src={{user.user_Icon}} id="photo">
+                        <h2 id="Names"> {{user.name}}</h2>
+                        <!-- <button id="lala" (click)="change_load_status(user.name)">Click me</button> -->
+
+
+                        <div class="checker">
+
+                                <div class="form">
+                                        <input type="checkbox" class="check" id="check_{{user.name}}" />
+                                        <label id="label_{{user.name}}" for="check">
+                                                <div class="loadercont" id="loader_{{user.name}}">
+                                                        <div class="load" ></div>
+                                                </div>
+                                                <svg viewBox="0,0,50,50" >
+                                                        <path d="M5 30 L 20 45 L 45 5"></path>
+                                                </svg>
+                                        </label>
+                                </div>
+                        </div>
+                </div>
+
+        </div>
+
+        <div class="alert alert-primary" id="alert" role="alert">
+                Vote Ended! Proceeding ... 
+        </div>
+
+</body>

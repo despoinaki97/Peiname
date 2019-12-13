@@ -1,0 +1,51 @@
+<div class="modal-header bg-warning">
+    <i style="line-height:1.6" class="material-icons">
+        shopping_cart
+    </i>
+    <h4 class="modal-title col-sm-12" style="text-align: center;"> {{getName()}}'s Cart</h4>
+    <button type="button" class="close" aria-label="Close" (click)="close('close')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div id="opened_bar">
+        <div class="card" style="text-align: center;">
+            <div class="card-body">
+                <!-- <h5>{{getName()}}</h5> -->
+
+                <ul class="list-group" id="lista">
+                    <li class="list-group-item" *ngFor="let item of cart[getSeat()]" id="ratings">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <p id="item_stats_2">{{item.quantity}}x</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p id="item_stats_2">{{item.item.name}}</p>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <p id="item_stats">{{item.item.price * item.quantity}}€</p>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <p class="alert alert-dark" id="total">Total:
+                    {{getTotalPrice(getSeat())}}€</p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <div class='row'>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-warning" (click)="close('close')">Close</button>
+        </div>
+        <div class="col-md-6">
+
+            <button type="button" class="btn btn-warning" (click)="submit()">Submit</button>
+        </div>
+    </div>
+</div>

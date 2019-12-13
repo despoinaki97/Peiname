@@ -1,0 +1,147 @@
+<ul class="list-group list-group-horizontal" id="master">
+    <li class="list-group-item" id="user" *ngFor="let user of this.Users">
+        <div class="card" [style.borderColor]="user.color" [style.width.px]="innerWidth" [style.height.px]="innerHeight"
+            style="text-align: center;">
+            <div class="card-body">
+                <h5>{{user.name}}</h5>
+
+                <ul class="list-group" id="lista" [style.borderColor]="user.color" >
+                    <li class="list-group-item"  *ngFor="let item of cart[user.seat]" id="ratings">
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                                <span *ngFor="let sharedWith of item.sharedWith" class="dot"
+                                    [style.backgroundColor]="sharedWith.color" id="colors">
+                                </span>
+                            </div>
+                            <div class="col-sm-2">
+                                <p id="item_stats_2">{{item.quantity}}x</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <p id="item_stats_2">{{item.item.name}}</p>
+
+                            </div>
+                            <div class="col-sm-3">
+                                <p id="item_stats">{{item.item.price * item.quantity}}€</p>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <p id="total">Total:
+                    {{getTotalPrice(user.seat)}}€</p>
+
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+<style>
+    #lista{
+        border-top: solid 0.25vh;
+    }
+    .dot {
+        height: 2vh;
+        width: 2vh;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    #total {
+        text-align: right;
+        position: absolute;
+        font-weight: bold;
+        bottom: 5%;
+        right: 0%;
+        transform: translate(-35%);
+    }
+
+    #master {
+        list-style-type: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .card {}
+
+    #user {
+        padding-right: 1vw;
+        ;
+        border: 0;
+        padding-left: 1vw;
+        background: transparent;
+    }
+
+    #icon {
+        width: 40%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #item_stats_2 {
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    #item_stats {
+        text-align: right;
+        ;
+        margin-bottom: 0;
+    }
+
+    .card-body {
+
+        padding: 0.55rem;
+    }
+
+    #ratings {
+        border: 0;
+        background: transparent;
+        text-align: left;
+        margin-top: 2.5%;
+    }
+
+    #rating_notstars {
+        font-size: 80%;
+
+        color: gray;
+    }
+
+    #rating_stars {
+        font-size: 80%;
+
+        color: darkorange;
+    }
+
+    #shop_notstars {
+        font-size: 125%;
+
+        color: gray;
+    }
+
+    #shop_stars {
+        font-size: 125%;
+
+        color: darkorange;
+    }
+
+    #item {
+        padding: 0;
+    }
+
+    .card {
+        border: solid 0.5vh;
+
+        background-color: white
+    }
+
+    img {
+        height: 1vh;
+
+    }
+</style>

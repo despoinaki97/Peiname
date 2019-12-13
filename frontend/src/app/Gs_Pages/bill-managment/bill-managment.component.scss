@@ -1,0 +1,200 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;       /* body takes whole viewport's height */
+}
+
+.modal{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#Your_Order{
+  text-align: center;
+  color: white;
+  padding-top: 2.5vh;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  background-color: #E5E5E5;
+}
+#push_down{
+  margin-top: 5vh;
+}
+#icon{
+  display: inline-block;
+}
+
+#product{
+  width: 95vw;
+  height: 10vh;
+  margin-left: 0.3vw;
+ 
+}
+#Product_share{
+  width:50%;
+}
+
+#Product_Details{
+  flex-wrap: nowrap;
+  
+}
+
+
+
+#product *{
+  padding-left:0;
+  padding-right:0;
+  margin-left:0;
+  margin-right:0;
+}
+
+#Product_Name{
+  color: #0d0d0d;
+  margin-left: 1vw!important;
+}
+
+#Price{
+  font-size: medium;
+  text-align: right;
+}
+#Details{
+  margin-left: 20vw!important;
+  width: 58vw;
+  font-size: small;
+  color: #8e8e8e;
+}
+
+#line{
+  margin: 0;
+  margin-top: 3vh;
+  width: 100%;
+  height: 0.22vh;
+  background-color: orange;
+}
+
+#Total{
+  flex-wrap: nowrap;
+  width: 95%;
+  height: 46vh;
+  margin-left: 1vw;
+}
+
+#Total_p{
+  margin-top: 3vh;
+  margin-left: 20vw;
+}
+
+#Total_Price{
+  padding:0;
+  margin-top:3vh;
+  text-align: right;
+  padding-right: 1%;
+}
+
+#Buttons{
+  position: absolute;
+  bottom: 1vh;
+  flex-wrap:nowrap;
+  margin: 0;
+  width: 100%;
+  height: 8vh;
+}
+
+.btn {
+  background: #FFCC48;
+  padding-right: 10vw ;
+  padding-left: 10vw;
+  color: black;
+  border-radius: 5px;
+  // height: 5vh;
+  text-align: center;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal_body.modal-body{
+  padding-top :0;
+}
+#modal_body{
+
+  height: 150vw;
+}
+
+#Other_Users{
+  padding-top:  3vh;
+  flex-wrap:nowrap;
+  height: 24%;
+}
+
+#photo{
+  width: 20vw;
+  height: 10vh;
+}
+#Name_col{
+  padding-top: 2.8vh;
+}
+
+#Price_modal{
+ 
+  text-align: right;
+
+
+}
+
+#line2{
+  padding-top: 0.3vh;
+  width: 94.8vw;
+  background-color: orange;
+}
+
+#modal_Procceed{
+  margin-left: 20vw;
+  width: 56vw;
+  margin-bottom: 2vh;
+  font-size: small;
+}
+
+.col-5{
+  padding: 0;
+}
+.col-sm-5{
+  padding-right: 0;
+  width: 75%;
+}
+
+#lista{
+  list-style-type: none;
+}
+
+#Product{
+  width: 80%;
+}
+
+.col-4{
+  text-align: right;
+  padding-right: 0;
+  padding-left: 15vw;
+}
+
+#item_details{
+    color: gray;
+    font-size: medium;
+    padding-right: 0;
+    padding-left: 18vw;
+  }

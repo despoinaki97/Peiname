@@ -1,0 +1,58 @@
+<div class="back"  >
+        
+    <img class="backarr" src="../../../assets/back.png" [routerLink]="['/restmenu']"/>
+    <img class="backimg" src="../../../assets/sizar.jpg"/>
+    <p class="instruction">Caesar's Salad</p>
+    
+    <nav class="scroll">
+        <p class="ingrtitle">Ingredients</p>
+            <ul class="menulist" >
+                <!-- <li class="ingrbar">
+                    <div class="checked"><img class="yellowcheck" src="../../../assets/check.png"/></div>
+                    <div class="ingrname">Lettuce</div>
+                </li> -->
+                
+                <li class="ingrbar">
+                        <div class="form-check">
+                            <label><input type="checkbox" name="check" checked><span class="label-text">Lettuce</span></label>
+                        </div>         
+                </li>
+                <li class="ingrbar">
+                        <div class="form-check">
+                            <label><input type="checkbox" name="check" checked><span class="label-text">Chicken</span></label>
+                        </div>         
+                </li>
+                <li class="ingrbar">
+                        <div class="form-check">
+                            <label><input type="checkbox" name="check" checked><span class="label-text">Regato Cheese</span></label>
+                        </div>         
+                </li>
+                <li class="ingrbar">
+                        <div class="form-check">
+                            <label><input type="checkbox" name="check" checked><span class="label-text">Corn</span></label>
+                        </div>         
+                </li>
+                <li class="ingrbar">
+                        <div class="form-check">
+                            <label><input type="checkbox" name="check" checked><span class="label-text">Croutons</span></label>
+                        </div>         
+                </li>
+                <li class="ingrbar">
+                        <div class="form-check">
+                            <label><input type="checkbox" name="check" checked><span class="label-text">Vinaigrette</span></label>
+                        </div>         
+                </li>
+            </ul>
+
+            <app-modal></app-modal>
+
+
+
+    </nav>
+   
+    <div class="floatback">
+            <button class="yellowbutt" type="button" data-toggle="modal" data-target="#myModal" (click)="showModal()">Share with</button>
+        <button class="yellowbutt2" [routerLink]="['/restmenu']">Add to cart</button>
+    <div>
+
+    </div>
