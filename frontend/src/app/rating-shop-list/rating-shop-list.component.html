@@ -3,7 +3,7 @@
     <li class="list-group-item" id = "shops" *ngFor="let shop of Shops">
         <div class="card" style="width: 18rem;    text-align: center;
         ">
-            <img src="/assets/cropped-logo-dummy.png" class="card-img-top " alt="logo">
+            <img src="{{shop.imgURL}}" class="card-img-top " alt="logo">
             <div class="card-body">
                 <h3>{{shop.name}}</h3>
 
