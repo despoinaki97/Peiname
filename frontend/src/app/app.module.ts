@@ -40,6 +40,7 @@ import { StateofrestComponent } from './pages/stateofrest/stateofrest.component'
 import { WallComponent } from './wall/wall.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { IdleComponent } from './idle/idle.component';
+import { TreatedComponent } from './treated/treated.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { IdleComponent } from './idle/idle.component';
     StateofrestComponent,
     WallComponent,
     CartModalComponent,
-    IdleComponent
+    IdleComponent,
+    TreatedComponent
   ],
   imports: [
     BrowserModule,

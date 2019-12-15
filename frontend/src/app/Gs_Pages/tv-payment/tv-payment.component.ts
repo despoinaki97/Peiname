@@ -4,6 +4,7 @@ import { Item } from '../../item';
 import { DatabankService } from 'src/app/databank.service';
 import * as Q from 'q';
 import { SocketsService } from 'src/app/global/services';
+import { RouterLink, RouterEvent, Router } from '@angular/router';
 
 @Component({
   selector: 'ami-fullstack-tv-payment',
@@ -12,7 +13,7 @@ import { SocketsService } from 'src/app/global/services';
 })
 export class TvPaymentComponent implements OnInit {
 
-  constructor(private DataBankService: DatabankService, private socket: SocketsService) { }
+  constructor(private DataBankService: DatabankService, private socket: SocketsService, private router: Router) { }
   public innerWidth: any;
   public innerHeight: any;
   public Users: ordAccount[];
@@ -112,6 +113,11 @@ export class TvPaymentComponent implements OnInit {
 
     // this.innerWidth = (window.innerWidth * 90 / 100) / ;
     this.innerHeight = window.innerHeight * 0.9;
+
+
+    this.socket.syncMessages('finished').subscribe(( data) =>{
+      this.router.navigateByUrl("idle/tv");
+    })
   }
 
 

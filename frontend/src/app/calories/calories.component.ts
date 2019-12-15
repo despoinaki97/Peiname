@@ -102,6 +102,9 @@ export class CaloriesComponent implements OnInit {
     })
 
 
+    this.socket.syncMessages('finished').subscribe(( data) =>{
+      this.router.navigateByUrl("wall_order_waiting/2");
+    })
   }
 
 }

@@ -142,6 +142,12 @@ main {
   height: 24%;
 }
 
+#Other_Users2{
+  padding-top:  3vh;
+  flex-wrap:nowrap;
+  height: 24%;
+}
+
 #photo{
   width: 20vw;
   height: 10vh;
@@ -197,4 +203,8 @@ main {
     font-size: medium;
     padding-right: 0;
     padding-left: 18vw;
+  }
+
+  #Price{
+    text-align: center;
   }

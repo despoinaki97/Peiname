@@ -16,6 +16,7 @@ import { ReturnStatement } from '@angular/compiler';
 })
 export class DatabankService {
   private shops: Shop[];
+  public finished: number = 0;
   private users: ordAccount[];
   private users_subject: BehaviorSubject<ordAccount[]>;
   public items_subject: BehaviorSubject<Item[]>;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SocketsService } from '../global/services';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ami-fullstack-table-vote-completed',
@@ -13,8 +14,10 @@ export class TableVoteCompletedComponent implements OnInit {
 
   ngOnInit() {
     
-    this.socket.syncMessages("host_proceed").subscribe((data)=>{
+    let sub:Subscription = this.socket.syncMessages("host_proceed").subscribe((data)=>{
       this.router.navigateByUrl("/table/restaurant")
+      sub.unsubscribe();
+      
     })
     
   }

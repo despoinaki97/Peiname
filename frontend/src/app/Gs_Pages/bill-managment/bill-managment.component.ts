@@ -9,6 +9,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SocketsService } from '../../global/services';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'ami-fullstack-bill-managment',
@@ -19,6 +20,11 @@ export class BillManagmentComponent implements OnInit {
 
   closeResult: string;
   i: number;
+  public finished:number = 0;
+  public choosed_for_treat: ordAccount[] =[];
+  public choosed_user1:boolean = false;
+  public choosed_user2:boolean = false;
+  public remainusers:ordAccount[] = [];
   private modalComponent: NgbModal;
   users: ordAccount[];
   public Users: ordAccount[];
@@ -69,8 +75,7 @@ export class BillManagmentComponent implements OnInit {
   getSeat() {
     return +localStorage.getItem("seat");
   }
-  getTotalPrice(): number {
-    let x = localStorage.getItem("seat")
+  getTotalPrice(x:number): number {
     let sum = 0;
     if (this.Items[x]) {
       this.Items[x].forEach((each: Item) => {
@@ -111,11 +116,106 @@ export class BillManagmentComponent implements OnInit {
     }
   }
 
+  Choosed_for_treat(choosed:boolean){
+    console.log(choosed)
+      if(choosed == true){
+      document.getElementById("Other_Users").style.backgroundColor = '#FFDB7E';
+      }
+      else{
+        document.getElementById("Other_Users").style.backgroundColor = "#FFFDF9";
+      }
+      this.choosed_user1 = !this.choosed_user1;
+  }
+
+  Choosed_for_treat2(choosed:boolean){
+    console.log(choosed)
+      if(choosed == true){
+      document.getElementById("Other_Users2").style.backgroundColor = '#FFDB7E';
+      }
+      else{
+        document.getElementById("Other_Users2").style.backgroundColor = "#FFFDF9";
+      }
+      this.choosed_user2 = !this.choosed_user2;
+
+    }
+    
+    Treat_someone(){
+      this.users.forEach( (user) =>{
+        if(user.seat == +localStorage.getItem('seat')) this.choosed_for_treat.push(user);
+      })
+      if(this.choosed_user1 == true) this.choosed_for_treat.push(this.remainusers[0]);
+      if(this.choosed_user2 == true) this.choosed_for_treat.push(this.remainusers[1]);
+
+      if(this.choosed_for_treat){
+        var total_tpm = 0;
+        var total = this.getTotalPrice(this.getSeat());
+        this.choosed_for_treat.forEach( (elem) =>{
+          total_tpm += this.getTotalPrice( elem.seat);
+        })
+        
+      total += total_tpm;
+      document.getElementById("Total_Price").innerHTML = total.toPrecision(2) + '€';
+      }
+      this.DataBankService.call("treat" , this.choosed_for_treat);
+      
+    }
+
+    Pay(){
+      if(this.choosed_for_treat.length != 0){
+        console.log("TRUE");
+      this.finished += this.choosed_for_treat.length;
+      }
+      else {
+        console.log(this.finished + " FINISHED")
+        this.finished = this.finished + 1;
+      }
+      
+      if( this.finished == this.users.length){
+        this.DataBankService.call("finished","")
+      }
+
+      else{
+        this.DataBankService.call("user_finished",this.finished);
+        this.router.navigateByUrl("idle/Order completed!")
+      }
+
+    }
+
+    
+
   ngOnInit() {
+    this.getUsers();
+    this.DataBankService.getUsers().subscribe((users) => {
+      users.forEach((each) => {
+        if (each.seat != this.getSeat()) this.remainusers.push(each)
+      })
+    })
+  
+    this.socket.syncMessages('treat').subscribe((data) => {
+      data.message.forEach(user => {
+        if(user.seat === +localStorage.getItem('seat') && data.message[0].seat !== +localStorage.getItem('seat')){
+           var to:string;
+           to = "treated/" + data.message[0].name;
+            this.router.navigateByUrl(to);
+        }
+      });
+        
+      });
+      this.socket.syncMessages('finished').subscribe(( data) =>{
+        this.router.navigateByUrl("idle/Order completed!")
+      })
+
+      this.socket.syncMessages('user_finished').subscribe(( data) =>{
+        console.log(data.message + "DATA MESSAGE")
+        this.finished = data.message;
+      })
+
     this.i = 0;
     this.updateCarts();
     this.socket.syncMessages('update_cart').subscribe((data) => {
       this.updateCarts();
     })
 
-}}
+}
+
+}

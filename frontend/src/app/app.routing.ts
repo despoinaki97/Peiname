@@ -26,6 +26,7 @@ import { TableVoteCompletedComponent } from './table-vote-completed/table-vote-c
 import { StateofrestComponent } from './pages/stateofrest/stateofrest.component';
 import { WallComponent } from './wall/wall.component';
 import {IdleComponent} from './idle/idle.component';
+import { TreatedComponent } from './treated/treated.component';
 
 
 
@@ -63,6 +64,8 @@ const routes: Routes = [
   { path: 'table/:type' , component:TableComponent},
   { path: 'tableEndvote' , component:TableVoteCompletedComponent},
   { path: 'idle/:name' , component:IdleComponent},
+  { path: 'treated/:name' , component:TreatedComponent},
+
  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ]
 

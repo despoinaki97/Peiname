@@ -73,7 +73,7 @@
 
     <div class="row" id="Buttons">
       <div class="col-sm-5">
-        <button class="btn">Pay</button>
+        <button class="btn" (click) = "Pay()">Pay</button>
 
       </div>
       <div class="col-sm-5" style="text-align: right; padding-right: 4%;">
@@ -86,29 +86,29 @@
     <ng-template #content let-modal>
 
       <div class="modal-body" id="modal_body">
-        <div class="row" id="Other_Users">
+        <div class="row" id="Other_Users" (click)="Choosed_for_treat(!choosed_user1)">
           <div class="col-sm-3">
-            <img src="../../../assets/Giorgos.png" id="photo">
+            <img src="{{remainusers[0].user_Icon}}" id="photo">
           </div>
           <div class="col-sm-3" id="Name_col">
-            <h5>Giorgos</h5>
+            <h5>{{remainusers[0].name}}</h5>
           </div>
           <div class="col-sm-3" id="Name_col">
-            <!-- <h5 id="Price_modal">{{users[1].getTotalPrice()}}€</h5> -->
+            <h5 id="Price"> {{getTotalPrice(remainusers[0].seat)}}€</h5>
           </div>
         </div>
         <div class="row" id="line2"></div>
 
 
-        <div class="row" id="Other_Users">
+        <div class="row" id="Other_Users2" (click)="Choosed_for_treat2(!choosed_user2)">
           <div class="col-sm-3">
-            <img src="../../../assets/Kostas.png" id="photo">
+            <img src="{{remainusers[1].user_Icon}}" id="photo">
           </div>
           <div class="col-sm-3" id="Name_col">
-            <h5>Kwstas</h5>
+            <h5>{{remainusers[1].name}}</h5>
           </div>
           <div class="col-sm-3" id="Name_col">
-            <!-- <h5 id="Price_modal">{{users[2].getTotalPrice()}}€</h5> -->
+            <h5 id="Price"> {{getTotalPrice(remainusers[1].seat)}}€</h5>
           </div>
         </div>
         <div class="row" id="line2"></div>
@@ -116,7 +116,7 @@
 
       </div>
 
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')"
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')" (click)="Treat_someone()" 
         id="modal_Procceed">Procceed To Payment</button>
 
     </ng-template>

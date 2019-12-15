@@ -5,6 +5,7 @@ import { Item } from 'src/app/item';
 import { element } from 'protractor';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SocketsService } from '../global/services';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class IdleComponent implements OnInit {
 
     
     this.name = this.activatedRoute.snapshot.paramMap.get('name');   
-    this.socket.syncMessages('start_voting').subscribe((value)=>{
+    const sub:Subscription =this.socket.syncMessages('start_voting').subscribe((value)=>{
+      sub.unsubscribe();
       this.router.navigateByUrl('/tv')
     })
   }
