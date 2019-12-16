@@ -138,3 +138,11 @@ body {
     font-weight: bold;
   }
   
+  #scroll{
+    position: fixed;
+    top:18%;
+    height: 85%; 
+    width:100%;
+    //overflow:hidden; 
+    overflow-y:scroll;
+  }

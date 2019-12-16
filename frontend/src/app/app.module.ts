@@ -41,6 +41,9 @@ import { WallComponent } from './wall/wall.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { IdleComponent } from './idle/idle.component';
 import { TreatedComponent } from './treated/treated.component';
+import { VirtualComponent } from './cursor/virtual/virtual.component';
+import { SmartSpeakerService } from './smart-speaker.service';
+
 
 @NgModule({
   declarations: [
@@ -77,7 +80,8 @@ import { TreatedComponent } from './treated/treated.component';
     WallComponent,
     CartModalComponent,
     IdleComponent,
-    TreatedComponent
+    TreatedComponent,
+    VirtualComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +93,7 @@ import { TreatedComponent } from './treated/treated.component';
     ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [ SmartSpeakerService],
   bootstrap: [AppComponent],
   entryComponents:[FormModalComponent,CartModalComponent
   ]

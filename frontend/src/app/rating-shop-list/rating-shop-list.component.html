@@ -1,8 +1,8 @@
+<div id="horscroll">
 <ul class="list-group list-group-horizontal">
-    <li class="list-group-item" id = "shops" *ngFor="let shop of shops">
-        <div class="card" style="width: 18rem;    text-align: center;
-        ">
-            <img src="/assets/cropped-logo-dummy.png" class="card-img-top " alt="logo">
+    <li class="list-group-item" id = "shops" *ngFor="let shop of Shops">
+        <div class="card" style="width: 18rem;    text-align: center;">
+            <img src="{{shop.imgURL}}" class="card-img-top " alt="logo">
             <div class="card-body">
                 <h3>{{shop.name}}</h3>
 
@@ -35,7 +35,7 @@
         </div>
     </li>
 </ul>
-
+</div>
 <style>
     #shops{
         padding-right: 0;
@@ -88,7 +88,8 @@
     }
 
     .card {
-        background-color: #ffe5a5
+        background-color: #ffe5a5;
+         height : 43.5vw;
     }
 
     img {

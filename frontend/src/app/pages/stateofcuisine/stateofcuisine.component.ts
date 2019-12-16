@@ -30,6 +30,7 @@ export class StateofcuisineComponent implements OnInit {
     })
   }
 
+  
   ngOnInit() {
     
     let username = localStorage.getItem('username');

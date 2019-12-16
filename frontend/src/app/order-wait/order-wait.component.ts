@@ -9,6 +9,8 @@ import {
 } from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
+import { SocketsService } from '../global/services';
+import { DatabankService } from '../databank.service';
 
 
 @Component({
@@ -38,7 +40,7 @@ export class OrderWaitComponent implements OnInit {
   flag = false;
   interval;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private socket:SocketsService , private DatabankService:DatabankService) { }
 
   ngOnInit() {
     const min = +this.activatedRoute.snapshot.paramMap.get('min');
@@ -83,6 +85,8 @@ export class OrderWaitComponent implements OnInit {
   animEnd(event) {
     if (this.flag) {
       this.hide = true;
+      this.DatabankService.call('Final_Table',"");
+      console.log("TELIOSA")
     }
     // do more stuff
   }

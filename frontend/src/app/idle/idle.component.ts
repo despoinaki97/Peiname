@@ -6,6 +6,8 @@ import { element } from 'protractor';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SocketsService } from '../global/services';
 import { Subscription } from 'rxjs';
+import { SmartSpeakerService } from '../smart-speaker.service';
+
 
 
 @Component({
@@ -15,7 +17,7 @@ import { Subscription } from 'rxjs';
 })
 export class IdleComponent implements OnInit {
 
-  constructor(private socket:SocketsService,private databank:DatabankService,private router: Router,private activatedRoute: ActivatedRoute) { }
+  constructor(private speaker:SmartSpeakerService ,private socket:SocketsService,private databank:DatabankService,private router: Router,private activatedRoute: ActivatedRoute) { }
   public name:string;
   ngOnInit() {
 
@@ -25,5 +27,12 @@ export class IdleComponent implements OnInit {
       sub.unsubscribe();
       this.router.navigateByUrl('/tv')
     })
-  }
+
+      this.socket.syncMessages('Final_Table').subscribe((value)=>{
+        if(this.name == 'table'){
+          console.log("PREPEI NA ALAKSW")
+          this.router.navigateByUrl("Final-table");
+        }
+    })
+    }
 }

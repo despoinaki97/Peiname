@@ -10,6 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { SocketsService } from 'src/app/global/services';
 import { Router } from '@angular/router';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { SmartSpeakerService } from 'src/app/smart-speaker.service';
 
 @Component({
   selector: 'ami-fullstack-voteres',
@@ -19,13 +20,16 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class VoteresComponent implements OnInit {
   shops:Shop[];
   foundshop:boolean=false;
-  constructor(private router: Router, private DataBankService: DatabankService, @Inject(PLATFORM_ID) private plaformId: Object, private injector: Injector, private socket: SocketsService) { }
+  constructor(private router: Router, private DataBankService: DatabankService, @Inject(PLATFORM_ID) private plaformId: Object, private injector: Injector, private socket: SocketsService,private _smartSpeaker:SmartSpeakerService) { }
 
   ngOnInit() {
     this.shops=this.DataBankService.getShops();
     
   }
+
   
+
+
   gotokrassas(){
     this.shops.forEach(element=>{
         if(element.name=="Krassas")

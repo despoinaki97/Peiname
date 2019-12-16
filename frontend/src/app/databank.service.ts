@@ -24,9 +24,9 @@ export class DatabankService {
   private items: Item[];
   constructor(private http: HttpClient) {
     this.users = [
-      // new ordAccount(0, "Giorgos.S", [], "#0057FF", "../assets/Giorgos.png"),
-      // new ordAccount(1, "Despoina.S", [], "#FF00F5", "../assets/girl.png")
-      // , new ordAccount(2, "Kostas.D", [], "#1ED847", "../assets/Kostas.png")
+      new ordAccount(0, "Giorgos.S", [], "#0057FF", "../assets/Giorgos.png"),
+      new ordAccount(1, "Despoina.S", [], "#FF00F5", "../assets/girl.png")
+      , new ordAccount(2, "Kostas.D", [], "#1ED847", "../assets/Kostas.png")
     ]
     this.users_subject = new BehaviorSubject(this.users);
     this.items_subject = new BehaviorSubject(this.items);
